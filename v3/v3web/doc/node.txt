@@ -1,0 +1,9 @@
+instalirati NVM (node version manager)
+https://github.com/coreybutler/nvm-windows/releases/download/1.1.9/nvm-setup.exe
+
+
+nvm install 14.15.5 (downgrade node to version that satisfies node-sass)
+nvm use 14.15.5 
+npm install node-sass@4.14.1 (reinstall node-sass)
+npm rebuild node-sass
+quasar build

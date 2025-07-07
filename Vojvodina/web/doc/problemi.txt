@@ -1,0 +1,11 @@
+//  Kada se doda ROLE_STRUCNI_STAB u rolama (post - https://procoach-prod.api.glu.one/roles) "uspesno" doda rolu, ali je iz nekog razloga ne prikaze, samo tu?
+//  ROLE_IGRAC - 'isto treba da budu zakucano negde u bazi, dodao sam jednom, sada radi'
+//  Nekoliko njih mora da bude zakucano i fali provera da li je jedinstvena rola kada se pravi nova
+
+
+//  https://procoach-prod.api.glu.one/element-fudbalske-igre-sifrarnik
+//  https://procoach-prod.api.glu.one/element-fudbalske-igre-sifrarnik
+//  fali provera da li je code jedinstven
+
+
+// Konekcije - moze da se obrise staff, ili igrac, ali i dalje ostaje "povezan" sa timom

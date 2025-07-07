@@ -1,0 +1,95 @@
+// app global css in Sass form
+::-webkit-scrollbar
+    height: 12px
+    width: 14px
+    background: transparent
+    z-index: 12
+    overflow: visible
+
+
+::-webkit-scrollbar-thumb
+    width: 10px
+    background-color: #323b623f
+    border-radius: 10px
+    z-index: 12
+    border: 4px solid rgba(0, 0, 0, 0)
+    background-clip: padding-box
+    transition: background-color .32s ease-in-out
+    margin: 4px
+    min-height: 32px
+    min-width: 32px
+
+
+::-webkit-scrollbar-thumb:hover
+    background: #323b623f
+html
+    overflow: hidden
+
+
+.q-table__middle
+    max-height: calc(100vh - 280px)
+.q-field__label
+  font-size: 14px
+  color: #aaaaaa
+
+  .q-field--float
+    background: white !important
+    border: 1px solid #3b5d99 !important
+
+  .q-field--float .q-field__label
+    transform: translateY(-100%) scale(0.75)
+    left: -5px
+    background: white
+    width: fit-content
+    padding: 0 5px
+    color: black
+    font-size: 16px
+  .q-field--auto-height.q-field--labeled .q-field__control-container
+    padding-top: 12px;
+
+.mojaTabela div:first-child
+  padding-top: 0px
+  padding-bottom: 0px
+
+.mojaTabela
+  q-table-top
+  padding-top: 0px !important
+  padding-bottom: 0px
+  table
+    border-spacing: 0 5px
+  tr
+    color: #323b62
+    height: 50px
+    border-radius: 5px
+    font-weight: 500
+    box-shadow: 0px 0px 3px -5px rgba(0,0,0,0.15)
+  tr:nth-child(even)
+    background-color: #f5f8fb
+  tr:nth-child(odd)
+    background-color: #ffffff
+  td:first-child,
+  th:first-child
+    border-radius: 10px 0 0 10px
+  td:last-child,
+  th:last-child
+    border-radius: 0 10px 10px 0
+
+
+.q-table__container > div.row
+    overflow: auto !important
+    max-height: calc(100vh - 280px)
+.my-sticky-header-table
+  /* height or max-height is important */
+  height: 310px
+
+
+  thead tr th
+    position: sticky
+    z-index: 1
+  thead tr:first-child th
+    top: 5px
+
+  /* this is when the loading indicator appears */
+  &.q-table--loading thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px

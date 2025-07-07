@@ -1,0 +1,103 @@
+1. autorizacija 
+    authorization-endpoint
+        GET     /oauth/token                                *** RADI *** sa sitemskim korisnikom!
+
+2. Rad sa korisnicima
+    korisnik-controller
+        GET     /user       user
+        PUT     /user       modifyUser
+        GET     /user/tz    timeZones
+
+3. Rad sa igracima
+    igraci-controller
+        GET     /igraci             getIgraci               *** RADI ***
+        POST    /igraci             addIgrac                *** RADI ***
+        GET     /igraci/{ident}     getIgrac                *** RADI ***
+        PUT     /igraci/{ident}     modifyIgrac             *** RADI ***
+        DELETE  /igraci/{ident}     deleteIgrac             *** RADI ***
+
+    postura-controller
+        GET     /posture                getPosture          *** RADI ***
+        POST    /posture                addPostura
+        GET     /posture/{ident}        getPostura
+        GET     /posture/igrac/{ident}  getPosturaForPlayer *** RADI ***        
+
+4. Rad sa ulogama korisnika
+    role-controller
+        GET     /roles              rolesAll                *** RADI ***
+        POST    /roles              addRole                 *** RADI ***
+        PUT     /roles/{roleName}   updateRole              *** RADI ***
+        DELETE  /roles/{roleName}   deleteRole              *** RADI ***
+        POST    /roles/list         addRoles
+
+5. Rad sa timovima (selekcijama)
+    selekcija-controller
+        GET     /selekcije                              getSelekcije            *** RADI ***
+        POST    /selekcije                              addSelekcija            *** RADI ***
+        GET     /selekcije/{id}/users                   getUsersFromSelection
+        GET     /selekcije/{ident}                      getSelekcija            *** RADI ***
+        PUT     /selekcije/{ident}                      updateSelekcija         *** RADI ***
+        DELETE  /selekcije/{ident}                      deleteSelekcija         *** RADI ***
+        POST    /selekcije/{idSelekcije}/{idIgraca}     addPlayerToSelekcija
+        POST    /selekcije/{idSelekcije}/{idOstalo}     addOthersToSelekcija
+        POST    /selekcije/{idSelekcije}/{idTrenera}    addTrenerToSelekcija
+        GET     /selekcije/trener/{id}                  getSelekcijeForTrener    
+    
+6. Zdravstveni status igraca
+    zdravstveni-status-medicinski-karton-controller
+
+7. Povrede igraca
+    povrede-igraca-controller     
+
+8. Morfoloske karakteristike igraca
+    morfologija-controller
+
+9. Motoricke sposobnosti igraca
+    9.1. snaga  
+        snaga-controller
+    9.2. fleksibilnost
+        fleksibilnost-controller
+    9.3. fms
+        fms-controller
+    9.4. Rizik od povredjivanja
+        identifikacija-povreda-controller
+    9.5. postura
+        postura-controller - NE unosi se rucno!
+    9.6. Izokinetika 
+        **** - NE unosi se rucno
+    9.7. brzina
+        brzina-controller
+    9.8. agilnost
+        agilnost-controller
+
+10. funkcionalni podaci o igracima
+        funkcionalni-podaci-controller
+
+11. Psiholoski profila igraca
+
+12. Inteligencija igraca
+    inteligencija-controller
+
+13. socijalni kapital igraca
+    socijalni-kapital-controller
+
+14. Testiranje igraca
+    podaci-o-testiranju-igraca-controller
+
+15. Finansije
+    igrac-finansijska-ulaganja-controller
+
+
+
+
+doba-dana-controller
+dogadjaj-controller
+location-spy-controller
+
+
+ 
+
+pozicija-controller
+strucni-stab-controller
+user-pozicija-controller
+

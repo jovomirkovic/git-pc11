@@ -1,0 +1,42 @@
+Problemi sa utakmicom:
+
+✓ ______  cesto se zove GET - elementi-utakmice/utakmica/null
+
+          Greska ne treba da se upali na dodeli brojeva kada je input prazan, focus->blur linija '1556' pretraga 'playersNeedToHaveDifferentNumbers'
+
+
+          Greske za igracima i njihovim informacijama ce biti resene kada bogdan izmeni get zahtev
+            ne vraca igrace na klupi pa ig vadimo iz selekcije i poredimo sa igracima na terenu
+            ne vraca igrace na klupi pa ni njihove startne brojeve
+            ne vraca igrace na klupi pa ni info da li je primarni ili alternativni ili ni jedan u formaciji
+
+
+          kada nije pokrenuta utakmica, stoji ali nije kraj (mozda i samo pre pocetka) isto vazi i za posle kraja utakmice
+            zabranjeno je
+              zamena
+            dozvoljeno je   
+              gol
+              log
+              dodela brojeva
+              plusevi i minusi
+
+          Period se nigde ne cuva, samo dok je upaljeno, kad god udjes ponovo krece od nule
+✓ ______  fali deselect u zameni i treba da se disable-uje dugme kada nisu uzabrana dva igraca
+          trocifreni  iveci brojevi se prelamaju pri prikazu igraca na terenu
+
+
+
+
+
+
+od promenljivih za igrace imamo
+  igraciSelekcije
+  igraciSelekcijeKopija
+
+  igraciNaTerenu
+  igraciNaKlupi
+
+  selektovaniIgracZaIzlaz
+  selektovaniIgracZaUlaz
+
+  playerPlayingStatus unutar igraciNaTerenu

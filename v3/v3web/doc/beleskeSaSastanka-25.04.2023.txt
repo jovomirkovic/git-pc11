@@ -1,0 +1,196 @@
+pravila
+<!-- todo: jedna decimala ogranicenje  -->
+tacka za decimale za sada
+
+
+##ODRADJENO##    snaga skokovi u cm da budu na jednoj decimali
+##ODRADJENO##    fleksibilnost 'thomas test' ima 4 opcije, staviti radio dugmice
+    0 - Bol
+    1 - Loše
+    2 - Dobar
+    3 - Odličan
+
+    
+    0 - Painfull
+    1 - Bad
+    2 - Good
+    3 - Excelent
+
+
+##ODRADJENO##    FMS sva polja sem poslednjeg imaju iste opcije, isto radio dugmici pod
+    0 - Bol
+    1 - Loše
+    2 - Dobar
+    3 - Odličan
+
+    
+    0 - Painfull
+    1 - Bad
+    2 - Good
+    3 - Excelent
+
+
+##ODRADJENO##        svaki cm ide jedna decimala
+##ODRADJENO##            identifikacija povredde isto
+
+##ODRADJENO##            identifikacija rizikacija   one leg squat left i right i nordic test
+##ODRADJENO##            isto od 0-3 iste ove gore vrednosti
+
+##ODRADJENO##        brzina svaku ograniciti na 2 decimale
+##ODRADJENO##        zig zag oba i t test, sva tri ograniciti na 2 decimale
+
+##ODRADJENO##        zdravstveni karton, celobrojno do tri cifre, prva(posle prva dva (od otkucaja)) tri polja
+##ODRADJENO##        resperatory rate at rest isto samo dve cifre
+
+##JEDNOG LEPOG DANA##    Da se automatski izbacuje autocomplete na osnovu prethodnih unosa bogdan jednog lepog dana (poslednja dva polja)
+
+                    povrede ubacene vrednosti one tri tackice ne rade gore jer pokazuje na drugu bazu kod 400
+
+##ODRADJENO##        kada se ugasi dijalog za klasifikaciju povrede da se ne ugasi sve
+
+
+
+##ODRADJENO##        igraci funkcionalni podaci - prva dva u metrima idu bez decimala
+
+##ODRADJENO##        anaerobicRunningSpeedThreshold sa jednom decimalom
+
+##ODRADJENO##        psihologija assesment self assesment nije poravnat kako valja, i mozda drugacije pozadine na oba da bude vidljivije sta je sta
+##ODRAD    slajder dodati linijice i brojevi ispod
+
+            Dodato ali se ne salje - bogdan    Samopouzdanje (Confidence) fali na self testu, dodati ga iznad dodnja tri
+            jer je i u trener i u self assesment
+
+
+##ODRADJENO##         dodati Reakcija na gresku (Reaction to a mistake) u test u sredinu imedju peak i reaction i u self
+                        reakcija na gresku u self vec postoji samo se zove reaction to error
+
+##ODRADJENO##         social capital - good freind i good player ograniciti os 0 do 100, staviti slajder za njih plus minus
+##ODRADJENO##         slajder za sve od 0 do 10
+##ODRADJENO##         finansije clubs percentage isto staviti slajder
+
+
+##ODRADJENO##         Sve merne jedinice pretvoriti u uglaste zagrade
+
+
+##ODRADJENO##         morfologija jedna decimala
+
+##ODRADJENO##         bmi dve cifre jedna decimala
+##ODRADJENO##         viseralna mast slajder 1 - 20 kao za proenat plus minus
+##ODRADJENO##         svi cm 1 decimala
+
+
+
+##ODRADJENO##         administracija jedna decimala
+##ODRADJENO##         users
+##ODRADJENO##          sva polja su obavezna
+##ODRADJENO##         role
+##ODRADJENO##             sva polja
+##ODRADJENO##         teams
+##ODRADJENO##             sva obavezna
+##ODRADJENO##         staff
+##ODRADJENO##             sve obavezno sem
+##ODRADJENO##             
+##ODRADJENO##             educational institution
+##ODRADJENO##             passport number
+##ODRADJENO##             contract earnings
+##ODRADJENO##             validnost passporta
+##ODRADJENO##             i validnost contracta ne morale
+##ODRADJENO##             licenca
+##ODRADJENO##             prva tri su samo obavezna :D
+
+##ODRADJENO##         igraci sta nije obavezno
+##ODRADJENO##             nadimak
+##ODRADJENO##             recomended by
+##ODRADJENO##             email
+##ODRADJENO##             mobilni telefon
+##ODRADJENO##             slika
+##ODRADJENO##             passport number i passport validiti
+##ODRADJENO##             koje dete po redu
+##ODRADJENO##             sa kime zivi
+##ODRADJENO##             svih 6 u family
+##ODRADJENO##             i ovo poslednje
+
+##ODRADJENO##         konekcije, da stane 7 igraca sa desne strane otprilike 30/70 onaj slider sto je bilo pola pola pol
+    
+##ODRADJENO##         game elements ograniciti na cifre 1 ili 2 cifre - obavezno polje
+##ODRADJENO##             ime obavezno, opis nije
+##ODRADJENO##         tehnika 
+##ODRADJENO##             grupa
+##ODRADJENO##                 sva polja su obavezna
+##ODRADJENO##             items
+##ODRADJENO##                 samo ime obavezno
+##ODRADJENO##         taktika isto
+
+##ODRADJENO##         principi igrace
+##ODRADJENO##             nije obavezno 
+##ODRADJENO##                 opis
+##ODRADJENO##         
+##ODRADJENO##             group items da bude disabled dok se ne popuni kao i primary element of tehnika.. ti originalno prazni
+
+##ODRADJENO##         test data
+##ODRADJENO##             nije obavezno 
+##ODRADJENO##                 opis1
+##ODRADJENO##                 opis2
+##ODRADJENO##                 poslace mi za ovo naknadno
+##ODRADJENO##                 (ostali ispod?)
+
+
+dosta o administraciji
+##ODRADJENO##         trening
+##ODRADJENO##         obavezno
+##ODRADJENO##             lokacija
+##ODRADJENO##             podlogu po default-u staviti trava
+##ODRADJENO##             vrsta treninga
+##ODRADJENO##             iz forma ukloniti players!
+##ODRADJENO##         tok treninga    
+##ODRADJENO##             detalji
+##ODRADJENO##                 ne staje sve, popraviti
+##ODRADJENO##         imaju polja koja su obavezna ali te ne obavesti dok ne pokusas da sacuvas
+
+
+##ODRADJENO##         prozivka, bez skrola u vise kolona (33 igraca)
+
+##ODRADJENO##         trenazne vezbe
+##ODRADJENO##             obavezno sve sem opisa
+dodati sta koji utakmica je gotova kao u treninzima
+    krajnji rezultat i vreme da li je proslo
+##ODRADJENO##         utakmice
+##ODRADJENO##             obavezno
+##ODRADJENO##                 tip utakmice
+##ODRADJENO##                 lokacija
+##ODRADJENO##                 protivnik
+##ODRADJENO##         formacije fali prezime i kliktav mistake
+##ODRADJENO##         formacije fali prezime
+
+
+    tok utakmice je glevo za trenera
+        trebace slicno za trening kad tad 
+        stoperica je birna za cuvanje za kasnije poredjenje sa snimkom, sve se cuva sa njom ja mislim
+
+##ODRADJENO##         tehnicki elementi
+##ODRADJENO##             sve obavezno
+##ODRADJENO##         takticki elementi
+##ODRADJENO##             sve obavezno
+
+
+
+
+
+
+ima i lokacija u dva reda maks, jedno od drugog kradu, ne menjati velicinu ukoliko ne morale
+obe forme povecati da stane sto vise (8 kolona i za timove i za igrace)
+
+
+
+
+
+
+
+
+
+
+izbor tima novi beograd dva reda potisnuo uzrast
+i igraci nisu iste velicine isto
+
+
+obevestenje izaberi igraca ili tim i disable i sve ostalo

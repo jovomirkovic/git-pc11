@@ -1,0 +1,47 @@
+{
+  "name": "foocass_admin",
+  "version": "0.0.1",
+  "description": "admin za FOOCASS",
+  "productName": "FOOCASS",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "author": "Jovo N. Mirkovic",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/cli": "^2.4.0",
+    "@quasar/extras": "^1.0.0",
+    "apexcharts": "^3.15.5",
+    "axios": "^0.19.2",
+    "debounce": "^1.2.1",
+    "echarts": "^4.6.0",
+    "lodash.debounce": "^4.0.8",
+    "moment": "^2.27.0",
+    "quasar": "^1.0.0",
+    "vue-apexcharts": "^1.5.2",
+    "vue-cryptojs": "^2.1.4",
+    "vue-draggable": "^2.0.6",
+    "vue-echarts-v3": "^2.0.1",
+    "vue-file-base64": "^1.0.2",
+    "vue-i18n": "^8.24.3",
+    "vue-quill-editor": "^3.0.6",
+    "vue2-datepicker": "^3.5.0",
+    "vue2-simplert-plugin": "^0.4.1",
+    "vuedraggable": "^2.24.3"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-qcalendar": "^1.5.3",
+    "strip-ansi": "^3.0.1"
+  },
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}

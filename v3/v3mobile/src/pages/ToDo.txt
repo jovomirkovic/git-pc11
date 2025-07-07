@@ -1,0 +1,104 @@
+node 10.18.1
+cordova 10
+npm install -g @quasar/cli@1.4.0
+npm install quasar@1
+npm install -g cordova@10
+npm install -g @quasar/icongenie@2.4.0
+
+
+
+
+
+** dodavanje cordova-e ***
+quasar mode add cordova
+cd src-cordova
+cordova platform add android (ili cordova platform add ios)
+cordova requirements
+
+** bildovanje **
+cd..
+quasar build -m cordova -T android -t mat
+ili
+quasar build -m cordova -T android -t mat -d
+cd src-cordova
+cordova build
+
+*******************************************************************
+npm i -S @gauseen/vue-finger
+
+dodavanje ikona
+icongenie generate -i "C:\Users\blago\Projects\mKonekt\zvezda\Vojvodina\mobile\src\assets\img\logo.png"
+
+
+
+0.0.0   Dodati mapiranje brojeva na BodyBack i BodyFront                                        ** ODRADJENO **
+0.0.1   Dodati menjanje boja brojeva na BodyBack i BodyFront                                    ** ODRADJENO **
+0.0.2   Napraviti da dogadjaj bude responzivan                                                  ** ODRADJENO **
+0.0.3   Napraviti slajder sa smajlijima                                                         ** ODRADJENO **
+0.0.4   Napraviti da se cuva sta je kliknuto u BodyBack i BodyFront u local storage             ** ODRADJENO bez localstorage, jer se to vec cuva u nivoBola**
+0.0.5   Popraviti cuvanje stanja tela za indekse 5 i 9                                          ** ODRADJENO **
+
+cordova plugin add cordova-plugin-geolocation - removed!
+cordova plugin add --save cordova-plugin-scheduler -removed!
+
+cordova plugin add @mauron85/cordova-plugin-background-geolocation - removed!
+
+cordova plugin add cordova-background-geolocation-lt
+cordova plugin add cordova-plugin-logtofile - removed!
+
+
+cordova plugin add cordova-plugin-androidx-adapter - za android 9.0+ preporucuju, mozda zbof toga greska
+
+
+ako javi gresku:
+
+https://github.com/apache/cordova-android/issues/678
+Thank you so much - I found your solution after hours and hours of struggling.
+
+Just as correction>
+Create a directory : platforms\android\app\src\main\res\mipmap.
+Then copy resources\splash.png to icon.png in the new mipmap directory.
+
+Thanks again !!!
+
+cordova plugin add cordova-plugin-background-mode - removed
+
+cordova plugin add cordova-plugin-local-notification
+
+cordova plugin add cordova-plugin-app-exit
+
+Finale:
+
+ODRADJENO (PROVERITI)   1. Android 10
+2. Kupiti licencu
+3. Period pracenja - schedule
+ODRADJENO  4. Događaji - da mogu da se unesu samo jednom
+ODRADJENO   5. Dodati meni, gore desno
+    - Podesavanja (autologin)
+    - Pomoc
+    - Logout
+ODRADJENO   6. promeniti roze boju za jak bol
+ODRADJENO   7. Autologin
+ODRADJENO   8. Notifijacije, da se popuni anketa - jutarnja u 8:00 i vecernja u 21:30
+ODRADJENO   9. Ograniciti jutarnju i verenju anketu na jedno popunjavanje
+ODRADJENO   (Proveriti u odredjeno doba)   10. Vizuelno malo pojacati sta je na redu da se popuni.. (ili staviti strlicu, ili kažiprst...) a kad je popunjeno prst prema gore :)
+ODRADJENO   11. Istaci na lepsi nacin slicice za telo, da budu krupnije i da se vidi koji je prednji koji zadnji deo tela
+ODRADJENO   12. Login na Enter
+
+
+
+
+cordova plugin add cordova-plugin-androidx-adapter
+cordova plugin add cordova-plugin-app-exit
+//cordova plugin add cordova-plugin-background-fetch
+cordova plugin add cordova-plugin-local-notification
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add https://github.com/transistorsoft/cordova-background-geolocation.git#3.9.4
+
+
+
+
+
+dobro jutro i laku noc su pomereni desno i imaju scroll ka desno
+na malim ekranima je zguzvano, ruzno i dobro jutro ne staje (jutarnja anketa je iza unosa)
+slika en stigne da se sacuva u localstorage-u a vec je presao na start

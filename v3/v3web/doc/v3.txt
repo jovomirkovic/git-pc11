@@ -1,0 +1,32 @@
+V3 - multitenat verzija
+
+1. Promene na loginu
+
+Redosled povređivanja
+treba da se pozove
+prvo tenants, (vidimo koji su sve rasppoloživi tenanti)
+pa login, (logijemo se na odeđeni tenant, i uzmeno token)
+pa user (pokupimo podatke o korisniku i dodamo u globalne promeljive ono što nam treba)
+
+token sadrži sve podatke u sebi, i userId, tako da teoretski ne mora da se šalje
+
+2. Acces userId
+
+User Access se u potpunosti radi na frontu, smao se JSON čuva u bazi
+
+todo
+doati mogućnost brisanja stranica i dodavanja novih stranica
+
+3. tenants
+
+todo
+dodati novu stranicu tenants CRUD
+u okviru nje dodati i polja za vizuelno predstavljanje, logo i slično
+
+4. igrači
+dodati un i pwd
+
+5. stručni štab
+dodati un i pwd
+
+

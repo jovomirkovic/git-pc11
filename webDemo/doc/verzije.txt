@@ -1,0 +1,82 @@
+Ver  0.1.00
+
+datum:
+Osnovna vezija sa Administracijom, Igracima i Utakmocama za test
+
+Ver 0.2.00
+
+datum 2.10.20.
+Popavljeno:
+
+1.	Funkcionalne sposobnosti – dodata mogućnost unosa decimalnih brojeva
+•	Yo-Yo distanca (m) – ukupna pretrčana distanca
+•	Anaerobni prag na distanci trčanja – izraženo u metrima – određena računskim putem
+•	Anaerobni prag za VO2max – izraženo u mmol/kg/minut
+•	Anaerobni prag brzine trčanja – izraženo u km/h
+•	VO2max - predstavlja polje u kome je uskladištena informacija o maksimalnoj potrošnji kiseonika pri maksimalnom aerobnom metabolizmu. 
+•	Brzina trčanja na VO2max
+ 
+2.	Fleksibilnost
+ 
+•	Abdukcija  ispravljena labela
+•	Tomasov test (kuk) – prošireno na 
+	Levo
+	Desno 
+o	Tomasov test (koleno) – prošireno na 
+	Levo
+	Desno 
+o	Dorzofleksija – prošireno na 
+	Levo
+	Desno 
+3.	FMS 
+•	Pregibanje noge - – prošireno na: Levo, Desno, Ukupno
+•	Linijski Iskorak – prošireno na: Levo, Desno, Ukupno
+•	Prelazak Prepona – prošireno na: Levo, Desno, Ukupno
+•	Pokretljivost ramena – prošireno na: Levo, Desno, Ukupno
+4.	Identifikacija rizika od povređivanja
+ 
+·       Čučanj na jednoj nozi – prošireno na: 
+o	Levo, 
+o	Desno
+·       Skoliometar  - – prošireno na:
+o   Cervikalni
+o   Torakalni
+o   Lumbalni
+
+datum 5.10.2020
+Ver 0.2.01
+
+FMS - predlaze se manja vrednost za ukupno, od ponudjenih - levo, Desno
+
+datum 23.10.2020
+Ver 0.3.00
+
+* U formi za snagu je dodata mogucnost unosa svih vrednosti sa 4 decimale
+* U formi za FMS su dodata polja Levo, Desno i Ukupno za Rotacionu stabilnost
+* Ukupna sstabilnost se racuna kao zbir svih 7 ocena (uzima se manja vrednost)
+* U psiholoskom profilu su dodata polja: Inteligencija, Hrabrost i Samouvid
+* U formu Motoricka sposobnost - Snaga - je dodato datumsko polje za vreme unosa
+* U formu Motoricka sposobnost - Agilnost - je dodato datumsko polje za vreme unosa
+
+datum 30.10.2020
+Ver 0.3.01
+
+* ispravljen bug za rotacionu stabilnost
+
+datum 6.1.2021
+Ver 0.3.02
+
+* ispravljen bug oko datuma rodjenja
+
+datum 27.1.2021
+Ver 0.3.03
+
+* ispravljen bug unosa datuma u morfoloskim karakteristikama
+
+datum: 24.3.2021
+Ver 1.0.00
+
+* Dodate trenežne vežbe
+* Dodati treninzi
+* ispravljen bug sa datumom i vremenom utakmice
+* ispravljen bug sa telesnom masom u morfologiji

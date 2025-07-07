@@ -1,0 +1,219 @@
+Postupak promene u komponentama za unos podataka
+------------------------------------------------
+
+1. promenimo title u <q-table>
+2. promenimo row-key= u <q-table>
+3. pomenimo labelu u <q-btn @click="otvordeDialog()" outline color="primary" label="Novi korisnik" class="q-mr-xs" />
+4. promenimo <q-tooltip> za editovanje i brisanje korisnika / igraca / itd
+5. preskocimo q-dialog, vraticemo se kasnije :)
+6. Idemo u data, da sredimo tabelu. Prvo unesmo nove podatke u editedItem
+7. zatim te iste podatke unesemo i u defaultItem
+8. sad idemo u columns [] (zgodno je podeliti ekran)
+    promenimo name
+    promenimo label
+    promenimo field
+    tako definisemo svaku kolonu za koju zelimo da se vidi u tabeli
+    на крају треба да остане
+    {
+            name: "action",
+            align: "left",
+            label: "Akcija",
+            field: "action",
+            sortable: true
+        }
+
+9. sad idemo u data[] - ovo su podaci koje cemo kasnije vuci iz baze, za sad nam trebaju samo za test
+    ovde kopiramo sve podatke iz editedItem i dodelimo im neke vrednosti
+    to ponovimo par puta, da imamo par redov au tabeli, naravno podatke promenimo
+10. sad se vratimo na q-dialog. U njemu se nalaze polja za dodvanje i izmenu (опет згодна подела екрана, подаке копирамо из columns)
+    promenimo naslov
+    za svako polje menjamo label i v-model
+    ako nam je polje tipa select, upotrebimo <q-item-section> sablon i popunimo novu listu (listOptions) u data
+
+i to je to... sad se samo ubaci u .vue fajl (impot, components, i <ime></ime>)
+
+Postupak povezivanja komponenti na bazu podataka
+------------------------------------------------
+
+1. dovlačenje podataka
+    promenimo: 
+        data: [],
+    dodamo:
+        mounted() {
+            this.getData() //idemo da uzmenmo podatke iz baze
+        },
+    dodamo i metod:
+        //''''''''''''''''''''''''''''''''''''''''
+        // citanje rola
+        //........................................
+        getData() {       
+        let linkStr = this.$apiPutanja +  '/roles' 
+        //debugger;
+            this.$axios
+            .get(linkStr,{
+                    headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer  " + window.$token
+                    }
+                })
+            .then(response => {
+                debugger
+                this.data = response.data;
+                debugger
+
+            })
+            .catch(e => {
+                //this.errors.push(e);
+                console.log("Greska: " + e);
+            });
+        },
+    u njemu promenimo apiPutanja u skladu sa dokumentacijom na swagger-u
+
+2. dodavanje novog zapisa i izmena postojeceg
+    klik na dugme "Snimi" zove metod addrow()
+    taj metod moramo da prilagodimo
+    dodamo
+        za promenu podataka
+            this.putData();
+        za dodavanje podataka
+            this.postData();
+    sad dodamo ova dva metoda
+        izmenimo podatke
+        kpiramo metod getDateTime() ako nam trebaju
+
+3. brisanje zapisa
+    promenimo metod i prilagodimo ga
+    //''''''''''''''''''''''''''''''''''''''''
+    // брисање записа у локау, и позивање функције за брисање записа у бази
+    //........................................   
+    deleteItem(item) {
+      const index = this.data.indexOf(item);
+      let obj = {
+            title: 'Upozorenje!',
+            message: 'Da li zaista želite da izbrišete tekući zapis?',
+            customCloseBtnText: 'Ne',            
+            disableOverlayClick: true,
+            useConfirmBtn: true,
+            customConfirmBtnText: 'Da, želim',            
+            onConfirm: onConfirmWrapper,
+            type: 'warning',                
+            showXclose: true,
+        }
+        this.$Simplert.open(obj);
+        var self=this
+        function onConfirmWrapper ()  {
+            self.data.splice(index, 1);
+            debugger
+            self.deleteData(item);
+        }
+        
+    },
+
+    dodamo metod deleteData(item)
+
+
+Postupak dodavanja komponente za izbor igraca
+---------------------------------------------
+
+Ideja je da uvek iza imena i prezimena stoji ikona za promenu selektovanog igraca
+
+1. na vrhu, gde je ime igraca prilagodimo ovakav DIV 
+        <div class="row">
+            <h5> Izabrani igrač: {{this.igrac}}</h5> 
+            <q-btn style="padding:22px;margin:10px;color:red" flat round icon="people" @click="izborIgraca()" >
+              <q-tooltip>Izbor igrača</q-tooltip>
+            </q-btn>
+        </div>
+        
+        ispod q-table prilagoditi template sekciju
+        <template v-if="igrac !='Izaberite igrača ->'" v-slot:top-right="props">
+
+2. na dnu templejta iznad </q-page> dodamo
+        <q-dialog persistent v-model="dialog_za_promenu_igraca">
+          <promenaIgraca @update-snimi="prenesiOvde"></promenaIgraca>
+        </q-dialog>
+
+3. dodamo import
+      import promenaIgraca from "../components/promenaIgracaKomponenta"
+
+4. dodamo u komponente
+        components: {
+            promenaIgraca,
+        },
+5. dodamo u data
+    dialog_za_promenu_igraca: false,
+6. Prilagodimo mounted  
+  mounted() {
+    this.igrac = window.$igracName;
+    this.igracID1 = window.$igracID;
+    debugger
+    if (this.igrac == undefined) {
+      this.igrac = 'Izaberite igrača ->'
+    } else {
+      this.getDataZaID() //idemo da uzmenmo podatke iz baze
+    }
+  },
+7. dodaomo metode
+    prenesiOvde(jen, dva) {
+      debugger
+      this.igrac = jen
+      this.igracID1 = dva;
+      debugger
+      this.getDataZaID() //idemo da uzmenmo podatke iz baze
+    },
+    izborIgraca() {
+      this.dialog_za_promenu_igraca = true            
+    },
+8. proverimo watch - ne treba da ima polje igrac
+    
+
+
+****** Rad sa datumima *******
+U bazu se uvek upisuje Zulu - iliti UTC datumima
+FE ga prikazuje u lokalu
+Kolona za datum u q-tabeli treba da ima format:
+
+columns: [
+        {
+          name: "vremeOcene",
+          required: true,
+          label: "Datum",
+          align: "left",
+          field: "vremeOcene",
+          sortable: true,
+          format: val => date.formatDate(val, 'DD/MM/YYYY')
+        },
+
+q-date treba da prikaje "computed" vrednost, sa value, ovako:
+
+                <q-item class="formular ponisti" style="">
+                    <q-input dense outlined :value="vremeOceneLocal" label="Datum merenja" mask="date" :rules="['date']" class="datumKlasa">
+                      <template v-slot:append>
+                        <q-icon name="event" class="cursor-pointer">
+                          <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
+                            <q-date v-model="editedItem.vremeOcene" @input="() => $refs.qDateProxy.hide()"></q-date>
+                          </q-popup-proxy>
+                        </q-icon>
+                      </template>
+                    </q-input>
+                  </q-item>
+
+computed: {
+    vremeOceneLocal(){
+      return date.formatDate(this.editedItem.vremeOcene, 'YYYY-MM-DD HH:mm')
+    }
+  },                  
+
+Dakle value se racuna, a v-model i dalje ostaje ista vrednost
+
+
+
+
+******************************************************************************
+rad sa grafikonima, demo
+https://echarts.apache.org/examples/en/index.html#chart-type-gauge
+
+npm install --save vuedraggable
+
+rad sa datumima
+npm install --save moment

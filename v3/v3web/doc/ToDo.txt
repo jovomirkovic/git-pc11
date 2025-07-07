@@ -1,0 +1,44 @@
+1. Login
+    -radi samo fiktivno
+
+2. Administracija
+    2.1. Korisnici sistema
+        - obrada greški, dupli korisnik i slično
+    2.2. Uloge
+        - obrada greški
+    2.3. Timovi
+        - 
+    2.4. Stručni tim 
+        - edit ne cita role
+    2.5. Igrači
+        - obrqada greski
+        - provera polja - sta mora, sta ne mora
+    2.6. Veze
+        -
+
+5. Igrači
+    5.1. Izbor igrača
+        dodati indikator da je igrač izabran
+        kad se korinsik ponovo vrati na tu stranu da stoji od ranije izabran igrač
+    5.2. Sportski staž
+        sve fali
+    5.3. Morfološke karakteristike
+        u novom merenju i izmeni promeniti
+            datum merenja, na datumsko polje
+            dominnantna ruka - leva/desna
+            dominantna noga - leva/desna
+            odskočna noga - leva/desna
+
+    5.6. Psihološki profil
+        5.6.1. Testovi
+            - malo srediti formu
+            - izbor od 1 do 10
+        5.7.1 Procena i samoprocena
+            - malo srediti formu
+            - izbor od 1 do 10
+    
+    5.10. Anđeo čuvar
+        - sve fali       
+
+
+

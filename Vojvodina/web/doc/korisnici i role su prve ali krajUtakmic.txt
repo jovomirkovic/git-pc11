@@ -1,0 +1,119 @@
+
+korisnici i role su prve ali krajUtakmice
+prvo se kreira neki tim
+
+posle se dodaje jedan igrac
+        greske
+            slika da se popne gore
+            datumi nisu prevedeni na naski
+            datum isteka pasosa ne treba da bude obavezno polje
+            videti da li je obavezno, i javiti ima
+Uvek se pogleda i edit
+kliktav mis preko svakog i celog elemenata tabele
+onda se pokazuju konekcije
+
+izabere se taj tim
+    igraci
+        unos igraca prebaciti na isti fazon
+        polja da budu ista, poruka drugacija
+
+game elements
+elementi tehnike
+elementi taktike
+    da matrica bude 3 x X
+    tsc fk
+    i jos jedan
+
+    pokazuju i kao prave ali pokazuju zvezdime podatke
+
+
+Principi igre
+    bitno da ne budu samo svi
+        ali to je sa bogdanom
+
+
+
+# Onda prelazimo na trening
+Trenazne vezbe mogu pre treninga skroz okej prebaciti, moze
+
+eady to coach site
+
+Onda prelazimo na trenazne vezbe 
+    kopira sa sajt agore i doda je
+
+    ova vezba
+        PASSING WITH DRIBBLING AND TRICKS II
+
+    treba je popraviti, prikaz
+
+
+Posle tog idemo u treninge
+    biramo tim
+        Jednog dana - mozda Mozda moze da se zabrani selekcija labele ali da ostane input   
+            napravi tening
+            prelazi kroz tok treninga
+            teta treba da bude u novom redu
+            treba opisni tooltip za mental, teta...
+            i opis je samo na teti u zagradi a treba da bude na svima 
+
+        dva bloka kada se preklapaju, i probas da sacuvas drugi blok
+        ne da ti a ne kaze ti
+        a ako se to desi onda ne da uopste da sacuvas, moras ispocetka
+
+        pa onda +15 pa onda da, obrisi pa se pojavi random novi blok
+
+        a sa desne strane treba da budu sortirane vezbe u odnosu na uzrast ekipe kojoj trening pripada
+        ako je u14 a vezba je samo u20, onda ona ide na kraj
+
+        To ce kad tad trebati da bude stablo, ne jos
+        x je kao elipsa
+            i na utakmicama isto elipsa a treba krug
+
+
+sada ide na utakmicu ali pauza prvo za video
+        fali tagovanje (bice i na treningu)
+
+        Wolves NBGD pokazuje meceve drugih ekipa ili barem tako izgelda
+
+        greska kodsortiranja tabele prema datumu
+
+        u trening treba isto dodati da sme da se menja dok se ne oceni
+
+
+
+        Pravi se utakmica 
+
+        Stvari u utakmici i u treningu koje su fiksne a ne iz baze kao npr trava, treba prevesti  - listaUslova
+
+        okej vracamo se na utakmicu
+
+        pravimo je i sve se redom unosi
+        Selekt nekada gubi click, ne otvara ponudu
+        pa onda formacija
+            igrac je na klupi a ne postoji, ostao je u vezama a ne i u igracima
+            i ne treba da ima klupe najvrv, barem ne tu
+            pa je popuni skroz pa save pa save
+        pa tok
+            dugacko ime, treba ga prosiriti, ceo prozor isto
+            nece assign players
+            ali prvo je izabrao igraca
+
+        ovaj add ako ide u dva reda onda je x ruzan, desni klik umesto x-a
+        
+        
+        i to je to u sustini za pokazivanje
+
+
+        cesce procene, pa da su i lose, samo da znaju :D
+
+
+
+
+
+
+
+
+
+
+
+Tehnicki i takticki elementi, samo ih spustiti ispod playersa da budu uvuceni, iznad medical i ostalog

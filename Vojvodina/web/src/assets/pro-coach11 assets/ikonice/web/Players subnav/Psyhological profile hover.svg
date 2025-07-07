@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Psyhological profile hover</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Psyhological-profile-hover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-40-Copy-2">
+            <g id="Group-36-Copy" transform="translate(5.000000, 5.000000)" fill="#FF4B00">
+                <path d="M11.8948789,12.9903761 C11.7991617,12.2780943 11.6968736,11.566015 11.5946772,10.8538344 C11.5595473,10.6015372 11.5467727,10.3332719 11.4829,10.0841684 C11.3104437,9.41350503 10.6844913,8.96320251 10.0074407,8.95042797 C9.74556263,8.9440407 9.48049093,8.95042797 9.21861287,8.95042797 C7.9219971,8.95042797 6.62538132,8.95042797 5.33195918,8.95042797 C4.47606503,8.95042797 3.62017087,8.93126616 2.76427672,8.95042797 C2.08403248,8.96639614 1.45808004,9.41350503 1.28881739,10.0841684 C1.22494469,10.3332719 1.21217015,10.6015372 1.17704017,10.8538344 C1.14191019,11.1125188 1.10358657,11.3712032 1.06845658,11.6298877 C0.911968472,12.7412726 0.758673996,13.8526576 0.602185886,14.9640425 C0.432923235,16.1648492 12.2869557,15.9080234 11.8948789,12.9903761 Z" id="Path" fill-rule="nonzero"></path>
+                <circle id="Oval" cx="6.14952972" cy="4.02797203" r="4.02797203"></circle>
+            </g>
+            <circle id="Oval" stroke="#FF4B00" stroke-width="2" cx="11" cy="11" r="10"></circle>
+            <rect id="Rectangle" fill="#FF4B00" transform="translate(20.707107, 20.000000) rotate(-315.000000) translate(-20.707107, -20.000000) " x="17.2071068" y="18.5" width="7" height="3" rx="1.5"></rect>
+        </g>
+    </g>
+</svg>

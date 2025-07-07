@@ -1,0 +1,70 @@
+Uputstvo:
+https://quasar.dev/options/app-internationalization#introduction
+
+1. Tabele ide iz .table, na primer
+:loading-label="$t('table.loadingLabel')"
+
+2. Komponente idu po imenima, na engledskom, na primer
+:label="$t('administration.user.newUser')"
+
+3. u programsko delu se ide sa this. , na primer
+columns: [
+        {
+          name: "userName",
+          required: true,
+          label: this.$t('administration.user.username'),
+          align: "left",
+          field: "userName",
+          sortable: true
+        },
+
+
+
+login                               login                                   $t('login.)                                                 jovo    *** gotovo ***
+administration                      administracija.vue                      $t('administration.')
+    users                           korisnici                               $t('administration.user.')                                  Jelena *** gotovo ***
+    roles                           uloge                                   $t('administration.roles.')                                 Jelena *** gotovo ***
+    teams                           timovi                                  $t('administration.teams.')                                 Jelena *** gotovo ***
+    professionalStaff               strucniTimKomponenta                    $t('administration.professionalStaff.')                     Jelena *** gotovo ***
+    players                         igraciOsnoviPodaci                      $t('administration.players.')                               Jelena *** gotovo ***
+    connections                     povezivanje                             $t('administration.connections.')                           Jelena *** gotovo ***
+    elementsOfTheGame               elmentiKomponenta                       $t('administration.elementsOfTheGame.')                     Jelena *** gotovo ***
+    technique      
+        groups                      tehnikaGrupeKomponenta                  $t('administration.technique.groups.')                      Jelena *** gotovo ***
+        items                       tehnikaStavkeKomponenta                 $t('administration.technique.items.')                       Jelena *** gotovo ***
+        setpointMatrix              zadatiNivoTehnikeKomponenta             $t('administration.technique.setpointMatrix.')              Jelena *** gotovo ***
+    tactics                     
+        groups                      taktikaGrupeKomponenta                  $t('administration.tactics.groups.')                        Jelena *** gotovo ***
+        items                       taktikaStavkeKomponenta                 $t('administration.tactics.items.')                         Jelena *** gotovo ***
+        setpointMatrix              zadatiNivoTaktikeKomponenta             $t('administration.tactics.setpointMatrix.')                Jelena *** gotovo ***
+    principlesOfTheGame             principiIgreKomponenta                  $t('administration.principlesOfTheGame.')                   Jelena *** gotovo ***
+    testData                        podaciOTestovimaKomponenta              $t('administration.testData.')                              Jelena *** gotovo ***
+trainings                           treningKomponenta                       $t('administration.')
+trainingExercises                   trenazneVezbeKomponenta                 $t('trainings.')
+matches                             utakmiceKomponenta                      $t('trainingExercises.')
+catapult
+technicalElements                   ocenaTehnikeKomponenta                  $t('technicalElements.')
+tacticalElements                    ocenaTaktikeKomponenta                  $t('tacticalElements.')
+medicalRecord                       zdravstveniKartonKomponenta             $t('medicalRecord.')
+playerInjuries                      povredeIgracaKomponenta                 $t('playerInjuries.')
+players                             igraci                                  $t('players.')
+    sportsTrail                     sportskiStazKomponenta                  $t('players.ss.') - prvo se dole prevesti
+    playerRating                    procenaIgracaKomponenta
+    morphologicalCharacteristics    morfologijaKomponenta
+    motorSkills
+        power                       snagaKomponenta
+        flexibility                 fleksibilnostKomponenta
+        FMS                         fmsKomponenta
+        riskOfInjury                identifikacijaRizikaPovredjivanjaKomponenta
+        posture                     postura
+        isokinetics
+        speed                       brzinaKomponenta
+        agility                     agilnostKomponenta
+    functionalData                  funkcionalniPodaciKomponenta
+    psychologicalProfile
+        tests                       psiholoskiProfilPsihologKomponenta
+        assessmentSelfssessment     psiholoskiProfilTrenerKomponenta
+    intelligence                    inteligencijaKomponenta
+    socialCapital                   socijalniKapitalKomponenta
+    finance                         finansijeKomponenta
+    guardianAngel                   andjeoCuvarKomponenta

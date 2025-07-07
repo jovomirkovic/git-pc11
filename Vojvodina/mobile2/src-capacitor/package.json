@@ -1,0 +1,14 @@
+{
+  "name": "mobile2",
+  "version": "0.0.1",
+  "description": "mobile for pc11 - FKV",
+  "author": "Jovo N. Mirkovic <jovo@mirkovic.rs>",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/local-notifications": "^6.1.0"
+  }
+}

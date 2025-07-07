@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Risk of injury</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Risk-of-injury" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy-3" transform="translate(0.000000, 2.000000)">
+            <rect id="Rectangle" fill="#3B5D99" x="0" y="3" width="24" height="17" rx="3.27272727"></rect>
+            <rect id="Rectangle-Copy-6" fill="#3B5D99" x="9" y="0" width="7" height="2" rx="1"></rect>
+            <path d="M17,12.0458661 C17,12.6475964 16.4026555,13.1361839 15.666568,13.1361839 L14.1366484,13.1361839 L14.1366484,14.8001393 C14.1366484,15.4624589 13.648077,16 13.0457038,16 L11.954293,16 C11.3520805,16 10.8635091,15.4624589 10.8635091,14.8001393 L10.8635091,13.1361839 L9.20001982,13.1361839 C8.53770018,13.1361839 8,12.6475964 8,12.0457054 L8,10.9364071 C8,10.3345 8.53770018,9.84592857 9.20001982,9.84592857 L10.8635091,9.84592857 L10.8635091,8.33310893 C10.8635091,7.59750357 11.3520805,7 11.9557073,7 L13.0460252,7 C13.648077,7 14.1366484,7.59750357 14.1366484,8.33310893 L14.1366484,9.84592857 L15.666568,9.84592857 C16.4026555,9.84592857 17,10.3345 17,10.9375 L17,12.0458661 Z" id="Path" fill="#F5F8FB"></path>
+        </g>
+    </g>
+</svg>

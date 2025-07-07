@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Functional data hover</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Functional-data-hover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M13.2,0 L13.2,3.64511278 C17.268,4.22857143 20.4,7.72932331 20.4,11.9699248 C20.4,13.0466165 20.19,14.075188 19.824,15.0195489 L22.944,16.8661654 C23.61,15.3684211 24,13.7203008 24,11.9699248 C24,5.73233083 19.266,0.607518797 13.2,0 Z M12,20.3909774 C7.362,20.3909774 3.6,16.6195489 3.6,11.9699248 C3.6,7.72932331 6.732,4.22857143 10.8,3.64511278 L10.8,0 C4.728,0.601503759 0,5.73233083 0,11.9699248 C0,18.6165414 5.364,24 11.994,24 C15.966,24 19.476,22.0571429 21.66,19.0796992 L18.546,17.2390977 C17.01,19.1578947 14.652,20.3909774 12,20.3909774 Z" id="Shape-Copy-4" fill="#FF4B00" fill-rule="nonzero"></path>
+    </g>
+</svg>

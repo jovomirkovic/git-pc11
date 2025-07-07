@@ -1,0 +1,7 @@
+Verija 2
+
+
+
+quasar build -m capacitor -T android --ide
+nvm use 18.15.0
+capacitor

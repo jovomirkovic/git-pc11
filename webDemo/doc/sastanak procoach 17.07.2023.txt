@@ -1,0 +1,12 @@
+
+
+
+ne moze da se pokrene utakmica
+dodavanje brojeva daje gresku negde pukne (kad se dodaju brojevi dupliraju se igraci)
+
+
+kad se dodaju elementi tehnike taktike u utakmicic da se resetujTeren
+
+greska network error na pokretanje meca
+
+Elementi sa utakmice su nestali na wolves vs tigers

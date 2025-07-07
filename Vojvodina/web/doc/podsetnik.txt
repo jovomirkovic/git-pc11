@@ -1,0 +1,17 @@
+Verzija za pokazivanje
+
+Sakrivamo:
+
+Dashboard
+Administracija
+    Formacije
+Treninzi
+Trenazne vezbe
+Katapult
+Povrede igraca
+Igraci
+    Sportski staz
+    Motoricke sposobnosti
+        Postura
+        Izokinetika
+    Andjeo cuvar
