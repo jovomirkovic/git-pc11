@@ -7,8 +7,6 @@
           :columns="columns"
           title="List of Tenants"
           row-key="keycloakId"
-          v-model:selected="selectedRow"
-          selection="single"
           style="width: min(1000px, 90vw)"
         >
           <template v-slot:top-right="props">
@@ -67,12 +65,12 @@
             outlined
             class="q-ma-md"
             v-model="name"
-            style="min-width: 350px;"
+            style="min-width: 350px"
             label="Tenant name"
             :rules="[
-              val =>
+              (val) =>
                 /^[a-zA-Z0-9]*$/.test(val) ||
-                'Only alphanumerical characters allowed'
+                'Only alphanumerical characters allowed',
             ]"
           />
           <q-input
@@ -80,7 +78,7 @@
             outlined
             class="q-ma-md"
             v-model="tokenLifespanInMinutes"
-            style="min-width: 350px;"
+            style="min-width: 350px"
             label="Token lifespan (min)"
             type="number"
             mask="#######"
@@ -90,7 +88,7 @@
             outlined
             class="q-ma-md"
             v-model="customConfiguration"
-            style="min-width: 350px;"
+            style="min-width: 350px"
             label="Token configuration (json)"
             type="textarea"
           />
@@ -122,27 +120,31 @@ export default {
           name: "tokenLifespanInMinutes",
           label: "Token Lifespan",
           field: "tokenLifespanInMinutes",
-          align: "left"
+          align: "left",
         },
-        { name: "actions", label: "Actions", field: "actions", align: "center" }
+        {
+          name: "actions",
+          label: "Actions",
+          field: "actions",
+          align: "center",
+        },
       ],
-      selectedRow: null,
       selectedTenant: null,
       addEntryDialog: false,
       name: "",
       tokenLifespanInMinutes: 0,
-      customConfiguration: null
+      customConfiguration: null,
     };
   },
   watch: {
-    addEntryDialog: function(val) {
+    addEntryDialog: function (val) {
       if (val == false) {
         this.selectedTenant = null;
         this.name = "";
         this.tokenLifespanInMinutes = 0;
         this.customConfiguration = null;
       }
-    }
+    },
   },
   methods: {
     getTenants() {
@@ -151,21 +153,21 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.$token
-        }
+          Authorization: "Bearer " + window.$token,
+        },
       })
-        .then(response => response.json())
+        .then((response) => response.json())
         // .then(response => {
         //   debugger
         //   self.data = response.data;
         //   console.log('Успешно tenants data:', self.data);
         //     })
 
-        .then(data => {
+        .then((data) => {
           debugger;
           //window.$tenant = data[0].name;
           //self.data = data;
-          self.data = data.map(e => {
+          self.data = data.map((e) => {
             let tmp;
             try {
               tmp = JSON.parse(e.customConfiguration);
@@ -177,12 +179,12 @@ export default {
               keycloakId: e.keycloakId,
               name: e.name,
               tokenLifespanInMinutes: e.tokenLifespanInMinutes,
-              customConfiguration: tmp
+              customConfiguration: tmp,
             };
           });
           console.log("Успешно tenants data:", self.rows);
         })
-        .catch(error => {
+        .catch((error) => {
           //console.error('Greska u logovanju:', error);
           self.$q.notify({ message: self.$t("login.checkData"), color: "red" });
         });
@@ -193,17 +195,17 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.$token
-        }
+          Authorization: "Bearer " + window.$token,
+        },
       })
-        .then(response => response.json())
+        .then((response) => response.json())
         // .then(response => {
         //   debugger
         //   self.data = response.data;
         //   console.log('Успешно tenants data:', self.data);
         //     })
 
-        .then(data => {
+        .then((data) => {
           debugger;
 
           console.log(data);
@@ -218,7 +220,7 @@ export default {
           self.customConfiguration = tmp;
           self.addEntryDialog = true;
         })
-        .catch(error => {
+        .catch((error) => {
           //console.error('Greska u logovanju:', error);
           self.$q.notify({ message: self.$t("login.checkData"), color: "red" });
         });
@@ -228,7 +230,7 @@ export default {
       if (!/^[a-zA-Z0-9]*$/.test(this.name)) {
         this.$q.notify({
           message: "Only alphanumerical characters are allowed in tenant name",
-          color: "negative"
+          color: "negative",
         });
         return;
       }
@@ -237,7 +239,7 @@ export default {
       var dataString = {
         name: this.name,
         tokenLifespanInMinutes: this.tokenLifespanInMinutes,
-        customConfiguration: JSON.stringify(this.customConfiguration)
+        customConfiguration: JSON.stringify(this.customConfiguration),
       };
 
       let data1 = JSON.stringify(dataString);
@@ -247,26 +249,26 @@ export default {
         .post("https://redstar-dev.atomdataservices.com/tenants", data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           self.getTenants();
           self.addEntryDialog = false;
           self.$q.notify({
             message: "Tenant successfully added",
-            color: "positive"
+            color: "positive",
           });
           console.log(response);
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
-          response.errors.forEach(entry => {
+          response.errors.forEach((entry) => {
             self.$q.notify({
               message: "An error occurred while adding tenant",
               caption: entry.message,
-              color: "negative"
+              color: "negative",
             });
           });
           console.log(response);
@@ -284,7 +286,7 @@ export default {
       if (!/^[a-zA-Z0-9]*$/.test(this.name)) {
         this.$q.notify({
           message: "Only alphanumerical characters are allowed in tenant name",
-          color: "negative"
+          color: "negative",
         });
         return;
       }
@@ -292,7 +294,7 @@ export default {
 
       var dataString = {
         tokenLifespanInMinutes: this.tokenLifespanInMinutes,
-        customConfiguration: JSON.stringify(this.customConfiguration)
+        customConfiguration: JSON.stringify(this.customConfiguration),
       };
 
       let data1 = JSON.stringify(dataString);
@@ -306,27 +308,27 @@ export default {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Bearer " + window.$token
-            }
+              Authorization: "Bearer " + window.$token,
+            },
           }
         )
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           self.getTenants();
           self.addEntryDialog = false;
           self.$q.notify({
             message: "Tenant successfully edited",
-            color: "positive"
+            color: "positive",
           });
           console.log(response);
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
-          response.errors.forEach(entry => {
+          response.errors.forEach((entry) => {
             self.$q.notify({
               message: "An error occurred while editing tenant",
               caption: entry.message,
-              color: "negative"
+              color: "negative",
             });
           });
           console.log(response);
@@ -342,38 +344,38 @@ export default {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Bearer " + window.$token
-            }
+              Authorization: "Bearer " + window.$token,
+            },
           }
         )
-        .then(response => {
+        .then((response) => {
           debugger;
           this.getTenants();
           self.$q.notify({
             message: "Tenant successfully deleted",
-            color: "positive"
+            color: "positive",
           });
           console.log(response);
         })
-        .catch(response => {
+        .catch((response) => {
           //handle error
           console.log(response);
-          response.errors.forEach(entry => {
+          response.errors.forEach((entry) => {
             self.$q.notify({
               message: "An error occurred while deleting tenant",
               caption: entry.message,
-              color: "negative"
+              color: "negative",
             });
           });
         });
     },
     exportCSV() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -392,14 +394,14 @@ export default {
         this.$q.notify({
           message: self.$t("players.motorSkills.speed.browserForbids"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
+    },
   },
   mounted() {
     this.getTenants();
-  }
+  },
 };
 </script>
 

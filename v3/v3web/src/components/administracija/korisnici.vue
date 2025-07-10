@@ -17,10 +17,7 @@
       :virtual-scroll-sticky-size-start="48"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-        background-color: unset;
-        box-shadow: unset;
-      "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -87,7 +84,7 @@
 
       <template v-slot:header-cell-action="props">
         <!-- <div style="height: 100px; background: red;"> -->
-        <q-th style="color: #ffffff00; width: 110px;">
+        <q-th style="color: #ffffff00; width: 110px">
           {{ props.col.label }}
         </q-th>
         <!-- </div> -->
@@ -145,7 +142,7 @@
           border-radius: 5px;
           box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
           color: #323b62;
-      "
+        "
       >
         <q-card-section>
           <q-btn
@@ -154,10 +151,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.user.users") }}
           </div>
         </q-card-section>
@@ -193,9 +190,9 @@
                       @blur="spustiPlaceholder('Span-IP1', editedItem.userName)"
                       ref="input1"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.user.enterUserName')
+                          $t('administration.user.enterUserName'),
                       ]"
                     />
                     <span id="Span-IP1" class="placeholder">{{
@@ -231,9 +228,9 @@
                       @blur="spustiPlaceholder('Span-IP2', editedItem.password)"
                       ref="input2"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.user.enterPassword')
+                          $t('administration.user.enterPassword'),
                       ]"
                     />
                     <span id="Span-IP2" class="placeholder">{{
@@ -261,16 +258,16 @@
                     emit-value
                     map-options
                     :style="{
-                      height: [editedItem.roles.length > 3 ? '80px' : '40px']
+                      height: [editedItem.roles.length > 3 ? '80px' : '40px'],
                     }"
                     ref="select1"
                     @focus="popniPlaceholder('Span-SL1')"
                     @input="popniPlaceholder('Span-SL1')"
                     @blur="spustiPlaceholder('Span-SL1', editedItem.roles)"
                     :rules="[
-                      val =>
+                      (val) =>
                         (val !== null && val !== '' && val.length != 0) ||
-                        $t('administration.user.enterRole')
+                        $t('administration.user.enterRole'),
                     ]"
                   />
                   <span
@@ -309,9 +306,9 @@
                       @blur="spustiPlaceholder('Span-IP3', editedItem.ime)"
                       ref="input3"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.user.enterName')
+                          $t('administration.user.enterName'),
                       ]"
                     />
                     <span id="Span-IP3" class="placeholder">{{
@@ -347,9 +344,9 @@
                       @blur="spustiPlaceholder('Span-IP4', editedItem.prezime)"
                       ref="input4"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.user.enterSurName')
+                          $t('administration.user.enterSurName'),
                       ]"
                     />
                     <span id="Span-IP4" class="placeholder">{{
@@ -369,9 +366,9 @@
                       @blur="spustiPlaceholder('Span-IP5', editedItem.email)"
                       ref="input5"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.user.enterEmail')
+                          $t('administration.user.enterEmail'),
                       ]"
                     />
                     <span id="Span-IP5" class="placeholder">{{
@@ -393,14 +390,24 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
           ></q-btn>
         </q-card-actions>
       </q-card>
@@ -423,10 +430,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.user.users") }}
           </div>
         </q-card-section>
@@ -470,7 +477,13 @@
                   <q-select
                     borderless
                     readonly
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     multiple
                     :options="listOptions"
                     :label="$t('administration.user.role')"
@@ -568,7 +581,7 @@ export default {
         ime: "",
         prezime: "",
         active: true,
-        email: ""
+        email: "",
       },
       defaultItem: {
         id: 0,
@@ -578,7 +591,7 @@ export default {
         ime: "",
         prezime: "",
         active: true,
-        email: ""
+        email: "",
       },
       mode: "list",
       columns: [
@@ -588,41 +601,41 @@ export default {
           label: this.$t("administration.user.username"),
           align: "left",
           field: "userName",
-          sortable: true
+          sortable: true,
         },
         {
           name: "roles",
           align: "left",
           label: this.$t("administration.user.role"),
           field: "roles",
-          sortable: true
+          sortable: true,
         },
         {
           name: "ime",
           align: "left",
           label: this.$t("administration.user.name"),
           field: "ime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "prezime",
           align: "left",
           label: this.$t("administration.user.surname"),
           field: "prezime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "action",
           align: "left",
           label: this.$t("table.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   mounted() {
@@ -671,10 +684,10 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           if (response.status == 401) {
             this.$router.push({ name: "login" });
@@ -683,11 +696,11 @@ export default {
           // debugger;
           // this.getData();
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.getData();
         })
-        .catch(e => {
+        .catch((e) => {
           console;
           //this.errors.push(e);
           this.loadingUtakmice = false;
@@ -708,10 +721,10 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           if (response.status == 401) {
             this.$router.push({ name: "login" });
@@ -720,7 +733,7 @@ export default {
           debugger;
           this.loadingUtakmice = false;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           this.loadingUtakmice = false;
           this.$router.push({ name: "login" });
@@ -744,8 +757,8 @@ export default {
         password: this.editedItem.password,
         prezime: this.editedItem.prezime,
         roles: this.editedItem.roles,
-        userName: this.editedItem.userName,
-        email: this.editedItem.email
+        userName: this.editedItem.userName.toLowerCase(),
+        email: this.editedItem.email,
       };
 
       // var dataString = {
@@ -765,25 +778,25 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             icon: "done",
             message: self.$t("administration.user.msgPositive"),
-            color: "positive"
+            color: "positive",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           self.$q.notify({
             message: self.$t("administration.user.msgNeg"),
-            color: "red"
+            color: "red",
           });
         });
     },
@@ -803,8 +816,8 @@ export default {
         password: this.editedItem.password,
         prezime: this.editedItem.prezime,
         roles: this.editedItem.roles,
-        userName: this.editedItem.userName,
-        email: this.editedItem.email
+        userName: this.editedItem.userName.toLowerCase(),
+        email: this.editedItem.email,
       };
       debugger;
       let data1 = JSON.stringify(dataString);
@@ -812,25 +825,25 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.user.msgChange"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           ////alert(response);
           self.$q.notify({
             message: self.$t("administration.user.msgNotChange"),
-            color: "red"
+            color: "red",
           });
         });
     },
@@ -857,19 +870,19 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.user.msgDel"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -897,7 +910,7 @@ export default {
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.user.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -926,7 +939,7 @@ export default {
         customConfirmBtnText: this.$t("administration.user.txtYes"),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       var self = this;
@@ -960,9 +973,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -975,8 +988,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -1022,11 +1035,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -1049,7 +1062,7 @@ export default {
         this.$q.notify({
           message: this.$t("administration.user.msgPrtSc"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
     },
@@ -1059,8 +1072,8 @@ export default {
       var selekt = document.getElementById("selektovi");
       if (selekt.options.length == 0) selekt.style.background = "red";
       else selekt.style.background = "blue";
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -35,7 +35,7 @@ export default {
     labeljezik: "Language",
     coachingStaff: "Coaching staff",
     access: "Access",
-    test: "Test"
+    test: "Test",
   },
   login: {
     selectTenant: "Select tenant",
@@ -46,13 +46,13 @@ export default {
     enterUserName: "Please enter username",
     enterPassword: "Please enter password",
     checkData: "Please check username and password!",
-    notAllowes: "Access not allowed!"
+    notAllowes: "Access not allowed!",
   },
   administration: {
     menu: {
       users: "Users",
       roles: "Roles",
-      teams: "Teams",
+      teams: "Sections",
       professionalStaff: "Staff",
       // professionalStaff: 'Professional staff',
       players: "Athletes",
@@ -66,7 +66,7 @@ export default {
       testData: "Test data",
       groups: "Groups",
       items: "Items",
-      setpointMatrix: "Setpoint matrix"
+      setpointMatrix: "Setpoint matrix",
     },
     user: {
       close: "Close",
@@ -101,7 +101,7 @@ export default {
       txtYes: "Yes",
 
       enterEmail: "Please enter email",
-      email: "Email"
+      email: "Email",
     },
     roles: {
       role: "Roles",
@@ -124,10 +124,10 @@ export default {
       msgVeto: "This role cannot be changed!",
       war: "Warning",
       txtNo: "No",
-      txtYes: "Yes"
+      txtYes: "Yes",
     },
     teams: {
-      team: "Teams",
+      team: "Sections",
       newTeam: "New team",
       teamName: "Team name",
       enterTeamName: "Please enter team name",
@@ -155,7 +155,7 @@ export default {
       war: "Warning",
       txtNo: "No",
       txtYes: "Yes",
-      notSaved: "Data not saved, please enter all fields!"
+      notSaved: "Data not saved, please enter all fields!",
     },
     professionalStaff: {
       enterRole: "Please enter a role",
@@ -206,7 +206,7 @@ export default {
       obrazovanjeVisoka: "Faculty",
       obrazovanjeMaster: "Master studies",
       obrazovanjeDoktorske: "PhD studies",
-      email: "Email"
+      email: "Email",
     },
     players: {
       emailTaken: "Email allready taken",
@@ -288,7 +288,7 @@ export default {
       visoko: "Faculty",
       doktorat: "PhD",
       da: "Da",
-      ne: "Ne"
+      ne: "Ne",
     },
     connections: {
       changeData: "Change data",
@@ -343,7 +343,7 @@ export default {
       txtNo: "No",
       txtYes: "Yes",
       enterPos: "Enter position",
-      notSaved: "Data not saved, please enter all fields!"
+      notSaved: "Data not saved, please enter all fields!",
     },
     elementsOfTheGame: {
       elementsOfTheFootballGame: "Skill levels of a football game",
@@ -370,7 +370,7 @@ export default {
       war: "Warning",
       txtNo: "No",
       txtYes: "Yes",
-      notSaved: "Data not saved, please enter all fields!"
+      notSaved: "Data not saved, please enter all fields!",
     },
     technique: {
       groups: {
@@ -395,7 +395,7 @@ export default {
         war: "Warning",
         txtNo: "No",
         txtYes: "Yes",
-        notSaved: "Data not saved, please enter all fields!"
+        notSaved: "Data not saved, please enter all fields!",
       },
       items: {
         grpTech: "Groups of techniques",
@@ -415,7 +415,7 @@ export default {
         notSaved: "Data not saved, please enter all fields!",
         war: "Warning",
         txtNo: "No",
-        txtYes: "Yes"
+        txtYes: "Yes",
       },
       setpointMatrix: {
         setTactics: "Set new techniques",
@@ -427,8 +427,8 @@ export default {
         msgDel: "Data deleted successfully!",
         msgDelConf: "Do you really want to delete the current record?",
         msgPrtSc: "The browser does not allow saving files ...",
-        notSaved: "Data not saved, please enter all fields!"
-      }
+        notSaved: "Data not saved, please enter all fields!",
+      },
     },
     tactics: {
       groups: {
@@ -448,7 +448,7 @@ export default {
         war: "Warning",
         txtNo: "No",
         txtYes: "Yes",
-        notSaved: "Data not saved, please enter all fields!"
+        notSaved: "Data not saved, please enter all fields!",
       },
       items: {
         grpTac: "Groups of tactics",
@@ -465,7 +465,7 @@ export default {
         msgDel: "Data deleted successfully!",
         msgDelConf: "Do you really want to delete the current record?",
         msgPrtSc: "The browser does not allow saving files ...",
-        notSaved: "Data not saved, please enter all fields!"
+        notSaved: "Data not saved, please enter all fields!",
       },
       setpointMatrix: {
         setTactics: "Set new tactics",
@@ -476,8 +476,8 @@ export default {
         msgDel: "Data deleted successfully!",
         msgDelConf: "Do you really want to delete the current record?",
         msgPrtSc: "The browser does not allow saving files ...",
-        notSaved: "Data not saved, please enter all fields!"
-      }
+        notSaved: "Data not saved, please enter all fields!",
+      },
     },
     principlesOfTheGame: {
       requiredField: "Required field",
@@ -498,7 +498,7 @@ export default {
       msgDel: "Data deleted successfully!",
       msgDelConf: "Do you really want to delete the current record?",
       msgPrtSc: "The browser does not allow saving files ...",
-      notSaved: "Data not saved, please enter all fields!"
+      notSaved: "Data not saved, please enter all fields!",
     },
     testData: {
       notSaved: "Test data not saved",
@@ -528,8 +528,8 @@ export default {
       funkcionalni: "functional",
       psiholoski: "psychologically",
       pojedinacna: "individual",
-      baterija: "battery"
-    }
+      baterija: "battery",
+    },
   },
   trainings: {
     enterTrainingType: "Please enter training type",
@@ -652,26 +652,26 @@ export default {
     obrisiTimeline: "Delete Timeline",
     dodajTimeline: "Add Timeline",
     borgovaSkala: {
-      "0": "0 | Nothing at all",
+      0: "0 | Nothing at all",
       "03": "0.3 | Barely noticeable",
       "05": "0.5 | Extremely weak",
       "07": "0.7 | Very, very weak",
-      "1": "1 | Very weak",
-      "15": "1.5 | Barely weak",
-      "2": "2 | Weak",
-      "25": "2.5 | Moderately weak",
-      "3": "3 | Moderate",
-      "4": "4 | Moderately strong",
-      "5": "5 | Considerably Strong",
-      "6": "6 | Strong",
-      "7": "7 | Very strong",
-      "8": "8 | Hard",
-      "9": "9 | Very Hard",
-      "10": "10 | Extremely hard",
-      "11": "11 | Near maximum",
-      "12": "12 | Absolute maximum",
-      "13": "13 | Maximal exertion"
-    }
+      1: "1 | Very weak",
+      15: "1.5 | Barely weak",
+      2: "2 | Weak",
+      25: "2.5 | Moderately weak",
+      3: "3 | Moderate",
+      4: "4 | Moderately strong",
+      5: "5 | Considerably Strong",
+      6: "6 | Strong",
+      7: "7 | Very strong",
+      8: "8 | Hard",
+      9: "9 | Very Hard",
+      10: "10 | Extremely hard",
+      11: "11 | Near maximum",
+      12: "12 | Absolute maximum",
+      13: "13 | Maximal exertion",
+    },
   },
   trainingExercises: {
     enterName: "Please enter a name",
@@ -714,7 +714,7 @@ export default {
     physicalExercise: "Physical exercise",
     name: "Name",
     category: "Category",
-    ages: "Ages"
+    ages: "Ages",
   },
   log: {
     noResultLabel: "No data found for these criteria",
@@ -727,7 +727,7 @@ export default {
     changeItem: "Change item",
     typeOfEvenet: "Type of event",
     theCourseOfTheMatch: "The course of the match",
-    score: "Score"
+    score: "Score",
   },
   matches: {
     matchOngoing: "You can't exit while the match is ongoing",
@@ -876,7 +876,7 @@ export default {
     thereIsNoPeriodToStop: "There is no period to stop",
     dataDeletedSuccessfully: "Data deleted successfully",
     definingANewMatch: "Defining a new match",
-    romb: "4-4-2 rhombus"
+    romb: "4-4-2 rhombus",
   },
   catapult: {},
   technicalElements: {
@@ -926,7 +926,7 @@ export default {
     description2: "Adopted an element of technique",
     description3: "Applied in game incorrectly",
     description4: "Applied in game correctly",
-    description5: "Master"
+    description5: "Master",
   },
   tacticalElements: {
     description0: "Familiar with the element of tactics",
@@ -971,7 +971,7 @@ export default {
     pleaseChooseYourTechnique: "Please choose your technique",
     tactics: "Tactics",
     levelOfAdoption: "Level of adoption",
-    dataNotSaved: "Data not saved, please enter all fields"
+    dataNotSaved: "Data not saved, please enter all fields",
   },
   medicalRecord: {
     enterAbilityToPlaySports: "Please select ability to play sports",
@@ -1015,7 +1015,7 @@ export default {
     enterBloodTestResults: "Please select blood test completion",
     bloodTestResults: "Blood test completed",
     institution: "Institution",
-    doctor: "Doctor"
+    doctor: "Doctor",
   },
   playerInjuries: {
     leftSide: "Left side",
@@ -1078,7 +1078,7 @@ export default {
     recoveryTimeForecast: "Recovery time estimation",
     leftSide: "Left side",
     rightSide: "Right side",
-    NA: "NA"
+    NA: "NA",
   },
   players: {
     tests: "Tests",
@@ -1117,10 +1117,10 @@ export default {
       areYouSureDelete: "Are you sure you want to delete the following?",
       browserForbids: "The browser does not allow saving files...",
 
-      noData: "No data"
+      noData: "No data",
     },
     playerRating: {
-      playerRating: "Player Rating",
+      playerRating: "Athlete Rating",
       // playerRating: "Player evaluation",
       selectedPlayer: "Selected player",
       selectPlayer: "Select player",
@@ -1161,7 +1161,7 @@ export default {
       reprezentacija: "Champion League",
       fkCZ: "National team",
       superliga: "National League",
-      prvaLiga: "Second League"
+      prvaLiga: "Second League",
     },
     morphologicalCharacteristics: {
       morphologicalCharacteristics: "Morphology ",
@@ -1212,14 +1212,14 @@ export default {
       right: "Right",
       newMeasurementSuccessfullyAdded: "New measurement successfully added!",
       measurementDataDeletedSuccessfully:
-        "Measurement data deleted successfully!"
+        "Measurement data deleted successfully!",
     },
     motorSkills: {
       thomasTest: {
         painfull: "Painfull",
         bad: "Bad",
         good: "Good",
-        excelent: "Excelent"
+        excelent: "Excelent",
       },
       motorSkills: "Motor Skills",
       // motorSkills: "Motorical Skills",
@@ -1283,7 +1283,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Measurement data changed successfully!",
         measurementDataDeletedSuccessfully:
-          "Measurement data deleted successfully!"
+          "Measurement data deleted successfully!",
       },
       flexibility: {
         flexibility: "Flexibility",
@@ -1327,7 +1327,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Measurement data changed successfully!",
         measurementDataDeletedSuccessfully:
-          "Measurement data deleted successfully!"
+          "Measurement data deleted successfully!",
       },
       FMS: {
         FMS: "FMS",
@@ -1381,7 +1381,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Measurement data changed successfully!",
         measurementDataDeletedSuccessfully:
-          "Measurement data deleted successfully!"
+          "Measurement data deleted successfully!",
       },
       riskOfInjury: {
         riskOfInjury: "Risk of injury",
@@ -1432,7 +1432,7 @@ export default {
         nordikTest: "Nordik test",
         scolionetarCervical: "Scoliometer - cervical",
         scolionetarThoracic: " Scoliometer - toracal",
-        scolionetarLumbar: " Scoliometer - lumbar"
+        scolionetarLumbar: " Scoliometer - lumbar",
       },
       posture: {
         posture: "Posture",
@@ -1466,7 +1466,7 @@ export default {
         measurementDataDeletedSuccessfully:
           "Measurement data deleted successfully!",
         mesurement: "Measurement",
-        whoDidTheTesting: "Who did the testing"
+        whoDidTheTesting: "Who did the testing",
       },
       isokinetics: {
         isokinetics: "Isokinetic dinamometer",
@@ -1500,7 +1500,7 @@ export default {
         measurementDataDeletedSuccessfully:
           "Measurement data deleted successfully!",
         mesurement: "Measurement",
-        whoDidTheTesting: "Who did the testing"
+        whoDidTheTesting: "Who did the testing",
       },
       speed: {
         speed: "Speed",
@@ -1540,7 +1540,7 @@ export default {
         m10: "10m",
         mls10: "10m - flying start",
         m20: "20m",
-        m30: "30m"
+        m30: "30m",
       },
       agility: {
         agility: "Agility",
@@ -1579,8 +1579,8 @@ export default {
         zigZagMovementWithTheBall: "Zig-zag movement with the ball",
         tAgilityTestForTheGoalkeeper: "T agility test for the goalkeeper",
         zigZag: "Zig-zag",
-        zigZagBall: "Zig-zag Ball"
-      }
+        zigZagBall: "Zig-zag Ball",
+      },
     },
     functionalData: {
       functionalData: "Functional data",
@@ -1620,7 +1620,7 @@ export default {
       anaerobicThresholdAtVO2max: " VO2 at anaerobic threshold",
       anaerobicRunningSpeedThreshold: " Running speed at anaerobic threshold",
       VO2max: "VO2max",
-      runningSpeedAtVO2max: "Running speed at VO2max"
+      runningSpeedAtVO2max: "Running speed at VO2max",
     },
     psychologicalProfile: {
       psychologicalProfile: "Psychology",
@@ -1679,7 +1679,7 @@ export default {
         managingYourOwnEmotions: "Emotion Regulation",
         socialSkills: "Social skills",
         usingEmotions: "Utilization of emotions",
-        optimism: "Optimism"
+        optimism: "Optimism",
       },
       assessmentSelfssessment: {
         confidence: "Confidence",
@@ -1732,8 +1732,8 @@ export default {
         insight: "Insight", //samouvid
         concentrationSelfAssessment: "Concentration - self-assessment",
         concentrationCoachAssessment: "Concentration - coach assessment",
-        selfAssessment: "Self-assessment"
-      }
+        selfAssessment: "Self-assessment",
+      },
     },
     intelligence: {
       intelligence: "Intelligence",
@@ -1774,7 +1774,7 @@ export default {
       s1: "S1",
       insertValueBetwen0and36: "Insert value between 0 and 36",
       insertValueBetwen0and30: "Insert value between 0 and 30",
-      electricalNetwork: "Electrical network"
+      electricalNetwork: "Electrical network",
     },
     socialCapital: {
       socialCapital: "Social capital",
@@ -1816,7 +1816,7 @@ export default {
       respectForOthers: "Respect for others",
       presenceAndAccuracy: "Presence and accuracy",
       workEthic: "Work ethic",
-      tidiness: "Tidiness"
+      tidiness: "Tidiness",
     },
     finance: {
       finance: "Finance",
@@ -1863,7 +1863,7 @@ export default {
       accommodationCostMonthly: "Accommodation cost (€/monthly)",
       proffesionalContractMonthly: "Professional contract (€/monthly)",
 
-      fullCostMonthly: "Full cost (monthly)"
+      fullCostMonthly: "Full cost (monthly)",
     },
     guardianAngel: {
       guardianAngel: "Guardian angel",
@@ -1904,15 +1904,15 @@ export default {
       notes: "Notes",
       trackingFrom: "Tracking from",
       trackingTo: "Tracking to",
-      goodPlayer: "Good player"
-    }
+      goodPlayer: "Good player",
+    },
   },
   promenaIgraca: {
     izaberiTim: "Choose a team",
     izaberiTimIIgraca: "Choose a team and a player",
     timovi: "Sports organizations",
     igraci: "Athletes",
-    tim: "Organization"
+    tim: "Organization",
   },
   table: {
     rowsPerPage: "Rows per page",
@@ -1927,6 +1927,6 @@ export default {
     search: "Search",
     grid: "Grid",
     list: "List",
-    exportToCSV: "CSV export"
-  }
+    exportToCSV: "CSV export",
+  },
 };

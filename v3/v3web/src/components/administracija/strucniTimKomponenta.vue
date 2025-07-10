@@ -15,10 +15,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-            background-color: unset;
-            box-shadow: unset;
-          "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -82,7 +79,7 @@
       </template>
 
       <template v-slot:header-cell-action="props">
-        <q-th style="color: #ffffff00; min-width: 110px;">
+        <q-th style="color: #ffffff00; min-width: 110px">
           {{ props.col.label }}
         </q-th>
       </template>
@@ -142,7 +139,7 @@
     </q-table>
 
     <q-dialog persistent v-model="new_customer">
-      <q-card style="width: 600px; max-width: 60vw;">
+      <q-card style="width: 600px; max-width: 60vw">
         <q-card-section>
           <q-btn
             icon="close"
@@ -150,10 +147,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.professionalStaff.profTeam") }}
           </div>
         </q-card-section>
@@ -179,9 +176,9 @@
                       @blur="spustiPlaceholder('Span-IP1', editedItem.ime)"
                       ref="input1"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.professionalStaff.enterName')
+                          $t('administration.professionalStaff.enterName'),
                       ]"
                     />
                     <span id="Span-IP1" class="placeholder">{{
@@ -205,9 +202,9 @@
                       @blur="spustiPlaceholder('Span-IP2', editedItem.prezime)"
                       ref="input2"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.professionalStaff.enterSurname')
+                          $t('administration.professionalStaff.enterSurname'),
                       ]"
                     />
                     <span id="Span-IP2" class="placeholder">{{
@@ -232,15 +229,15 @@
                     map-options
                     ref="select1"
                     :style="{
-                      height: [editedItem.roles.length > 3 ? '80px' : '40px']
+                      height: [editedItem.roles.length > 3 ? '80px' : '40px'],
                     }"
                     @focus="popniPlaceholder('Span-SL1')"
                     @input="popniPlaceholder('Span-SL1')"
                     @blur="spustiPlaceholder('Span-SL1', editedItem.roles)"
                     :rules="[
-                      val =>
+                      (val) =>
                         (val !== null && val !== '' && val.length != 0) ||
-                        $t('administration.professionalStaff.enterRole')
+                        $t('administration.professionalStaff.enterRole'),
                     ]"
                   />
                   <span
@@ -403,7 +400,7 @@
                       "
                       ref="input6"
                       mask="##/##/####"
-                      :rules="[val => valiDate(val) || 'DD/MM/YYYY']"
+                      :rules="[(val) => valiDate(val) || 'DD/MM/YYYY']"
                     >
                       <template v-slot:append>
                         <q-icon name="event" class="cursor-pointer">
@@ -471,7 +468,7 @@
                         spustiPlaceholder('Span-IP8', editedItem.vaznostPasosa)
                       "
                       ref="input8"
-                      :rules="[val => valiDate(val) || 'DD/MM/YYYY']"
+                      :rules="[(val) => valiDate(val) || 'DD/MM/YYYY']"
                     >
                       <template v-slot:append>
                         <q-icon name="event" class="cursor-pointer">
@@ -554,21 +551,31 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
           ></q-btn>
         </q-card-actions>
       </q-card>
     </q-dialog>
 
     <q-dialog v-model="dataPreview">
-      <q-card style="width: 600px; max-width: 60vw;">
+      <q-card style="width: 600px; max-width: 60vw">
         <q-card-section>
           <q-btn
             icon="close"
@@ -576,10 +583,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.professionalStaff.profTeam") }}
           </div>
         </q-card-section>
@@ -623,7 +630,13 @@
                 <q-item-section>
                   <q-select
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.professionalStaff.role')"
                     multiple
                     readonly
@@ -636,7 +649,13 @@
                 <q-item-section>
                   <q-select
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.professionalStaff.license')"
                     readonly
                     :options="opcijeLicenca"
@@ -649,7 +668,13 @@
                 <q-item-section>
                   <q-select
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px;  padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.professionalStaff.education')"
                     :options="opcijeObrazovanje"
                     readonly
@@ -831,61 +856,61 @@ export default {
         { label: "Analitičar", value: "Analitičar" },
         { label: "Kondicioni trener", value: "Kondicioni trener" },
         { label: "Trener golmana", value: "Trener golmana" },
-        { label: "Lekar", value: "Lekar" }
+        { label: "Lekar", value: "Lekar" },
       ],
       opcijeObrazovanje: [
         {
           label: this.$t("administration.professionalStaff.obrazovanjeOsnovno"),
-          value: "Osnovno obrazovanje"
+          value: "Osnovno obrazovanje",
         },
         {
           label: this.$t("administration.professionalStaff.obrazovanjeSrednje"),
-          value: "Srednje stručno obrazovanje"
+          value: "Srednje stručno obrazovanje",
         },
         {
           label: this.$t("administration.professionalStaff.obrazovanjeVisa"),
-          value: "Viša školska ustanova"
+          value: "Viša školska ustanova",
         },
         {
           label: this.$t("administration.professionalStaff.obrazovanjeVisoka"),
-          value: "Visoka školska ustanova"
+          value: "Visoka školska ustanova",
         },
         {
           label: this.$t("administration.professionalStaff.obrazovanjeMaster"),
-          value: "Master studije"
+          value: "Master studije",
         },
         {
           label: this.$t(
             "administration.professionalStaff.obrazovanjeDoktorske"
           ),
-          value: "Doktorske studije"
-        }
+          value: "Doktorske studije",
+        },
       ],
       opcijeLicenca: [
         {
           label: this.$t("administration.professionalStaff.profiLicenca"),
-          value: "PROFI licenca"
+          value: "PROFI licenca",
         },
         {
           label: this.$t("administration.professionalStaff.eliteLicenca"),
-          value: "ELITE youth licenca"
+          value: "ELITE youth licenca",
         },
         {
           label: this.$t("administration.professionalStaff.licencaA"),
-          value: "A licenca"
+          value: "A licenca",
         },
         {
           label: this.$t("administration.professionalStaff.licencaB"),
-          value: "B licenca"
+          value: "B licenca",
         },
         {
           label: this.$t("administration.professionalStaff.licencaC"),
-          value: "C licenca"
+          value: "C licenca",
         },
         {
           label: this.$t("administration.professionalStaff.licencaD"),
-          value: "D licenca"
-        }
+          value: "D licenca",
+        },
       ],
       customer: {},
       new_customer: false,
@@ -908,7 +933,7 @@ export default {
         email: "",
         userName: "",
         password: "",
-        active: true
+        active: true,
       },
       defaultItem: {
         id: 0,
@@ -927,7 +952,7 @@ export default {
         email: "",
         userName: "",
         password: "",
-        active: true
+        active: true,
       },
       mode: "list",
       columns: [
@@ -937,14 +962,14 @@ export default {
           label: this.$t("administration.professionalStaff.name"),
           align: "left",
           field: "ime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "prezime",
           align: "left",
           label: this.$t("administration.professionalStaff.surname"),
           field: "prezime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "rolesOpisno",
@@ -952,29 +977,29 @@ export default {
           label: this.$t("administration.professionalStaff.tipe"),
           field: "rolesOpisno",
           sortable: true,
-          format: val =>
-            val.filter(e => !e.includes("Professional staff")).join(", ")
+          format: (val) =>
+            val.filter((e) => !e.includes("Professional staff")).join(", "),
         },
         {
           name: "obrazovanje",
           align: "left",
           label: this.$t("administration.professionalStaff.education"),
           field: "obrazovanje",
-          sortable: true
+          sortable: true,
         },
         {
           name: "stazUsportu",
           align: "left",
           label: this.$t("administration.professionalStaff.sportInter"),
           field: "stazUsportu",
-          sortable: true
+          sortable: true,
         },
         {
           name: "stazUklubu",
           align: "left",
           label: this.$t("administration.professionalStaff.clubInter"),
           field: "stazUklubu",
-          sortable: true
+          sortable: true,
         },
         {
           name: "datumVazenjaUgovora",
@@ -982,7 +1007,7 @@ export default {
           label: this.$t("administration.professionalStaff.contractExpiration"),
           field: "datumVazenjaUgovora",
           sortable: true,
-          format: val => date.formatDate(val, "DD/MM/YYYY")
+          format: (val) => date.formatDate(val, "DD/MM/YYYY"),
         },
         {
           name: "vaznostPasosa",
@@ -990,20 +1015,20 @@ export default {
           label: this.$t("administration.professionalStaff.passportImportance"),
           field: "vaznostPasosa",
           sortable: true,
-          format: val => date.formatDate(val, "DD/MM/YYYY")
+          format: (val) => date.formatDate(val, "DD/MM/YYYY"),
         },
         {
           name: "action",
           align: "left",
           label: this.$t("table.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   mounted() {
@@ -1137,16 +1162,16 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           this.listOptions = response.data.map(this.dajRole);
           this.loadingUtakmice = false;
           debugger;
           this.getData();
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           this.loadingUtakmice = false;
           console.log("Greska: " + e);
@@ -1166,26 +1191,26 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           self.data = response.data;
           console.log("this.data");
           console.log(self.data);
           self.data.forEach((entry, index) => {
             self.data[index].rolesOpisno = entry.rolesOpisno.filter(
-              e => !e.includes("Professional staff")
+              (e) => !e.includes("Professional staff")
             );
             self.data[index].roles = entry.roles.filter(
-              e => !e.includes("ROLE_STRUCNI_STAB")
+              (e) => !e.includes("ROLE_STRUCNI_STAB")
             );
           });
           console.log("this.data");
           console.log(self.data);
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           console.log("Greska: " + e);
         });
@@ -1217,7 +1242,7 @@ export default {
         roles: this.editedItem.roles,
         email: this.editedItem.email,
         userName: this.editedItem.email,
-        password: "test"
+        password: "test",
       };
 
       let data1 = JSON.stringify(dataString);
@@ -1227,21 +1252,35 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.$q.notify({
             message: self.$t("administration.professionalStaff.msgPositive"),
-            color: "green"
+            color: "green",
           });
           self.getData();
         })
-        .catch(function(response) {
-          //handle error
-          console.log(response);
+        .catch(function (error) {
+          console.log(error); // The whole error object
+          if (error.response) {
+            // The server responded with a status code out of 2xx
+            console.log(error.response.data); // your JSON error object
+            console.log(error.response.data.message); // the message string you want
+          } else if (error.request) {
+            // The request was made but no response received
+            console.log(error.request);
+          } else {
+            // Something else happened
+            console.log("Error", error.message);
+          }
+          self.$q.notify({
+            message: error.response.data.message,
+            color: "red",
+          });
           //alert(response);
         });
     },
@@ -1270,7 +1309,7 @@ export default {
         ime: this.editedItem.ime,
         prezime: this.editedItem.prezime,
         roles: this.editedItem.roles,
-        email: this.editedItem.email
+        email: this.editedItem.email,
       };
       debugger;
       let data1 = JSON.stringify(dataString);
@@ -1278,21 +1317,26 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.professionalStaff.msgChange"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
+
+          self.$q.notify({
+            message: response.data.message,
+            color: "red",
+          });
           //alert(response);
         });
     },
@@ -1325,19 +1369,19 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.professionalStaff.msgDel"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1358,7 +1402,7 @@ export default {
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.professionalStaff.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -1412,7 +1456,7 @@ export default {
         ),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       var self = this;
@@ -1505,9 +1549,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -1520,8 +1564,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -1540,11 +1584,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -1563,11 +1607,11 @@ export default {
         this.$q.notify({
           message: this.$t("administration.professionalStaff.msgPrtSc"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

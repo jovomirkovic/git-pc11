@@ -15,7 +15,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela"
-      style="background-color: unset; box-shadow: unset;"
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px; text-transform: uppercase;"
       color="blue-10"
     >
@@ -83,7 +83,7 @@
       </template>
 
       <template v-slot:header-cell-action="props">
-        <q-th style="color: #ffffff00; width: 110px;">
+        <q-th style="color: #ffffff00; width: 110px">
           {{ props.col.label }}
         </q-th>
       </template>
@@ -93,6 +93,7 @@
           <div class="q-gutter-sm">
             <q-btn
               @click="editItem(props.row)"
+              v-if="!defaultRole(props.row.uloga)"
               id="dugmeEdit"
               round
               dense
@@ -105,6 +106,7 @@
             </q-btn>
             <q-btn
               @click="deleteItem(props.row)"
+              v-if="!defaultRole(props.row.uloga)"
               id="dugmeBrisi"
               round
               dense
@@ -138,12 +140,12 @@
     <q-dialog persistent v-model="new_customer">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -152,10 +154,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.roles.role") }}
           </div>
         </q-card-section>
@@ -190,9 +192,9 @@
                       "
                       ref="input1"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.roles.enterRole')
+                          $t('administration.roles.enterRole'),
                       ]"
                     />
                     <span id="Span-IP1" class="placeholder">{{
@@ -223,9 +225,9 @@
                       "
                       ref="input2"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.roles.enterRoleName')
+                          $t('administration.roles.enterRoleName'),
                       ]"
                     />
                     <span id="Span-IP2" class="placeholder">{{
@@ -247,14 +249,24 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
           ></q-btn>
         </q-card-actions>
       </q-card>
@@ -263,12 +275,12 @@
     <q-dialog v-model="dataPreview">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -277,10 +289,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.roles.role") }}
           </div>
         </q-card-section>
@@ -357,12 +369,12 @@ export default {
       editedItem: {
         ident: 0,
         uloga: "",
-        naziv_uloge: ""
+        naziv_uloge: "",
       },
       defaultItem: {
         ident: 0,
         uloga: "",
-        naziv_uloge: ""
+        naziv_uloge: "",
       },
       mode: "list",
       columns: [
@@ -379,22 +391,22 @@ export default {
           align: "left",
           label: this.$t("administration.roles.role"),
           field: "uloga",
-          sortable: true
+          sortable: true,
         },
         {
           name: "naziv_uloge",
           align: "left",
           label: this.$t("administration.roles.roleName"),
           field: "naziv_uloge",
-          sortable: true
+          sortable: true,
         },
         {
           name: "action",
           align: "right",
           label: this.$t("table.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       // data: [       //ovo je samo za test, podatke vucemo iz baze
@@ -415,8 +427,8 @@ export default {
       //   },
       // ],
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   beforeMount() {},
@@ -424,6 +436,28 @@ export default {
     this.getData(); //idemo da uzmenmo podatke iz baze
   },
   methods: {
+    defaultRole(role) {
+      return (
+        role == "ROLE_IGRAC" ||
+        role == "ROLE_TRENER" ||
+        role == "POMOCNI_TRENER" ||
+        role == "ROLE_KONDICIONI_TRENER" ||
+        role == "ROLE_TRENER_GOLMANA" ||
+        role == "ROLE_KOORDINATOR" ||
+        role == "ROLE_IGRAC" ||
+        role == "ROLE_SKAUT" ||
+        role == "ROLE_ANALITICAR" ||
+        role == "ROLE_LEKAR" ||
+        role == "ROLE_PSIHOLOG" ||
+        role == "Physiotherapist" ||
+        role == "ROLE_KORISNIK" ||
+        role == "Administrator" ||
+        role == "ROLE_STRUCNI_STAB" ||
+        role == "INFO" ||
+        role == "Direktor"
+      );
+    },
+
     popniPlaceholder(id) {
       var izabraniPlaceholder = document.getElementById(id);
 
@@ -466,10 +500,10 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           if (response.status == 401) {
             this.$router.push({ name: "login" });
           }
@@ -478,7 +512,7 @@ export default {
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           console.log("Greska: " + e);
           this.$router.push({ name: "login" });
@@ -498,7 +532,7 @@ export default {
         datumKreiranja: datetime,
         naziv_uloge: this.editedItem.naziv_uloge,
         uloga: this.editedItem.uloga,
-        ident: this.editedItem.ident
+        ident: this.editedItem.ident,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -508,24 +542,24 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.$q.notify({
             message: self.$t("administration.user.msgPositive"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           ////alert(response);
           self.$q.notify({
             message: self.$t("administration.user.msgNeg"),
-            color: "red"
+            color: "red",
           });
         });
     },
@@ -541,7 +575,7 @@ export default {
       ) {
         self.$q.notify({
           message: self.$t("administration.user.enterRoleName"),
-          color: "red"
+          color: "red",
         });
         return;
       }
@@ -553,7 +587,7 @@ export default {
         datumKreiranja: datetime,
         naziv_uloge: this.editedItem.naziv_uloge,
         uloga: this.editedItem.uloga,
-        ident: this.editedItem.ident
+        ident: this.editedItem.ident,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -563,25 +597,25 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.user.msgChange"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           ////alert(response);
           self.$q.notify({
             message: self.$t("administration.user.msgNotChange"),
-            color: "red"
+            color: "red",
           });
         });
     },
@@ -597,19 +631,19 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.user.msgDel"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -640,7 +674,7 @@ export default {
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.roles.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -660,10 +694,28 @@ export default {
     // брисање записа у локау, и позивање функције за брисање записа у бази
     //........................................
     deleteItem(item) {
-      if (item.uloga == "ROLE_IGRAC") {
+      if (
+        item.uloga == "ROLE_IGRAC" ||
+        "ROLE_TRENER" ||
+        "POMOCNI_TRENER" ||
+        "ROLE_KONDICIONI_TRENER" ||
+        "ROLE_TRENER_GOLMANA" ||
+        "ROLE_KOORDINATOR" ||
+        "ROLE_IGRAC" ||
+        "ROLE_SKAUT" ||
+        "ROLE_ANALITICAR" ||
+        "ROLE_LEKAR" ||
+        "ROLE_PSIHOLOG" ||
+        "Physiotherapist" ||
+        "ROLE_KORISNIK" ||
+        "Administrator" ||
+        "ROLE_STRUCNI_STAB" ||
+        "INFO" ||
+        "Direktor"
+      ) {
         this.$q.notify({
           message: this.$t("administration.roles.msgDelNot"),
-          color: "red"
+          color: "red",
         });
       } else {
         const index = this.data.indexOf(item);
@@ -676,7 +728,7 @@ export default {
           customConfirmBtnText: this.$t("administration.roles.txtYes"),
           onConfirm: onConfirmWrapper,
           type: "warning",
-          showXclose: true
+          showXclose: true,
         };
         this.$Simplert.open(obj);
         var self = this;
@@ -706,7 +758,7 @@ export default {
       if (this.editedItem.uloga == "ROLE_IGRAC") {
         this.$q.notify({
           message: this.$t("administration.roles.msgVeto"),
-          color: "red"
+          color: "red",
         });
       } else {
         this.new_customer = true;
@@ -721,9 +773,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -736,8 +788,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -753,9 +805,9 @@ export default {
 
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
           debugger;
           if (val == "" && val == null) this.$refs["input" + i].validate();
           this.$refs["input" + i].validate();
@@ -770,8 +822,8 @@ export default {
       while (!(i > 1 && sviSelektovi == null)) {
         debugger;
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val <= 1) this.$refs["select" + i].validate();
         }
@@ -796,11 +848,11 @@ export default {
     //........................................
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -819,11 +871,11 @@ export default {
         this.$q.notify({
           message: this.$t("administration.roles.msgPrtSc"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <q-page padding style="height: 90vh; overflow: auto;">
+  <q-page padding style="height: 90vh; overflow: auto">
     <!-- Add Entry Button -->
 
     <q-btn
@@ -38,7 +38,7 @@
         <div class="text-h6 q-mb-md">Entry Tree</div>
         <div>
           <tree-node
-            style="border-bottom: 1px solid #e1e1e1;"
+            style="border-bottom: 1px solid #e1e1e1"
             v-for="entry in rootEntries"
             :key="entry.id"
             :entry="entry"
@@ -94,10 +94,10 @@
               dense
               clearable
               :rules="[
-                val =>
+                (val) =>
                   form.type === 'component'
                     ? !!val || 'Component must have a parent'
-                    : true
+                    : true,
               ]"
             />
 
@@ -140,7 +140,7 @@
             type="textarea"
             class="q-ma-md"
             v-model="menuItemsJSONString"
-            style="min-width: 350px;"
+            style="min-width: 350px"
             label="Menu Item JSON"
           />
 
@@ -165,7 +165,7 @@ import TreeNode from "components/TreeNode.vue";
 export default {
   name: "EntryManager",
   components: {
-    TreeNode
+    TreeNode,
   },
   data() {
     return {
@@ -178,711 +178,711 @@ export default {
         icon: "",
         roles: [],
         type: "page",
-        parentId: null
+        parentId: null,
       },
-      entries:
-[
-    {
-      "id": "dashboard",
-      "type": "page",
-      "key": "dashboard",
-      "label": "main.dashboard",
-      "to": "/dashboard",
-      "roles": ["direktor"],
-      "parentId": null,
-      "icon": "Administration.svg"
-    },
-    {
-      "id": "dashboard1",
-      "type": "page",
-      "key": "dashboard1",
-      "label": "main.dashboard1",
-      "to": "/dashboard1",
-      "roles": [
-        "sys_admin",
-        "pomocni_trener",
-        "physiotherapist",
-        "admin",
-        "administrator"
+      entries: [
+        {
+          id: "dashboard",
+          type: "page",
+          key: "dashboard",
+          label: "main.dashboard",
+          to: "/dashboard",
+          roles: ["direktor"],
+          parentId: null,
+          icon: "Administration.svg",
+        },
+        {
+          id: "dashboard1",
+          type: "page",
+          key: "dashboard1",
+          label: "main.dashboard1",
+          to: "/dashboard1",
+          roles: [
+            "sys_admin",
+            "pomocni_trener",
+            "physiotherapist",
+            "admin",
+            "administrator",
+          ],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "administracija",
+          type: "page",
+          key: "administracija",
+          label: "main.administracija",
+          to: "/administracija",
+          roles: ["sys_admin", "admin", "administrator"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [
+            {
+              id: "1746989654609",
+              key: "Users",
+              label: "users",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["admin", "role_skaut", "sys_admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654610",
+              key: "roles",
+              label: "roles",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654611",
+              key: "teams",
+              label: "teams",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654612",
+              key: "professionalStaff",
+              label: "professionalStaff",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654613",
+              key: "playersLabel",
+              label: "playersLabel",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654614",
+              key: "connections",
+              label: "connections",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654615",
+              key: "elementsOfTheGame",
+              label: "elementsOfTheGame",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654616",
+              key: "technique",
+              label: "technique",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654617",
+              key: "tactics",
+              label: "tactics",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654618",
+              key: "principlesOfTheGame",
+              label: "principlesOfTheGame",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+            {
+              id: "1746989654619",
+              key: "testData",
+              label: "testData",
+              to: "",
+              icon: "Administration.svg",
+              roles: ["role_skaut", "admin"],
+              type: "component",
+              parentId: "administracija",
+              children: [],
+            },
+          ],
+        },
+        {
+          id: "treninzi",
+          type: "page",
+          key: "treninzi",
+          label: "main.treninzi",
+          to: "/treninzi",
+          roles: ["role_lekar", "administrator", "admin"],
+          parentId: null,
+          icon: "Trainings.svg",
+          children: [],
+        },
+        {
+          id: "trenezneVezbe",
+          type: "page",
+          key: "trenezneVezbe",
+          label: "main.trenezneVezbe",
+          to: "/trenezneVezbe",
+          roles: ["physiotherapist", "administrator", "role_skaut", "admin"],
+          parentId: null,
+          icon: "Training excersizes.svg",
+          children: [],
+        },
+        {
+          id: "utakmice",
+          type: "page",
+          key: "utakmice",
+          label: "main.utakmice",
+          to: "/utakmice",
+          roles: ["administrator", "role_skaut", "admin"],
+          parentId: null,
+          icon: "Matches.svg",
+          children: [],
+        },
+        {
+          id: "podaciOIgri",
+          type: "page",
+          key: "podaciOIgri",
+          label: "main.podaciOIgri",
+          to: "/podaciOIgri",
+          roles: ["administrator", "admin"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "catapult",
+          type: "page",
+          key: "catapult",
+          label: "main.catapult",
+          to: "/catapult",
+          roles: ["administrator", "admin"],
+          parentId: null,
+          icon: "Catapult.svg",
+          children: [],
+        },
+        {
+          id: "taktickiElementi",
+          type: "page",
+          key: "taktickiElementi",
+          label: "main.taktickiElementi",
+          to: "/taktickiElementi",
+          roles: ["administrator", "role_skaut", "admin"],
+          parentId: null,
+          icon: "Tactical elements.svg",
+          children: [],
+        },
+        {
+          id: "tehnickiElementi",
+          type: "page",
+          key: "tehnickiElementi",
+          label: "main.tehnickiElementi",
+          to: "/tehnickiElementi",
+          roles: ["administrator", "role_skaut", "admin"],
+          parentId: null,
+          icon: "Technical elements.svg",
+          children: [],
+        },
+        {
+          id: "principiIgre",
+          type: "page",
+          key: "principiIgre",
+          label: "main.principiIgre",
+          to: "/principiIgre",
+          roles: ["administrator", "admin"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "medicinskiKarton",
+          type: "page",
+          key: "medicinskiKarton",
+          label: "main.medicinskiKarton",
+          to: "/igraci/medicinskiKarton",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Medical record.svg",
+          children: [],
+        },
+        {
+          id: "povredeIgraca",
+          type: "page",
+          key: "povredeIgraca",
+          label: "main.povredeIgraca",
+          to: "/igraci/povredeIgraca",
+          roles: ["administrator", "admin", "direktor"],
+          parentId: "igraci",
+          icon: "Player injuries.svg",
+          children: [],
+        },
+        {
+          id: "strucniTim",
+          type: "page",
+          key: "strucniTim",
+          label: "main.strucniTim",
+          to: "/strucniTim",
+          roles: ["administrator", "admin"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "igraci",
+          type: "page",
+          key: "igraci",
+          label: "main.igraci",
+          to: "/igraci",
+          roles: ["administrator", "admin", "direktor"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [
+            {
+              id: "medicinskiKarton",
+              type: "page",
+              key: "medicinskiKarton",
+              label: "main.medicinskiKarton",
+              to: "/igraci/medicinskiKarton",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Medical record.svg",
+              children: [],
+            },
+            {
+              id: "povredeIgraca",
+              type: "page",
+              key: "povredeIgraca",
+              label: "main.povredeIgraca",
+              to: "/igraci/povredeIgraca",
+              roles: ["administrator", "admin", "direktor"],
+              parentId: "igraci",
+              icon: "Player injuries.svg",
+              children: [],
+            },
+            {
+              id: "1746989654620",
+              type: "component",
+              key: "sportTrails",
+              label: "sportTrails",
+              to: "",
+              roles: ["admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654621",
+              type: "component",
+              key: "playerRating",
+              label: "playerRating",
+              to: "",
+              roles: ["admin", "direktor"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654622",
+              type: "component",
+              key: "morphologicalCharacteristic",
+              label: "morphologicalCharacteristic",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654623",
+              type: "component",
+              key: "motorSkills",
+              label: "motorSkills",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654624",
+              type: "component",
+              key: "functionalData",
+              label: "functionalData",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654625",
+              type: "component",
+              key: "psychologicalProfile",
+              label: "psychologicalProfile",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654626",
+              type: "component",
+              key: "intelligence",
+              label: "intelligence",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654627",
+              type: "component",
+              key: "socialCapital",
+              label: "socialCapital",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654628",
+              type: "component",
+              key: "finance",
+              label: "finance",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+            {
+              id: "1746989654629",
+              type: "component",
+              key: "guardianAngel",
+              label: "guardianAngel",
+              to: "",
+              roles: ["administrator", "admin"],
+              parentId: "igraci",
+              icon: "Administration.svg",
+              children: [],
+            },
+          ],
+        },
+        {
+          id: "1746989654620",
+          type: "component",
+          key: "sportTrails",
+          label: "sportTrails",
+          to: "",
+          roles: ["admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654621",
+          type: "component",
+          key: "playerRating",
+          label: "playerRating",
+          to: "",
+          roles: ["admin", "direktor"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654622",
+          type: "component",
+          key: "morphologicalCharacteristic",
+          label: "morphologicalCharacteristic",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654623",
+          type: "component",
+          key: "motorSkills",
+          label: "motorSkills",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654624",
+          type: "component",
+          key: "functionalData",
+          label: "functionalData",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654625",
+          type: "component",
+          key: "psychologicalProfile",
+          label: "psychologicalProfile",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654626",
+          type: "component",
+          key: "intelligence",
+          label: "intelligence",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654627",
+          type: "component",
+          key: "socialCapital",
+          label: "socialCapital",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654628",
+          type: "component",
+          key: "finance",
+          label: "finance",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654629",
+          type: "component",
+          key: "guardianAngel",
+          label: "guardianAngel",
+          to: "",
+          roles: ["administrator", "admin"],
+          parentId: "igraci",
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "test",
+          type: "page",
+          key: "test",
+          label: "main.test",
+          to: "/test",
+          roles: ["pomocni_trener"],
+          parentId: null,
+          icon: "Administration.svg",
+        },
+        {
+          id: "access",
+          type: "page",
+          key: "access",
+          label: "main.access",
+          to: "/access",
+          roles: ["sys_Admin", "sys_admin", "administrator", "admin"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "tenanti",
+          type: "page",
+          key: "tenanti",
+          label: "main.tenanti",
+          to: "/tenanti",
+          roles: ["sys_admin", "administrator", "admin"],
+          parentId: null,
+          icon: "Administration.svg",
+          children: [],
+        },
+        {
+          id: "1746989654609",
+          key: "Users",
+          label: "users",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["admin", "role_skaut", "sys_admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654610",
+          key: "roles",
+          label: "roles",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654611",
+          key: "teams",
+          label: "teams",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654612",
+          key: "professionalStaff",
+          label: "professionalStaff",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654613",
+          key: "playersLabel",
+          label: "playersLabel",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654614",
+          key: "connections",
+          label: "connections",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654615",
+          key: "elementsOfTheGame",
+          label: "elementsOfTheGame",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654616",
+          key: "technique",
+          label: "technique",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654617",
+          key: "tactics",
+          label: "tactics",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654618",
+          key: "principlesOfTheGame",
+          label: "principlesOfTheGame",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746989654619",
+          key: "testData",
+          label: "testData",
+          to: "",
+          icon: "Administration.svg",
+          roles: ["role_skaut", "admin"],
+          type: "component",
+          parentId: "administracija",
+          children: [],
+        },
+        {
+          id: "1746991818919",
+          key: "nepostojecaStranica",
+          label: "nepostojecaStranica",
+          to: "nepostojecaStranica",
+          icon: "Administration.svg",
+          roles: [],
+          type: "page",
+          parentId: null,
+        },
       ],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "administracija",
-      "type": "page",
-      "key": "administracija",
-      "label": "main.administracija",
-      "to": "/administracija",
-      "roles": ["sys_admin", "admin", "administrator"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": [
-        {
-          "id": "1746989654609",
-          "key": "Users",
-          "label": "users",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["admin", "role_skaut", "sys_admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654610",
-          "key": "roles",
-          "label": "roles",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654611",
-          "key": "teams",
-          "label": "teams",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654612",
-          "key": "professionalStaff",
-          "label": "professionalStaff",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654613",
-          "key": "playersLabel",
-          "label": "playersLabel",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654614",
-          "key": "connections",
-          "label": "connections",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654615",
-          "key": "elementsOfTheGame",
-          "label": "elementsOfTheGame",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654616",
-          "key": "technique",
-          "label": "technique",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654617",
-          "key": "tactics",
-          "label": "tactics",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654618",
-          "key": "principlesOfTheGame",
-          "label": "principlesOfTheGame",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        },
-        {
-          "id": "1746989654619",
-          "key": "testData",
-          "label": "testData",
-          "to": "",
-          "icon": "Administration.svg",
-          "roles": ["role_skaut", "admin"],
-          "type": "component",
-          "parentId": "administracija",
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "treninzi",
-      "type": "page",
-      "key": "treninzi",
-      "label": "main.treninzi",
-      "to": "/treninzi",
-      "roles": ["role_lekar", "administrator", "admin"],
-      "parentId": null,
-      "icon": "Trainings.svg",
-      "children": []
-    },
-    {
-      "id": "trenezneVezbe",
-      "type": "page",
-      "key": "trenezneVezbe",
-      "label": "main.trenezneVezbe",
-      "to": "/trenezneVezbe",
-      "roles": ["physiotherapist", "administrator", "role_skaut", "admin"],
-      "parentId": null,
-      "icon": "Training excersizes.svg",
-      "children": []
-    },
-    {
-      "id": "utakmice",
-      "type": "page",
-      "key": "utakmice",
-      "label": "main.utakmice",
-      "to": "/utakmice",
-      "roles": ["administrator", "role_skaut", "admin"],
-      "parentId": null,
-      "icon": "Matches.svg",
-      "children": []
-    },
-    {
-      "id": "podaciOIgri",
-      "type": "page",
-      "key": "podaciOIgri",
-      "label": "main.podaciOIgri",
-      "to": "/podaciOIgri",
-      "roles": ["administrator", "admin"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "catapult",
-      "type": "page",
-      "key": "catapult",
-      "label": "main.catapult",
-      "to": "/catapult",
-      "roles": ["administrator", "admin"],
-      "parentId": null,
-      "icon": "Catapult.svg",
-      "children": []
-    },
-    {
-      "id": "taktickiElementi",
-      "type": "page",
-      "key": "taktickiElementi",
-      "label": "main.taktickiElementi",
-      "to": "/taktickiElementi",
-      "roles": ["administrator", "role_skaut", "admin"],
-      "parentId": null,
-      "icon": "Tactical elements.svg",
-      "children": []
-    },
-    {
-      "id": "tehnickiElementi",
-      "type": "page",
-      "key": "tehnickiElementi",
-      "label": "main.tehnickiElementi",
-      "to": "/tehnickiElementi",
-      "roles": ["administrator", "role_skaut", "admin"],
-      "parentId": null,
-      "icon": "Technical elements.svg",
-      "children": []
-    },
-    {
-      "id": "principiIgre",
-      "type": "page",
-      "key": "principiIgre",
-      "label": "main.principiIgre",
-      "to": "/principiIgre",
-      "roles": ["administrator", "admin"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "medicinskiKarton",
-      "type": "page",
-      "key": "medicinskiKarton",
-      "label": "main.medicinskiKarton",
-      "to": "/igraci/medicinskiKarton",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Medical record.svg",
-      "children": []
-    },
-    {
-      "id": "povredeIgraca",
-      "type": "page",
-      "key": "povredeIgraca",
-      "label": "main.povredeIgraca",
-      "to": "/igraci/povredeIgraca",
-      "roles": ["administrator", "admin", "direktor"],
-      "parentId": "igraci",
-      "icon": "Player injuries.svg",
-      "children": []
-    },
-    {
-      "id": "strucniTim",
-      "type": "page",
-      "key": "strucniTim",
-      "label": "main.strucniTim",
-      "to": "/strucniTim",
-      "roles": ["administrator", "admin"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "igraci",
-      "type": "page",
-      "key": "igraci",
-      "label": "main.igraci",
-      "to": "/igraci",
-      "roles": ["administrator", "admin", "direktor"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": [
-        {
-          "id": "medicinskiKarton",
-          "type": "page",
-          "key": "medicinskiKarton",
-          "label": "main.medicinskiKarton",
-          "to": "/igraci/medicinskiKarton",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Medical record.svg",
-          "children": []
-        },
-        {
-          "id": "povredeIgraca",
-          "type": "page",
-          "key": "povredeIgraca",
-          "label": "main.povredeIgraca",
-          "to": "/igraci/povredeIgraca",
-          "roles": ["administrator", "admin", "direktor"],
-          "parentId": "igraci",
-          "icon": "Player injuries.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654620",
-          "type": "component",
-          "key": "sportTrails",
-          "label": "sportTrails",
-          "to": "",
-          "roles": ["admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654621",
-          "type": "component",
-          "key": "playerRating",
-          "label": "playerRating",
-          "to": "",
-          "roles": ["admin", "direktor"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654622",
-          "type": "component",
-          "key": "morphologicalCharacteristic",
-          "label": "morphologicalCharacteristic",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654623",
-          "type": "component",
-          "key": "motorSkills",
-          "label": "motorSkills",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654624",
-          "type": "component",
-          "key": "functionalData",
-          "label": "functionalData",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654625",
-          "type": "component",
-          "key": "psychologicalProfile",
-          "label": "psychologicalProfile",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654626",
-          "type": "component",
-          "key": "intelligence",
-          "label": "intelligence",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654627",
-          "type": "component",
-          "key": "socialCapital",
-          "label": "socialCapital",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654628",
-          "type": "component",
-          "key": "finance",
-          "label": "finance",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        },
-        {
-          "id": "1746989654629",
-          "type": "component",
-          "key": "guardianAngel",
-          "label": "guardianAngel",
-          "to": "",
-          "roles": ["administrator", "admin"],
-          "parentId": "igraci",
-          "icon": "Administration.svg",
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": "1746989654620",
-      "type": "component",
-      "key": "sportTrails",
-      "label": "sportTrails",
-      "to": "",
-      "roles": ["admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654621",
-      "type": "component",
-      "key": "playerRating",
-      "label": "playerRating",
-      "to": "",
-      "roles": ["admin", "direktor"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654622",
-      "type": "component",
-      "key": "morphologicalCharacteristic",
-      "label": "morphologicalCharacteristic",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654623",
-      "type": "component",
-      "key": "motorSkills",
-      "label": "motorSkills",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654624",
-      "type": "component",
-      "key": "functionalData",
-      "label": "functionalData",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654625",
-      "type": "component",
-      "key": "psychologicalProfile",
-      "label": "psychologicalProfile",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654626",
-      "type": "component",
-      "key": "intelligence",
-      "label": "intelligence",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654627",
-      "type": "component",
-      "key": "socialCapital",
-      "label": "socialCapital",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654628",
-      "type": "component",
-      "key": "finance",
-      "label": "finance",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654629",
-      "type": "component",
-      "key": "guardianAngel",
-      "label": "guardianAngel",
-      "to": "",
-      "roles": ["administrator", "admin"],
-      "parentId": "igraci",
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "test",
-      "type": "page",
-      "key": "test",
-      "label": "main.test",
-      "to": "/test",
-      "roles": ["pomocni_trener"],
-      "parentId": null,
-      "icon": "Administration.svg"
-    },
-    {
-      "id": "access",
-      "type": "page",
-      "key": "access",
-      "label": "main.access",
-      "to": "/access",
-      "roles": ["sys_Admin", "sys_admin", "administrator", "admin"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "tenanti",
-      "type": "page",
-      "key": "tenanti",
-      "label": "main.tenanti",
-      "to": "/tenanti",
-      "roles": ["sys_admin", "administrator", "admin"],
-      "parentId": null,
-      "icon": "Administration.svg",
-      "children": []
-    },
-    {
-      "id": "1746989654609",
-      "key": "Users",
-      "label": "users",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["admin", "role_skaut", "sys_admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654610",
-      "key": "roles",
-      "label": "roles",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654611",
-      "key": "teams",
-      "label": "teams",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654612",
-      "key": "professionalStaff",
-      "label": "professionalStaff",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654613",
-      "key": "playersLabel",
-      "label": "playersLabel",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654614",
-      "key": "connections",
-      "label": "connections",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654615",
-      "key": "elementsOfTheGame",
-      "label": "elementsOfTheGame",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654616",
-      "key": "technique",
-      "label": "technique",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654617",
-      "key": "tactics",
-      "label": "tactics",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654618",
-      "key": "principlesOfTheGame",
-      "label": "principlesOfTheGame",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746989654619",
-      "key": "testData",
-      "label": "testData",
-      "to": "",
-      "icon": "Administration.svg",
-      "roles": ["role_skaut", "admin"],
-      "type": "component",
-      "parentId": "administracija",
-      "children": []
-    },
-    {
-      "id": "1746991818919",
-      "key": "nepostojecaStranica",
-      "label": "nepostojecaStranica",
-      "to": "nepostojecaStranica",
-      "icon": "Administration.svg",
-      "roles": [],
-      "type": "page",
-      "parentId": null
-    }],
       importDialog: false,
       menuItemsJSONString: "",
-      roleOptions: []
+      roleOptions: [],
     };
   },
   created() {
@@ -892,13 +892,13 @@ export default {
   },
   computed: {
     rootEntries() {
-      return this.entries.filter(e => !e.parentId);
+      return this.entries.filter((e) => !e.parentId && e.id); // ensure id exists
     },
     parentOptions() {
       return this.entries.filter(
-        e => e.type === "page" && (!this.editingId || e.id !== this.editingId)
+        (e) => e.type === "page" && (!this.editingId || e.id !== this.editingId)
       );
-    }
+    },
   },
   methods: {
     importFromJSON() {
@@ -909,7 +909,7 @@ export default {
 
         this.$q.notify({
           message: "JSON successfully imported",
-          color: "positive"
+          color: "positive",
         });
         this.importDialog = false;
         this.saveRoles();
@@ -917,7 +917,7 @@ export default {
         console.error("Failed to parse JSON:", error);
         this.$q.notify({
           message: "JSON is invalid",
-          color: "negative"
+          color: "negative",
         });
         return; // or you can return an empty object {}
       }
@@ -941,7 +941,7 @@ export default {
       if (this.form.type === "component" && !this.form.parentId) {
         this.$q.notify({
           type: "negative",
-          message: "Component must have a parent."
+          message: "Component must have a parent.",
         });
         return;
       }
@@ -952,17 +952,17 @@ export default {
       }
 
       if (this.editingId) {
-        const index = this.entries.findIndex(e => e.id === this.editingId);
+        const index = this.entries.findIndex((e) => e.id === this.editingId);
         if (index !== -1) {
           this.entries.splice(index, 1, {
             id: this.editingId,
-            ...this.form
+            ...this.form,
           });
         }
       } else {
         this.entries.push({
           id: String(Date.now()),
-          ...this.form
+          ...this.form,
         });
       }
 
@@ -977,7 +977,7 @@ export default {
     deleteEntry(id) {
       console.log("delete");
       console.log("delete");
-      this.entries = this.entries.filter(e => e.id !== id);
+      this.entries = this.entries.filter((e) => e.id !== id);
       console.log("delete");
       console.log("delete");
       this.saveRoles();
@@ -995,7 +995,7 @@ export default {
         icon: "",
         roles: [],
         type: "page",
-        parentId: null
+        parentId: null,
       };
       this.editingId = null;
     },
@@ -1010,7 +1010,7 @@ export default {
       // Add the current datetime as a timestamp to the new element
       const backupWithDatetime = {
         element: newElement,
-        timestamp: new Date().toISOString() // Save the current date and time in ISO format
+        timestamp: new Date().toISOString(), // Save the current date and time in ISO format
       };
 
       menuBackup.push(backupWithDatetime); // Add new element to the end
@@ -1030,12 +1030,12 @@ export default {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         }
       )
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           console.log("Успешно meni:", data);
           //vazno!!!
           //kad se doda novi meni u menuItems, treba ovo komentarisati, da se ne ucitava iz baze
@@ -1048,14 +1048,14 @@ export default {
           if (this.entries.length === 0) {
             debugger;
             this.entries = this.$router.options.routes
-              .filter(e => e.name == "basePath")[0]
-              .children.map(e => {
+              .filter((e) => e.name == "basePath")[0]
+              .children.map((e) => {
                 return {
                   key: e.name,
                   label: "main." + e.name,
                   to: e.path,
                   icon: e.meta.icon,
-                  roles: e.name == "access" ? ["sys_Admin", "sys_admin"] : []
+                  roles: e.name == "access" ? ["sys_Admin", "sys_admin"] : [],
                 };
               });
             console.log("this.entries");
@@ -1065,7 +1065,7 @@ export default {
           // Automatically save menu items in local storage
           this.automaticBackup(this.entries);
         })
-        .catch(error => console.error("Грешка meni:", error));
+        .catch((error) => console.error("Грешка meni:", error));
     },
     getRoles() {
       console.log("Fetching roles...");
@@ -1073,24 +1073,24 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.$token
-        }
+          Authorization: "Bearer " + window.$token,
+        },
       })
-        .then(response => response.json())
-        .then(data => {
-          this.roleOptions = data.map(item => {
+        .then((response) => response.json())
+        .then((data) => {
+          this.roleOptions = data.map((item) => {
             return { label: item.uloga, value: item.uloga.toLowerCase() };
           });
           console.log("Успешно role:", this.roleOptions);
           //this.roleOptions = ['pomocni_trener', 'role_trener', 'role_trener_golmana', 'role_kondicioni_trener', 'physiotherapist', 'storage-operator', 'role_psiholog', 'role_koordinator', 'role_lekar', 'administrator', 'user', 'role_igrac', 'admin', 'info', 'sys_admin', 'direktor', 'role_analiticar', 'role_skaut']
         })
-        .catch(error => console.error("Грешка role:", error));
+        .catch((error) => console.error("Грешка role:", error));
     },
     updateRole(row, roleName) {
       console.log(
         `updateRole triggered for Page: ${row.name}, Role: ${roleName}, Current Value: ${row[roleName]}`
       );
-      const roleIndex = this.entries.findIndex(item => item.key === row.key);
+      const roleIndex = this.entries.findIndex((item) => item.key === row.key);
       if (roleIndex === -1) {
         console.error("Row not found in entries");
         return;
@@ -1117,25 +1117,25 @@ export default {
         headers: {
           accept: "*/*",
           "Content-Type": "application/json",
-          Authorization: "Bearer " + $token
+          Authorization: "Bearer " + $token,
         },
         body: JSON.stringify({
           tenantName: window.$tenant,
-          keyValue: this.entries
-        })
+          keyValue: this.entries,
+        }),
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           this.meni();
           this.$emit("update-meni", this.entries);
           this.$q.notify({
             message: "Saved",
-            color: "green"
+            color: "green",
           });
           console.log("MeniPut: ", JSON.stringify(data));
         })
-        .catch(error => console.error("Грешка MeniPut:", error));
-    }
-  }
+        .catch((error) => console.error("Грешка MeniPut:", error));
+    },
+  },
 };
 </script>
