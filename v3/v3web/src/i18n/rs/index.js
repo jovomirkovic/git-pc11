@@ -35,7 +35,7 @@ export default {
     labeljezik: "Jezik",
     coachingStaff: "Strucni tim",
     access: "Prava pristupa",
-    test: "Test"
+    test: "Test",
   },
   login: {
     selectTenant: "Izaberite tenanta",
@@ -46,7 +46,7 @@ export default {
     enterUserName: "Unesite Vaše korisničko ime",
     enterPassword: "Unesite lozinku",
     checkData: "Molimo Vas da proverite korisničko ime i lozinku!",
-    notAllowes: "Pristup nije dozvoljen!"
+    notAllowes: "Pristup nije dozvoljen!",
   },
   administration: {
     menu: {
@@ -63,7 +63,7 @@ export default {
       testData: "Podaci o testovima",
       groups: "Grupe",
       items: "Stavke",
-      setpointMatrix: "Matrica zadatih vrednosti"
+      setpointMatrix: "Matrica zadatih vrednosti",
     },
     user: {
       close: "Zatvori",
@@ -94,7 +94,7 @@ export default {
       txtNo: "Ne",
       txtYes: "Da",
       enterEmail: "Unesite email",
-      email: "Email"
+      email: "Email",
     },
     roles: {
       role: "Uloge",
@@ -116,7 +116,7 @@ export default {
       msgVeto: "Ova uloga ne može da se menja!",
       war: "Upozorenje",
       txtNo: "Ne",
-      txtYes: "Da"
+      txtYes: "Da",
     },
     teams: {
       team: "Sportske organizacije",
@@ -146,7 +146,7 @@ export default {
       txtNo: "Ne",
       txtYes: "Da",
       notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
-      username: "Korisničko ime"
+      username: "Korisničko ime",
     },
     professionalStaff: {
       enterRole: "Molimo vas da unesete rolu",
@@ -196,7 +196,7 @@ export default {
       obrazovanjeVisoka: "Visoka školska ustanova",
       obrazovanjeMaster: "Master studije",
       obrazovanjeDoktorske: "Doktorske studije",
-      email: "Email"
+      email: "Email",
     },
     players: {
       emailTaken: "Email je zauzet",
@@ -278,7 +278,7 @@ export default {
       visoko: "Visoko",
       doktorat: "Doktorat",
       da: "Da",
-      ne: "Ne"
+      ne: "Ne",
     },
     connections: {
       changeData: "Izmena podataka",
@@ -334,7 +334,7 @@ export default {
       txtNo: "Ne",
       txtYes: "Da",
       enterPos: "Unesite poziciju",
-      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
     },
     elementsOfTheGame: {
       elementsOfTheFootballGame: "Elementi fudbalske igre",
@@ -361,7 +361,7 @@ export default {
       war: "Upozorenje",
       txtNo: "Ne",
       txtYes: "Da",
-      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
     },
     technique: {
       groups: {
@@ -386,7 +386,7 @@ export default {
         war: "Upozorenje",
         txtNo: "Ne",
         txtYes: "Da",
-        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
       },
       items: {
         grpTech: "Grupe tehnika",
@@ -406,7 +406,7 @@ export default {
         notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
         war: "Upozorenje",
         txtNo: "Ne",
-        txtYes: "Da"
+        txtYes: "Da",
       },
       setpointMatrix: {
         setTactics: "Zadati nove tehnike",
@@ -418,8 +418,8 @@ export default {
         msgDel: "Podaci su uspešno obrisani!",
         msgDelConf: "Da li zaista želite da izbrišete tekući zapis?",
         msgPrtSc: "Pretraživač ne dozvoljava snimanje fajlova...",
-        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
-      }
+        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
+      },
     },
     tactics: {
       groups: {
@@ -439,7 +439,7 @@ export default {
         war: "Upozorenje",
         txtNo: "Ne",
         txtYes: "Da",
-        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
       },
       items: {
         grpTac: "Grupe taktika",
@@ -456,7 +456,7 @@ export default {
         msgDel: "Podaci su uspešno obrisani!",
         msgDelConf: "Da li zaista želite da izbrišete tekući zapis?",
         msgPrtSc: "Pretraživač ne dozvoljava snimanje fajlova...",
-        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
       },
       setpointMatrix: {
         setTactics: "Zadati nove taktike",
@@ -467,8 +467,8 @@ export default {
         msgDel: "Podaci su uspešno obrisani!",
         msgDelConf: "Da li zaista želite da izbrišete tekući zapis?",
         msgPrtSc: "Pretraživač ne dozvoljava snimanje fajlova...",
-        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
-      }
+        notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
+      },
     },
     principlesOfTheGame: {
       requiredField: "Obavezno polje",
@@ -490,7 +490,7 @@ export default {
       msgDel: "Podaci su uspešno obrisani!",
       msgDelConf: "Da li zaista želite da izbrišete tekući zapis?",
       msgPrtSc: "Pretraživač ne dozvoljava snimanje fajlova...",
-      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!"
+      notSaved: "Podaci nisu sačuvani! Unesite SVA polja!",
     },
     testData: {
       notSaved: "Podaci o testovima nisu sacuvani",
@@ -520,8 +520,8 @@ export default {
       funkcionalni: "funkcionalni",
       psiholoski: "psihološki",
       pojedinacna: "pojedinačna",
-      baterija: "baterija"
-    }
+      baterija: "baterija",
+    },
   },
   trainings: {
     enterTrainingType: "Molimo vas da unesete tip treninga",
@@ -645,26 +645,26 @@ export default {
     obrisiTimeline: "Obrisi Timeline",
     dodajTimeline: "Dodaj Timeline",
     borgovaSkala: {
-      "0": "0 | Bez opterećnja",
+      0: "0 | Bez opterećnja",
       "03": "0.3 | Jedva primetno opterećenje",
       "05": "0.5 | Ekstremno slabo",
       "07": "0.7 | Izuzetno slabo",
-      "1": "1 | Veoma slabo",
-      "15": "1.5 | Umereno slabo",
-      "2": "2 | Slabo",
-      "25": "2.5 | Umereno slabo",
-      "3": "3 | Umereno",
-      "4": "4 | Umereno Jako",
-      "5": "5 | Prilično jako",
-      "6": "6 | Jako",
-      "7": "7 | Veoma Jako",
-      "8": "8 | Teško",
-      "9": "9 | Veoma teško",
-      "10": "10 | Ekstremno teško",
-      "11": "11 | Blizu maksimuma",
-      "12": "12 | Apsolutni maksimum",
-      "13": "13 | Maksimalna iscrpljenost"
-    }
+      1: "1 | Veoma slabo",
+      15: "1.5 | Umereno slabo",
+      2: "2 | Slabo",
+      25: "2.5 | Umereno slabo",
+      3: "3 | Umereno",
+      4: "4 | Umereno Jako",
+      5: "5 | Prilično jako",
+      6: "6 | Jako",
+      7: "7 | Veoma Jako",
+      8: "8 | Teško",
+      9: "9 | Veoma teško",
+      10: "10 | Ekstremno teško",
+      11: "11 | Blizu maksimuma",
+      12: "12 | Apsolutni maksimum",
+      13: "13 | Maksimalna iscrpljenost",
+    },
   },
   trainingExercises: {
     enterName: "Molimo vas da unesete ime",
@@ -707,7 +707,7 @@ export default {
     physicalExercise: "Fizičko opterećenje",
     name: "Ime",
     category: "Kategorija",
-    ages: "Godine"
+    ages: "Godine",
   },
   log: {
     noResultLabel: "Nema podataka za ovaj kriterijum",
@@ -720,7 +720,7 @@ export default {
     changeItem: "Promenite stavku",
     typeOfEvenet: "Vrsta događaja",
     theCourseOfTheMatch: "Tok utakmice",
-    score: "Ocena"
+    score: "Ocena",
   },
   matches: {
     matchOngoing: "Ne mozete da izađete dok je meč u toku",
@@ -869,7 +869,7 @@ export default {
     thereIsNoPeriodToStop: "Ne postoji pokrenut period igre!",
     dataDeletedSuccessfully: "Podaci su uspešno obrisani!",
     definingANewMatch: "Definisanje nove utakmice",
-    romb: "4-4-2 u rombu"
+    romb: "4-4-2 u rombu",
   },
   catapult: {},
   technicalElements: {
@@ -917,7 +917,7 @@ export default {
     description2: "Usvojio element tehnike",
     description3: "Primenio u igri nepravilno",
     description4: "Primenio u igri pravilno",
-    description5: "Master"
+    description5: "Master",
   },
   tacticalElements: {
     description0: "Upoznat sa elementom taktike",
@@ -960,7 +960,7 @@ export default {
     pleaseChooseYourTechnique: "Molimo izaberite svoju tehniku",
     tactics: "Taktika",
     levelOfAdoption: "Nivo usvojenosti",
-    dataNotSaved: "Podaci nisu sačuvani, molimo unesite sva polja"
+    dataNotSaved: "Podaci nisu sačuvani, molimo unesite sva polja",
   },
   medicalRecord: {
     enterAbilityToPlaySports:
@@ -1008,7 +1008,7 @@ export default {
     enterBloodTestResults:
       "Molimo vas izaberite da li je krvna slika obavljena",
     institution: "Institucija",
-    doctor: "Doktor"
+    doctor: "Doktor",
   },
   playerInjuries: {
     leftSide: "Leva strana",
@@ -1070,7 +1070,7 @@ export default {
     recoveryTimeForecast: "Prognoza vremena oporavka",
     leftSide: "Leva strana",
     rightSide: "Desna strana",
-    NA: "NA"
+    NA: "NA",
   },
   players: {
     tests: "Testovi",
@@ -1107,7 +1107,7 @@ export default {
       no: "Ne",
       areYouSureDelete: "Jeste li sigurni da želite da izbrišete sledeće?",
       browserForbids: "Pretraživač ne dozvoljava snimanje fajlova...",
-      noData: "Nema podataka"
+      noData: "Nema podataka",
     },
     playerRating: {
       playerRating: "Procena igrača",
@@ -1148,7 +1148,11 @@ export default {
       reprezentacija: "Reprezentacija i LŠ",
       fkCZ: "Prvi tim",
       superliga: "Superliga",
-      prvaLiga: "Prva liga"
+      prvaLiga: "Prva liga",
+      olympicMedalist: "Osvajač medalje na olimpijskim igrama",
+      olympicParticipation: "Plasman na olimpijske igre",
+      nationalRecord: "Državni rekord",
+      identifiedTalent: "Razvojni tim",
     },
     morphologicalCharacteristics: {
       morphologicalCharacteristics: "Morfološke karakteristike",
@@ -1190,20 +1194,24 @@ export default {
       visceralOintment: "Viscelarna mast",
       shankLength: "Dužina potkolenice",
       thighLength: "Dužina natkolenice",
+      forearmLength: "Dužina podlaktice",
+      upperArmLength: "Dužina nadlaktice",
+      handSize: "Veličina šake",
       dominantHand: "Dominantna ruka",
       dominantLeg: "Dominantna noga",
       bounceLeg: "Odskočna noga",
       left: "leva",
       right: "desna",
       newMeasurementSuccessfullyAdded: "Novo merenje je uspešno dodato!",
-      measurementDataDeletedSuccessfully: "Podaci merenja su uspešno izbrisani!"
+      measurementDataDeletedSuccessfully:
+        "Podaci merenja su uspešno izbrisani!",
     },
     motorSkills: {
       thomasTest: {
         painfull: "Bol",
         bad: "Loše",
         good: "Dobar",
-        excelent: "Odličan"
+        excelent: "Odličan",
       },
       motorSkills: "Motoričke sposobnosti",
       power: {
@@ -1265,7 +1273,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Podaci merenja su uspešno promenjeni!",
         measurementDataDeletedSuccessfully:
-          "Podaci merenja su uspešno izbrisani!"
+          "Podaci merenja su uspešno izbrisani!",
       },
       flexibility: {
         flexibility: "Fleksibilnost",
@@ -1309,7 +1317,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Podaci merenja su uspešno promenjeni!",
         measurementDataDeletedSuccessfully:
-          "Podaci merenja su uspešno izbrisani!"
+          "Podaci merenja su uspešno izbrisani!",
       },
       FMS: {
         FMS: "FMS",
@@ -1361,7 +1369,7 @@ export default {
         measurementDataChangedSuccessfully:
           "Podaci merenja su uspešno promenjeni!",
         measurementDataDeletedSuccessfully:
-          "Podaci merenja su uspešno izbrisani!"
+          "Podaci merenja su uspešno izbrisani!",
       },
       riskOfInjury: {
         riskOfInjury: "Opasnost od povreda",
@@ -1409,7 +1417,7 @@ export default {
         nordikTest: "Nordik test",
         scolionetarCervical: "Skoliometar  - cervikalni",
         scolionetarThoracic: "Skoliometar  - torakalni",
-        scolionetarLumbar: "Skoliometar  - lumbalni"
+        scolionetarLumbar: "Skoliometar  - lumbalni",
       },
       posture: {
         posture: "Postura",
@@ -1442,7 +1450,7 @@ export default {
         measurementDataDeletedSuccessfully:
           "Podaci merenja su uspešno izbrisani!",
         mesurement: "merenje",
-        whoDidTheTesting: "Ko je radio testiranje"
+        whoDidTheTesting: "Ko je radio testiranje",
       },
       isokinetics: {
         isokinetics: "Izokinetički dinamometar",
@@ -1475,7 +1483,7 @@ export default {
         measurementDataDeletedSuccessfully:
           "Podaci merenja su uspešno izbrisani!",
         mesurement: "merenje",
-        whoDidTheTesting: "Ko je radio testiranje"
+        whoDidTheTesting: "Ko je radio testiranje",
       },
       speed: {
         speed: "Brzina",
@@ -1514,7 +1522,7 @@ export default {
         m10: "10m",
         mls10: "10m - leteći start",
         m20: "20m",
-        m30: "30m"
+        m30: "30m",
       },
       agility: {
         agility: "Okretnost",
@@ -1553,8 +1561,8 @@ export default {
         tAgilityTestForTheGoalkeeper: "T test agilnosti za golmana",
 
         zigZag: "Cik-cak",
-        zigZagBall: "Cik-cak sa loptom"
-      }
+        zigZagBall: "Cik-cak sa loptom",
+      },
     },
     functionalData: {
       functionalData: "Funkcionalni podaci",
@@ -1593,7 +1601,7 @@ export default {
       anaerobicThresholdAtVO2max: "VO2 na anaerobnom pragu",
       anaerobicRunningSpeedThreshold: "Brzina trčanja na anaerobnom pragu",
       VO2max: "VO2max",
-      runningSpeedAtVO2max: "Brzina trčanja na VO2max"
+      runningSpeedAtVO2max: "Brzina trčanja na VO2max",
     },
     psychologicalProfile: {
       psychologicalProfile: "Psihološki profil",
@@ -1649,7 +1657,7 @@ export default {
         managingYourOwnEmotions: "Upravljanje sopstvenim emocijama",
         socialSkills: "Socijalne veštine",
         usingEmotions: "Korišćenje emocija",
-        optimism: "Optimizam"
+        optimism: "Optimizam",
       },
       assessmentSelfssessment: {
         confidence: "Samopouzdanje",
@@ -1702,8 +1710,8 @@ export default {
         concentrationSelfAssessment: "Koncentracija - samoprocena",
 
         concentrationCoachAssessment: "Koncentracija - procena trenera",
-        selfAssessment: "Samoprocena"
-      }
+        selfAssessment: "Samoprocena",
+      },
     },
     intelligence: {
       intelligence: "Inteligencija",
@@ -1743,7 +1751,7 @@ export default {
       s1: "S1",
       insertValueBetwen0and36: "Unesite vrednost od 0 do 36",
       insertValueBetwen0and30: "Unesite vrednost od 0 do 30",
-      electricalNetwork: "Električna mreža"
+      electricalNetwork: "Električna mreža",
     },
     socialCapital: {
       socialCapital: "Socijalni kapital",
@@ -1784,7 +1792,7 @@ export default {
       respectForOthers: "Poštovanje prema drugima",
       presenceAndAccuracy: "Prisutnost i tačnost",
       workEthic: "Radna etika",
-      tidiness: "Urednost"
+      tidiness: "Urednost",
     },
     finance: {
       finance: "Finansije",
@@ -1829,7 +1837,7 @@ export default {
       nutrition: "Ishrana (€/mesec)", // ishrana
       accommodationCostMonthly: "Troškovi smeštaja (€/mesec)",
       proffesionalContractMonthly: "Profesionalni ugovor (€/mesec)",
-      fullCostMonthly: "Putni troškovi (€/mesec)" //"Full cost (monthly)",
+      fullCostMonthly: "Putni troškovi (€/mesec)", //"Full cost (monthly)",
     },
     guardianAngel: {
       guardianAngel: "Anđeo čuvar",
@@ -1869,13 +1877,13 @@ export default {
       notes: "Beleška",
       trackingFrom: "Praćenje od",
       trackingTo: "Praćenje do",
-      goodPlayer: "Dobar igrač"
-    }
+      goodPlayer: "Dobar igrač",
+    },
   },
   promenaIgraca: {
     izaberiTim: "Izaberite tim",
     izaberiTimIIgraca: "Izaberite tim i igrača",
-    tim: "Tim"
+    tim: "Tim",
   },
   table: {
     rowsPerPage: "Broj redova po strani",
@@ -1890,6 +1898,6 @@ export default {
     search: "Pretraživanje",
     grid: "Mreža",
     list: "Lista",
-    exportToCSV: "Izvoz u CSV"
-  }
+    exportToCSV: "Izvoz u CSV",
+  },
 };

@@ -694,25 +694,7 @@ export default {
     // брисање записа у локау, и позивање функције за брисање записа у бази
     //........................................
     deleteItem(item) {
-      if (
-        item.uloga == "ROLE_IGRAC" ||
-        "ROLE_TRENER" ||
-        "POMOCNI_TRENER" ||
-        "ROLE_KONDICIONI_TRENER" ||
-        "ROLE_TRENER_GOLMANA" ||
-        "ROLE_KOORDINATOR" ||
-        "ROLE_IGRAC" ||
-        "ROLE_SKAUT" ||
-        "ROLE_ANALITICAR" ||
-        "ROLE_LEKAR" ||
-        "ROLE_PSIHOLOG" ||
-        "Physiotherapist" ||
-        "ROLE_KORISNIK" ||
-        "Administrator" ||
-        "ROLE_STRUCNI_STAB" ||
-        "INFO" ||
-        "Direktor"
-      ) {
+      if (item.uloga == "ROLE_IGRAC") {
         this.$q.notify({
           message: this.$t("administration.roles.msgDelNot"),
           color: "red",

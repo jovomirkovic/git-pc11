@@ -15,10 +15,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-            background-color: unset;
-            box-shadow: unset;
-          "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -85,7 +82,7 @@
       </template>
 
       <template v-slot:header-cell-action="props">
-        <q-th style="color: #ffffff00; min-width: 150px;">
+        <q-th style="color: #ffffff00; min-width: 150px">
           {{ props.col.label }}
         </q-th>
       </template>
@@ -154,12 +151,12 @@
     <q-dialog persistent v-model="new_customer">
       <q-card
         style="
-              width: 700px;
-              max-width: 70vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 700px;
+          max-width: 70vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -168,11 +165,11 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           />
 
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.players.players") }}
           </div>
         </q-card-section>
@@ -196,9 +193,9 @@
                         @blur="spustiPlaceholder('Span-IP0', editedItem.ime)"
                         ref="input1"
                         :rules="[
-                          val =>
+                          (val) =>
                             (val !== null && val !== '') ||
-                            $t('administration.players.enterName')
+                            $t('administration.players.enterName'),
                         ]"
                       />
                       <span id="Span-IP0" class="placeholder">{{
@@ -227,9 +224,9 @@
                       @input="popniPlaceholder('Span-SL1')"
                       @blur="spustiPlaceholder('Span-SL1', editedItem.pol)"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '' && val.length > 0) ||
-                          $t('administration.players.enterGender')
+                          $t('administration.players.enterGender'),
                       ]"
                     />
                     <span
@@ -258,9 +255,9 @@
                         "
                         ref="input2"
                         :rules="[
-                          val =>
+                          (val) =>
                             (val !== null && val !== '') ||
-                            $t('administration.players.enterSurname')
+                            $t('administration.players.enterSurname'),
                         ]"
                       />
                       <span id="Span-IP1" class="placeholder">{{
@@ -285,7 +282,7 @@
                       "
                       ref="input4"
                       mask="##/##/####"
-                      :rules="[val => valiDate(val) || 'DD/MM/YYYY']"
+                      :rules="[(val) => valiDate(val) || 'DD/MM/YYYY']"
                     >
                       <template v-slot:append>
                         <q-icon name="event" class="cursor-pointer">
@@ -337,7 +334,7 @@
 
                 <q-item class="formular1">
                   <q-item-section>
-                    <label class="custom-field one" style=" margin-top: 20px;">
+                    <label class="custom-field one" style="margin-top: 20px">
                       <q-input
                         :readonly="readonly"
                         style="margin-bottom: -10px"
@@ -354,11 +351,6 @@
                           )
                         "
                         ref="input5"
-                        :rules="[
-                          val =>
-                            (val !== null && val !== '') ||
-                            $t('administration.players.enterNationality')
-                        ]"
                       />
                       <span id="Span-IP4" class="placeholder">{{
                         $t("administration.players.nationality")
@@ -369,10 +361,10 @@
               </div>
               <div class="desnaStranaSlika">
                 <q-item>
-                  <q-item-section style="text-align:center">
+                  <q-item-section style="text-align: center">
                     <div class="row">
                       <div class="col-3"></div>
-                      <div class="col-3" style="width: 100% !important;">
+                      <div class="col-3" style="width: 100% !important">
                         <!-- <q-uploader
                           :url="editedItem.fotografija"
                           :change="getMenuImage"
@@ -395,12 +387,12 @@
                           :src="editedItem.fotografija"
                           spinner-color="white"
                           style="
-                              height: 200px;
-                              max-width: 150px;
-                              border: ridge;
-                              margin-top: 10px;
-                              margin-bottom: 20px;
-                            "
+                            height: 200px;
+                            max-width: 150px;
+                            border: ridge;
+                            margin-top: 10px;
+                            margin-bottom: 20px;
+                          "
                         />
                       </div>
                       <div class="col-3">
@@ -438,11 +430,6 @@
                         @input="popniPlaceholder('Span-IP5')"
                         @blur="spustiPlaceholder('Span-IP5', editedItem.adresa)"
                         ref="input6"
-                        :rules="[
-                          val =>
-                            (val !== null && val !== '') ||
-                            $t('administration.players.enterAddress')
-                        ]"
                       />
                       <span id="Span-IP5" class="placeholder">{{
                         $t("administration.players.address")
@@ -453,10 +440,7 @@
 
                 <q-item class="formular rasiri">
                   <q-item-section>
-                    <label
-                      class="custom-field one"
-                      style="margin-bottom: 25px;"
-                    >
+                    <label class="custom-field one" style="margin-bottom: 25px">
                       <q-input
                         :readonly="readonly"
                         borderless
@@ -476,7 +460,7 @@
                     </label>
                   </q-item-section>
                 </q-item>
-                <div style="width: 100%;">
+                <div style="width: 100%">
                   <q-item class="formular rasiri">
                     <q-item-section>
                       <label class="custom-field one" style="margin-top: 20px">
@@ -493,9 +477,9 @@
                             spustiPlaceholder('Span-IP7', editedItem.email)
                           "
                           :rules="[
-                            val =>
+                            (val) =>
                               (val !== null && val !== '') ||
-                              $t('administration.players.enterEmail')
+                              $t('administration.players.enterEmail'),
                           ]"
                         />
                         <span id="Span-IP7" class="placeholder">{{
@@ -505,7 +489,7 @@
                     </q-item-section>
                   </q-item>
                 </div>
-                <q-item
+                <!-- <q-item
                   class="formular rasiri"
                   style="padding-top: -10px; height: unset"
                 >
@@ -541,11 +525,11 @@
                       >{{ $t("administration.players.clubConn") }}</span
                     >
                   </q-item-section>
-                </q-item>
+                </q-item> -->
 
                 <q-item
                   class="formular rasiri ponisti"
-                  style="position: relative; top: 5px;"
+                  style="position: relative; top: 5px"
                 >
                   <q-item-section>
                     <label class="custom-field one">
@@ -595,7 +579,7 @@
                   </q-item-section>
                 </q-item>
 
-                <q-item class="formular ponisti" style="width: 50%;">
+                <q-item class="formular ponisti" style="width: 50%">
                   <label class="custom-field one datumInput">
                     <q-input
                       :readonly="readonly"
@@ -636,7 +620,11 @@
                 </q-item>
 
                 <p
-                  style="padding-top: 10px; text-align: center; margin-bottom: 10px;"
+                  style="
+                    padding-top: 10px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                  "
                   class="ponisti"
                 >
                   {{ $t("administration.players.fam") }}
@@ -673,7 +661,7 @@
 
                 <q-item
                   class="formular ponisti"
-                  style="width: 50%; position: relative; top: 5px;"
+                  style="width: 50%; position: relative; top: 5px"
                 >
                   <q-item-section>
                     <label class="custom-field one">
@@ -732,7 +720,7 @@
 
                 <q-item
                   class="formular ponisti"
-                  style="width: 50%; position: relative; top: 5px;"
+                  style="width: 50%; position: relative; top: 5px"
                 >
                   <q-item-section>
                     <label class="custom-field one">
@@ -801,8 +789,8 @@
                             />
                           </q-item-section>
                       </q-item> -->
-                <q-item class="formular ponisti" style="width: 50%;">
-                  <q-item-section style="display: block;">
+                <q-item class="formular ponisti" style="width: 50%">
+                  <q-item-section style="display: block">
                     <q-checkbox
                       :disable="readonly"
                       v-model="editedItem.uspehPorodice"
@@ -832,14 +820,24 @@
               :label="$t('administration.players.cancel')"
               @click="close"
               type="submit"
-              style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+              style="
+                background-color: #f5f8fb;
+                color: #323b62;
+                width: 20%;
+                margin: 10px;
+              "
               v-close-popup
             ></q-btn>
             <q-btn
               :label="$t('administration.players.save')"
               @click="addRow"
               type="submit"
-              style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+              style="
+                background-color: #ff4b00;
+                color: white;
+                width: 20%;
+                margin: 10px;
+              "
             ></q-btn> </q-card-actions
         ></q-card-section>
       </q-card>
@@ -848,12 +846,12 @@
     <q-dialog v-model="dataPreview">
       <q-card
         style="
-              width: 700px;
-              max-width: 70vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 700px;
+          max-width: 70vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -862,11 +860,11 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           />
 
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.players.players") }}
           </div>
         </q-card-section>
@@ -930,7 +928,13 @@
                   <q-select
                     borderless
                     readonly
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.players.gender')"
                     :options="opcijeZaPol"
                     v-model="editedItem.pol"
@@ -973,11 +977,17 @@
                 <q-img
                   :src="editedItem.fotografija"
                   spinner-color="white"
-                  style="height: 170px; max-width: 200px; border: ridge; margin: 7px; margin-top: 4px;"
+                  style="
+                    height: 170px;
+                    max-width: 200px;
+                    border: ridge;
+                    margin: 7px;
+                    margin-top: 4px;
+                  "
                 />
               </div>
 
-              <div style="margin-top: -15px;">
+              <div style="margin-top: -15px">
                 <q-item class="formular rasiri">
                   <q-item-section>
                     <label class="custom-field one">
@@ -1034,7 +1044,13 @@
                     <q-select
                       borderless
                       readonly
-                      style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                      style="
+                        background: #f5f8fb;
+                        color: #323b62;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding-left: 14px !important;
+                      "
                       :label="$t('administration.players.clubConn')"
                       :options="opcijeZaKlub"
                       v-model="editedItem.kakoJeDosaoUKlub"
@@ -1102,10 +1118,7 @@
                   </label>
                 </q-item>
 
-                <p
-                  style="padding-top: 5px; margin-bottom: 5px;"
-                  class="ponisti"
-                >
+                <p style="padding-top: 5px; margin-bottom: 5px" class="ponisti">
                   {{ $t("administration.players.fam") }}
                 </p>
                 <q-item class="formular">
@@ -1113,7 +1126,13 @@
                     <q-select
                       borderless
                       readonly
-                      style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px;  padding-left: 14px !important;"
+                      style="
+                        background: #f5f8fb;
+                        color: #323b62;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding-left: 14px !important;
+                      "
                       :label="$t('administration.players.livingWith')"
                       :options="opcijeSaKimZivi"
                       v-model="editedItem.saKimZivi"
@@ -1160,7 +1179,13 @@
                     <q-select
                       borderless
                       readonly
-                      style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                      style="
+                        background: #f5f8fb;
+                        color: #323b62;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding-left: 14px !important;
+                      "
                       :label="$t('administration.players.parentEdu')"
                       :options="opcijeZaObrazovanjeRoditelja"
                       v-model="editedItem.obrazovanjeRoditelja"
@@ -1173,7 +1198,13 @@
                     <q-select
                       borderless
                       readonly
-                      style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                      style="
+                        background: #f5f8fb;
+                        color: #323b62;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding-left: 14px !important;
+                      "
                       :label="$t('administration.players.parentJob')"
                       :options="opcijeZaroditeljiZaposleni"
                       v-model="editedItem.roditeljiZaposleni"
@@ -1192,7 +1223,13 @@
                     <q-select
                       readonly
                       borderless
-                      style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px;  padding-left: 14px !important;"
+                      style="
+                        background: #f5f8fb;
+                        color: #323b62;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding-left: 14px !important;
+                      "
                       :options="opcijeZaUspeh"
                       v-model="editedItem.uspehPorodice"
                     />
@@ -1229,7 +1266,7 @@ function wrapCsvValue(val, formatFn) {
 
 export default {
   components: {
-    base64
+    base64,
   },
   data() {
     return {
@@ -1240,90 +1277,96 @@ export default {
       listOptions: [
         {
           label: this.$t("administration.players.administrator"),
-          value: "ROLE_ADMIN"
+          value: "ROLE_ADMIN",
         },
         {
           label: this.$t("administration.players.trener"),
-          value: "ROLE_TRENER"
+          value: "ROLE_TRENER",
         },
         {
           label: this.$t("administration.players.pomocniTrener"),
-          value: "ROLE_POMTRENER"
+          value: "ROLE_POMTRENER",
         },
         {
           label: this.$t("administration.players.direktor"),
-          value: "ROLE_MANAGER"
+          value: "ROLE_MANAGER",
         },
-        { label: this.$t("administration.players.igrac"), value: "ROLE_PLAYER" }
+        {
+          label: this.$t("administration.players.igrac"),
+          value: "ROLE_PLAYER",
+        },
       ],
       opcijeZaKlub: [
         {
           label: this.$t("administration.players.preporukaMenadzer"),
-          value: "PREPORUKA_MENADZERA"
+          value: "PREPORUKA_MENADZERA",
         },
         {
           label: this.$t("administration.players.preporukaSkauta"),
-          value: "PREPORUKA_SKAUTA"
+          value: "PREPORUKA_SKAUTA",
         },
         {
           label: this.$t("administration.players.preporukaTrenera"),
-          value: "PREPORUKA_TRENERA"
+          value: "PREPORUKA_TRENERA",
         },
         {
           label: this.$t("administration.players.selektivniTrening"),
-          value: "SELEKTIVNI_TRENING"
+          value: "SELEKTIVNI_TRENING",
         },
         {
           label: this.$t("administration.players.regionalniCentar"),
-          value: "REGIONALNI_CENTAR"
+          value: "REGIONALNI_CENTAR",
         },
         {
           label: this.$t("administration.players.skolaFudbala"),
-          value: "SKOLA_FUDBALA"
+          value: "SKOLA_FUDBALA",
         },
         { label: this.$t("administration.players.kamp"), value: "KAMP" },
         { label: this.$t("administration.players.vip"), value: "VIP" },
-        { label: this.$t("administration.players.ostalo"), value: "OSTALO" }
+        { label: this.$t("administration.players.ostalo"), value: "OSTALO" },
       ],
       opcijeSaKimZivi: [
         {
           label: this.$t("administration.players.obaRoditelja"),
-          value: "OBA_RODITELJA"
+          value: "OBA_RODITELJA",
         },
         { label: this.$t("administration.players.majka"), value: "MAJKA" },
         { label: this.$t("administration.players.otac"), value: "OTAC" },
         {
           label: this.$t("administration.players.nijedno"),
-          value: "SAMOSTALNO"
+          value: "SAMOSTALNO",
         },
         {
           label: this.$t("administration.players.samostalno"),
-          value: "STARATELJ"
-        }
+          value: "STARATELJ",
+        },
       ],
       opcijeZaObrazovanjeRoditelja: [
         { label: this.$t("administration.players.osnovno"), value: "OSNOVNO" },
         { label: this.$t("administration.players.srednje"), value: "SREDNJE" },
         { label: this.$t("administration.players.vise"), value: "VISE" },
         { label: this.$t("administration.players.visoko"), value: "VISOKO" },
-        { label: this.$t("administration.players.doktorat"), value: "DONTORAT" }
+        {
+          label: this.$t("administration.players.doktorat"),
+          value: "DONTORAT",
+        },
       ],
       opcijeZaroditeljiZaposleni: [
         {
           label: this.$t("administration.players.obaRoditelja"),
-          value: "OBA_RODITELJA"
+          value: "OBA_RODITELJA",
         },
         { label: this.$t("administration.players.majka"), value: "MAJKA" },
         { label: this.$t("administration.players.otac"), value: "OTAC" },
-        { label: this.$t("administration.players.nijedno"), value: "NIJEDNO" }
+        { label: this.$t("administration.players.nijedno"), value: "NIJEDNO" },
       ],
       opcijeZaUspeh: [
         { label: this.$t("administration.players.da"), value: "DA" },
-        { label: this.$t("administration.players.ne"), value: "NE" }
+        { label: this.$t("administration.players.ne"), value: "NE" },
       ],
       opcijeZaPol: [
         { label: this.$t("administration.players.male"), value: "M" },
-        { label: this.$t("administration.players.female"), value: "F" }
+        { label: this.$t("administration.players.female"), value: "F" },
       ],
       customer: {},
       new_customer: false,
@@ -1351,7 +1394,7 @@ export default {
         obrazovanjeRoditelja: "",
         roditeljiZaposleni: "",
         uspehPorodice: "NE",
-        active: true
+        active: true,
       },
       defaultItem: {
         id: 0,
@@ -1375,7 +1418,7 @@ export default {
         obrazovanjeRoditelja: "",
         roditeljiZaposleni: "",
         uspehPorodice: "NE",
-        active: true
+        active: true,
       },
       mode: "list",
       columns: [
@@ -1385,21 +1428,21 @@ export default {
           label: this.$t("administration.players.name"),
           align: "left",
           field: "ime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "prezime",
           align: "left",
           label: this.$t("administration.players.surname"),
           field: "prezime",
-          sortable: true
+          sortable: true,
         },
         {
           name: "nadimak",
           align: "left",
           label: this.$t("administration.players.nick"),
           field: "nadimak",
-          sortable: true
+          sortable: true,
         },
         // {
         //   name: "pol",
@@ -1434,14 +1477,14 @@ export default {
           align: "left",
           label: this.$t("administration.players.mobile"),
           field: "mobilni",
-          sortable: true
+          sortable: true,
         },
         {
           name: "email",
           align: "left",
           label: this.$t("administration.players.email"),
           field: "email",
-          sortable: true
+          sortable: true,
         },
         // {
         //   name: "fotografija",
@@ -1463,15 +1506,15 @@ export default {
           label: this.$t("administration.players.birthDate"),
           field: "datumRodjenja",
           sortable: true,
-          format: val => date.formatDate(val, "DD/MM/YYYY")
+          format: (val) => date.formatDate(val, "DD/MM/YYYY"),
         },
         {
           name: "action",
           align: "left",
           label: this.$t("table.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       // data1: [
       //   {
@@ -1547,8 +1590,8 @@ export default {
       // ],
       data: [],
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   mounted() {
@@ -1691,16 +1734,16 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.data = response.data;
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           this.loadingUtakmice = false;
           console.log("Greska: " + e);
@@ -1749,7 +1792,7 @@ export default {
         uspehPorodice: this.editedItem.uspehPorodice,
         vaznostPasosa: vaznostPasosa1,
         userName: this.editedItem.email,
-        password: "test"
+        password: "test",
       };
 
       let data1 = JSON.stringify(dataString);
@@ -1759,20 +1802,20 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.players.msgPositive"),
-            color: "green"
+            color: "green",
           });
           self.close();
         })
-        .catch(function(error) {
+        .catch(function (error) {
           //handle error
           console.log(error);
           console.log(error.response);
@@ -1783,7 +1826,7 @@ export default {
           )
             self.$q.notify({
               message: self.$t("administration.players.emailTaken"),
-              color: "red"
+              color: "red",
             });
         });
     },
@@ -1828,7 +1871,7 @@ export default {
         saKimZivi: this.editedItem.saKimZivi,
         userName: this.editedItem.userName,
         uspehPorodice: this.editedItem.uspehPorodice,
-        vaznostPasosa: vaznostPasosa1
+        vaznostPasosa: vaznostPasosa1,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -1838,19 +1881,19 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.players.msgChange"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1868,19 +1911,19 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.players.msgDel"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1894,7 +1937,7 @@ export default {
       let linkStr = this.$apiPutanja + "/igraci/update-to-korisnik";
       var self = this;
       var dataString = {
-        id: item.id
+        id: item.id,
       };
       let data1 = JSON.stringify(dataString);
       debugger;
@@ -1902,19 +1945,19 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.players.msgPositmsgPositivePlyve"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1958,25 +2001,14 @@ export default {
         this.editedItem.datumRodjenja == ""
       )
         sveOK = false;
-      if (
-        this.editedItem.drzavljanstvo == null ||
-        this.editedItem.drzavljanstvo == ""
-      )
-        sveOK = false;
-      if (this.editedItem.adresa == null || this.editedItem.adresa == "")
-        sveOK = false;
-      if (
-        this.editedItem.kakoJeDosaoUKlub == null ||
-        this.editedItem.kakoJeDosaoUKlub == ""
-      )
-        sveOK = false;
+
       if (this.editedItem.email == null || this.editedItem.email == "")
         sveOK = false;
 
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.user.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -2029,7 +2061,7 @@ export default {
         customConfirmBtnText: this.$t("administration.players.txtYes"),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       var self = this;
@@ -2074,9 +2106,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -2089,8 +2121,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -2110,7 +2142,7 @@ export default {
         onConfirm: onConfirmWrapper,
         type: "warning",
         showXclose: true,
-        color: "#ff4b00"
+        color: "#ff4b00",
       };
       this.$Simplert.open(obj);
       var self = this;
@@ -2130,11 +2162,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -2153,11 +2185,11 @@ export default {
         this.$q.notify({
           message: this.$t("administration.players.msgPrtSc"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

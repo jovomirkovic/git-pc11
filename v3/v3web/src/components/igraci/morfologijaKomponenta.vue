@@ -27,10 +27,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-            background-color: unset;
-            box-shadow: unset;
-          "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -155,12 +152,12 @@
     <q-dialog persistent v-model="new_customer">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -169,10 +166,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("players.morphologicalCharacteristics.measurements") }}
           </div>
         </q-card-section>
@@ -208,7 +205,7 @@
                     @blur="spustiPlaceholder('Span-IP0', editedItem.datumVreme)"
                     ref="input0"
                     mask="##/##/####"
-                    :rules="[val => valiDate(val) || 'DD/MM/YYYY']"
+                    :rules="[(val) => valiDate(val) || 'DD/MM/YYYY']"
                   >
                     <template v-slot:append>
                       <q-icon name="event" class="cursor-pointer">
@@ -232,7 +229,7 @@
                   }}</span>
                 </label>
               </q-item>
-              <q-item style="margin-top: 20px;">
+              <q-item style="margin-top: 20px">
                 <q-item-section>
                   <label class="custom-field one">
                     <q-input
@@ -440,6 +437,34 @@
                       borderless
                       dense
                       placeholder=" "
+                      v-model="editedItem.masaMisicaProcenat"
+                      type="number"
+                      @focus="popniPlaceholder('Span-IP81')"
+                      @input="popniPlaceholder('Span-IP81')"
+                      @blur="
+                        spustiPlaceholder(
+                          'Span-IP81',
+                          editedItem.masaMisicaProcenat
+                        )
+                      "
+                    />
+                    <span id="Span-IP81" class="placeholder"
+                      >{{
+                        $t("players.morphologicalCharacteristics.muscleMassKg")
+                      }}
+                      [%]</span
+                    >
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <q-input
+                      :readonly="readonly"
+                      borderless
+                      dense
+                      placeholder=" "
                       v-model="editedItem.procenatTelesneMasti"
                       type="number"
                       @focus="popniPlaceholder('Span-IP9')"
@@ -495,7 +520,7 @@
               <q-item>
                 <q-item-section>
                   <label class="custom-field one">
-                    <div style="margin: 0px 10px;padding-bottom: 15px;">
+                    <div style="margin: 0px 10px; padding-bottom: 15px">
                       {{
                         $t(
                           "players.morphologicalCharacteristics.visceralOintment"
@@ -509,27 +534,8 @@
                         label-always
                         markers
                         :marker-labels="[
-                          0,
-                          1,
-                          2,
-                          3,
-                          4,
-                          5,
-                          6,
-                          7,
-                          8,
-                          9,
-                          10,
-                          11,
-                          12,
-                          13,
-                          14,
-                          15,
-                          16,
-                          17,
-                          18,
-                          19,
-                          20
+                          0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+                          16, 17, 18, 19, 20,
                         ]"
                         :min="0"
                         :max="20"
@@ -595,6 +601,90 @@
                   </label>
                 </q-item-section>
               </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <q-input
+                      :readonly="readonly"
+                      borderless
+                      dense
+                      placeholder=" "
+                      v-model="editedItem.duzinaPodlaktice"
+                      type="number"
+                      @focus="popniPlaceholder('Span-IP121')"
+                      @input="popniPlaceholder('Span-IP121')"
+                      @blur="
+                        spustiPlaceholder(
+                          'Span-IP121',
+                          editedItem.duzinaPodlaktice
+                        )
+                      "
+                    />
+                    <span id="Span-IP121" class="placeholder"
+                      >{{
+                        $t("players.morphologicalCharacteristics.forearmLength")
+                      }}
+                      [cm]</span
+                    >
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <q-input
+                      :readonly="readonly"
+                      borderless
+                      dense
+                      placeholder=" "
+                      v-model="editedItem.duzinaNadlaktice"
+                      type="number"
+                      @focus="popniPlaceholder('Span-IP122')"
+                      @input="popniPlaceholder('Span-IP122')"
+                      @blur="
+                        spustiPlaceholder(
+                          'Span-IP122',
+                          editedItem.duzinaNadlaktice
+                        )
+                      "
+                    />
+                    <span id="Span-IP122" class="placeholder"
+                      >{{
+                        $t(
+                          "players.morphologicalCharacteristics.upperArmLength"
+                        )
+                      }}
+                      [cm]</span
+                    >
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <q-input
+                      :readonly="readonly"
+                      borderless
+                      dense
+                      placeholder=" "
+                      v-model="editedItem.velicinaSake"
+                      type="number"
+                      @focus="popniPlaceholder('Span-IP123')"
+                      @input="popniPlaceholder('Span-IP123')"
+                      @blur="
+                        spustiPlaceholder('Span-IP123', editedItem.velicinaSake)
+                      "
+                    />
+                    <span id="Span-IP123" class="placeholder"
+                      >{{
+                        $t("players.morphologicalCharacteristics.handSize")
+                      }}
+                      [cm]</span
+                    >
+                  </label>
+                </q-item-section>
+              </q-item>
+
               <q-item>
                 <q-item-section class="custom-field one">
                   <q-select
@@ -695,14 +785,24 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
         </q-card-actions>
@@ -712,12 +812,12 @@
     <q-dialog v-model="dataPreview">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-          "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -726,10 +826,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("players.morphologicalCharacteristics.measurements") }}
           </div>
         </q-card-section>
@@ -1020,10 +1120,73 @@
               </q-item>
               <q-item>
                 <q-item-section>
+                  <label class="custom-field one">
+                    <input
+                      readonly
+                      placeholder=" "
+                      type="number"
+                      v-model="editedItem.duzinaPodlaktice"
+                      :label="
+                        $t('players.morphologicalCharacteristics.forearmLength')
+                      "
+                    />
+                    <span class="placeholder">{{
+                      $t("players.morphologicalCharacteristics.forearmLength")
+                    }}</span>
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <input
+                      readonly
+                      placeholder=" "
+                      type="number"
+                      v-model="editedItem.duzinaNadlaktice"
+                      :label="
+                        $t(
+                          'players.morphologicalCharacteristics.upperArmLength'
+                        )
+                      "
+                    />
+                    <span class="placeholder">{{
+                      $t("players.morphologicalCharacteristics.upperArmLength")
+                    }}</span>
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <input
+                      readonly
+                      placeholder=" "
+                      type="number"
+                      v-model="editedItem.velicinaSake"
+                      :label="
+                        $t('players.morphologicalCharacteristics.handSize')
+                      "
+                    />
+                    <span class="placeholder">{{
+                      $t("players.morphologicalCharacteristics.handSize")
+                    }}</span>
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
                   <q-select
                     readonly
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; margin-top: 10px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      margin-top: 10px;
+                      padding-left: 14px !important;
+                    "
                     :label="
                       $t('players.morphologicalCharacteristics.dominantHand')
                     "
@@ -1039,7 +1202,14 @@
                   <q-select
                     readonly
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; margin-top: 10px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      margin-top: 10px;
+                      padding-left: 14px !important;
+                    "
                     :label="
                       $t('players.morphologicalCharacteristics.dominantLeg')
                     "
@@ -1055,7 +1225,14 @@
                   <q-select
                     readonly
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; margin-top: 10px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      margin-top: 10px;
+                      padding-left: 14px !important;
+                    "
                     :label="
                       $t('players.morphologicalCharacteristics.bounceLeg')
                     "
@@ -1108,7 +1285,7 @@ export default {
       editedIndex: -1,
       kojaNoga: [
         this.$t("players.morphologicalCharacteristics.left"),
-        this.$t("players.morphologicalCharacteristics.right")
+        this.$t("players.morphologicalCharacteristics.right"),
       ],
       editedItem: {
         bmi: "",
@@ -1117,12 +1294,16 @@ export default {
         dominantnaNoga: "",
         dominantnaRuka: "",
         duzinaNadkolenice: "",
+        duzinaPodlaktice: "",
+        duzinaNadlaktice: "",
+        velicinaSake: "",
         duzinaPotkolenice: "",
         duzinaStopala: "",
         ident: "",
         identKorisnik: "",
         korisnikImePrezime: "",
         masaMisica: "",
+        masaMisicaProcenat: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
         procenatTelesneMasti: "",
@@ -1131,7 +1312,7 @@ export default {
         telesnaMasa: "",
         telesnaVisina: "",
         userIdent: this.igrID,
-        viscelarnaMast: 0
+        viscelarnaMast: 0,
       },
       defaultItem: {
         bmi: "",
@@ -1140,12 +1321,16 @@ export default {
         dominantnaNoga: "",
         dominantnaRuka: "",
         duzinaNadkolenice: "",
+        duzinaPodlaktice: "",
+        duzinaNadlaktice: "",
+        velicinaSake: "",
         duzinaPotkolenice: "",
         duzinaStopala: "",
         ident: "",
         identKorisnik: "",
         korisnikImePrezime: "",
         masaMisica: "",
+        masaMisicaProcenat: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
         procenatTelesneMasti: "",
@@ -1154,7 +1339,7 @@ export default {
         telesnaMasa: "",
         telesnaVisina: "",
         userIdent: this.igrID,
-        viscelarnaMast: 0
+        viscelarnaMast: 0,
       },
       mode: "list",
       columns: [
@@ -1165,45 +1350,45 @@ export default {
           align: "left",
           field: "datumVreme",
           sortable: true,
-          format: val => date.formatDate(val, "DD/MM/YYYY")
+          format: (val) => date.formatDate(val, "DD/MM/YYYY"),
         },
         {
           name: "telesnaMasa",
           align: "left",
           label: this.$t("players.morphologicalCharacteristics.bodyMass"),
           field: "telesnaMasa",
-          sortable: true
+          sortable: true,
         },
         {
           name: "telesnaVisina",
           align: "left",
           label: this.$t("players.morphologicalCharacteristics.bodyHeight"),
           field: "telesnaVisina",
-          sortable: true
+          sortable: true,
         },
         {
           name: "action",
           align: "left",
           label: this.$t("players.morphologicalCharacteristics.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       igr: "",
       igrID: "",
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   watch: {
-    selektovaniIgrac: function(val) {
+    selektovaniIgrac: function (val) {
       this.igr = val.igrac;
       this.igrID = val.igracID;
 
       this.getDataZaID();
-    }
+    },
   },
   mounted() {
     if (this.selektovaniIgrac.igracID != undefined) {
@@ -1291,20 +1476,11 @@ export default {
       this.editedIndex = this.data.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.editedItem.datumVreme =
-        item.datumVreme
-          .slice(0, 10)
-          .replace(/-/g, "/")
-          .split("/")[2] +
+        item.datumVreme.slice(0, 10).replace(/-/g, "/").split("/")[2] +
         "/" +
-        item.datumVreme
-          .slice(0, 10)
-          .replace(/-/g, "/")
-          .split("/")[1] +
+        item.datumVreme.slice(0, 10).replace(/-/g, "/").split("/")[1] +
         "/" +
-        item.datumVreme
-          .slice(0, 10)
-          .replace(/-/g, "/")
-          .split("/")[0];
+        item.datumVreme.slice(0, 10).replace(/-/g, "/").split("/")[0];
       this.readonly = true;
       this.new_customer = true;
       let self = this;
@@ -1323,16 +1499,16 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.data = response.data;
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           this.loadingUtakmice = false;
           console.log("Greska: " + e);
@@ -1357,22 +1533,26 @@ export default {
         dominantnaNoga: this.editedItem.dominantnaNoga,
         dominantnaRuka: this.editedItem.dominantnaRuka,
         duzinaNadkolenice: this.editedItem.duzinaNadkolenice,
+        duzinaPodlaktice: this.editedItem.duzinaPodlaktice,
+        duzinaNadlaktice: this.editedItem.duzinaNadlaktice,
+        velicinaSake: this.editedItem.velicinaSake,
         duzinaPotkolenice: this.editedItem.duzinaPotkolenice,
         duzinaStopala: this.editedItem.duzinaStopala,
         ident: 0,
         identKorisnik: this.editedItem.identKorisnik,
         korisnikImePrezime: this.editedItem.korisnikImePrezime,
         masaMisica: this.editedItem.masaMisica,
+        masaMisicaProcenat: this.editedItem.masaMisicaProcenat,
         odskocnaNoga: this.editedItem.odskocnaNoga,
-        procenaKonacneTelesneVisine: this.editedItem
-          .procenaKonacneTelesneVisine,
+        procenaKonacneTelesneVisine:
+          this.editedItem.procenaKonacneTelesneVisine,
         procenatTelesneMasti: this.editedItem.procenatTelesneMasti,
         procenatVodeUTelu: this.editedItem.procenatVodeUTelu,
         rasponRuku: this.editedItem.rasponRuku,
         telesnaMasa: this.editedItem.telesnaMasa,
         telesnaVisina: this.editedItem.telesnaVisina,
         userIdent: this.igrID,
-        viscelarnaMast: this.editedItem.viscelarnaMast
+        viscelarnaMast: this.editedItem.viscelarnaMast,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -1382,19 +1562,19 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
           self.$q.notify({
             message: "Novo merenje je uspešno dodato!",
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1419,22 +1599,26 @@ export default {
         dominantnaNoga: this.editedItem.dominantnaNoga,
         dominantnaRuka: this.editedItem.dominantnaRuka,
         duzinaNadkolenice: this.editedItem.duzinaNadkolenice,
+        duzinaPodlaktice: this.editedItem.duzinaPodlaktice,
+        duzinaNadlaktice: this.editedItem.duzinaNadlaktice,
+        velicinaSake: this.editedItem.velicinaSake,
         duzinaPotkolenice: this.editedItem.duzinaPotkolenice,
         duzinaStopala: this.editedItem.duzinaStopala,
         ident: this.editedItem.ident,
         identKorisnik: this.editedItem.identKorisnik,
         korisnikImePrezime: this.editedItem.korisnikImePrezime,
         masaMisica: this.editedItem.masaMisica,
+        masaMisicaProcenat: this.editedItem.masaMisicaProcenat,
         odskocnaNoga: this.editedItem.odskocnaNoga,
-        procenaKonacneTelesneVisine: this.editedItem
-          .procenaKonacneTelesneVisine,
+        procenaKonacneTelesneVisine:
+          this.editedItem.procenaKonacneTelesneVisine,
         procenatTelesneMasti: this.editedItem.procenatTelesneMasti,
         procenatVodeUTelu: this.editedItem.procenatVodeUTelu,
         rasponRuku: this.editedItem.rasponRuku,
         telesnaMasa: this.editedItem.telesnaMasa,
         telesnaVisina: this.editedItem.telesnaVisina,
         userIdent: this.igrID,
-        viscelarnaMast: this.editedItem.viscelarnaMast
+        viscelarnaMast: this.editedItem.viscelarnaMast,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -1444,10 +1628,10 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
@@ -1455,10 +1639,10 @@ export default {
             message: self.$t(
               "players.morphologicalCharacteristics.newMeasurementSuccessfullyAdded"
             ),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1474,10 +1658,10 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
@@ -1485,10 +1669,10 @@ export default {
             message: self.$t(
               "players.morphologicalCharacteristics.measurementDataDeletedSuccessfully"
             ),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -1517,11 +1701,18 @@ export default {
         this.editedItem.dohvatnaVisina = 0;
       if (this.editedItem.duzinaNadkolenice == "")
         this.editedItem.duzinaNadkolenice = 0;
+      if (this.editedItem.duzinaPodlaktice == "")
+        this.editedItem.duzinaPodlaktice = 0;
+      if (this.editedItem.duzinaNadlaktice == "")
+        this.editedItem.duzinaNadlaktice = 0;
+      if (this.editedItem.velicinaSake == "") this.editedItem.velicinaSake = 0;
       if (this.editedItem.duzinaPotkolenice == "")
         this.editedItem.duzinaPotkolenice = 0;
       if (this.editedItem.duzinaStopala == "")
         this.editedItem.duzinaStopala = 0;
       if (this.editedItem.masaMisica == "") this.editedItem.masaMisica = 0;
+      if (this.editedItem.masaMisicaProcenat == "")
+        this.editedItem.masaMisicaProcenat = 0;
       if (this.editedItem.procenaKonacneTelesneVisine == "")
         this.editedItem.procenaKonacneTelesneVisine = 0;
       if (this.editedItem.procenatTelesneMasti == "")
@@ -1557,7 +1748,7 @@ export default {
         ),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       function onConfirmWrapper() {
@@ -1628,9 +1819,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -1643,8 +1834,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -1655,11 +1846,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -1680,11 +1871,11 @@ export default {
             "players.morphologicalCharacteristics.browserForbids"
           ),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

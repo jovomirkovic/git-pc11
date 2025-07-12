@@ -183,6 +183,7 @@
                       hide-bottom-space
                       borderless
                       dense
+                      mask="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
                       placeholder=" "
                       v-model="editedItem.userName"
                       @focus="popniPlaceholder('Span-IP1')"

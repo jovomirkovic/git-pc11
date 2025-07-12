@@ -15,10 +15,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-            background-color: unset;
-            box-shadow: unset;
-          "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -83,7 +80,7 @@
       </template>
 
       <template v-slot:header-cell-action="props">
-        <q-th style="color: #ffffff00; width: 110px;">
+        <q-th style="color: #ffffff00; width: 110px">
           {{ props.col.label }}
         </q-th>
       </template>
@@ -138,12 +135,12 @@
     <q-dialog persistent v-model="new_customer">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -152,10 +149,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.teams.team") }}
             <!-- <q-btn round flat dense icon="close" class="float-right" color="grey-8" v-close-popup></q-btn> -->
           </div>
@@ -182,9 +179,9 @@
                       @blur="spustiPlaceholder('Span-IP1', editedItem.imeTima)"
                       ref="input1"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.teams.enterTeamName')
+                          $t('administration.teams.enterTeamName'),
                       ]"
                     />
                     <span id="Span-IP1" class="placeholder">{{
@@ -211,9 +208,9 @@
                     @input="popniPlaceholder('Span-SL1')"
                     @blur="spustiPlaceholder('Span-SL1', editedItem.uzrastTima)"
                     :rules="[
-                      val =>
+                      (val) =>
                         (val !== null && val !== '') ||
-                        $t('administration.teams.pickAgePls')
+                        $t('administration.teams.pickAgePls'),
                     ]"
                   />
                   <span
@@ -244,9 +241,9 @@
                       spustiPlaceholder('Span-SL2', editedItem.rangTakmicenja)
                     "
                     :rules="[
-                      val =>
+                      (val) =>
                         (val !== null && val !== '') ||
-                        $t('administration.teams.pickCompAgePls')
+                        $t('administration.teams.pickCompAgePls'),
                     ]"
                   />
                   <span
@@ -274,9 +271,9 @@
                       @blur="spustiPlaceholder('Span-IP2', editedItem.mesto)"
                       ref="input2"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
-                          $t('administration.teams.pickPlacePls')
+                          $t('administration.teams.pickPlacePls'),
                       ]"
                     />
                     <span id="Span-IP2" class="placeholder">{{
@@ -304,14 +301,24 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
           ></q-btn>
         </q-card-actions>
       </q-card>
@@ -320,12 +327,12 @@
     <q-dialog v-model="dataPreview">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -334,10 +341,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("administration.teams.team") }}
           </div>
         </q-card-section>
@@ -367,7 +374,13 @@
                   <q-select
                     borderless
                     readonly
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important;"
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.teams.pickAge')"
                     :options="listOptions"
                     v-model="editedItem.uzrastTima"
@@ -380,7 +393,13 @@
                   <q-select
                     borderless
                     readonly
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important; "
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('administration.teams.pickCompAge')"
                     :options="listOptions"
                     v-model="editedItem.rangTakmicenja"
@@ -451,7 +470,8 @@ export default {
         { label: "U18", value: "U18" },
         { label: "U19", value: "U19" },
         { label: "U20", value: "U20" },
-        { label: "U21", value: "U21" }
+        { label: "U21", value: "U21" },
+        { label: "Senior", value: "SENIOR" },
       ],
       editedIndex: -1,
       editedItem: {
@@ -461,7 +481,7 @@ export default {
         rangTakmicenja: "",
         mesto: "",
         datumEvidentoranja: "",
-        active: true
+        active: true,
       },
       defaultItem: {
         id: 0,
@@ -470,7 +490,7 @@ export default {
         rangTakmicenja: "",
         mesto: "",
         datumEvidentoranja: "",
-        active: true
+        active: true,
       },
       mode: "list",
       columns: [
@@ -480,7 +500,7 @@ export default {
           label: this.$t("administration.teams.teamName"),
           align: "left",
           field: "imeTima",
-          sortable: true
+          sortable: true,
         },
         {
           name: "uzrastTima",
@@ -489,14 +509,14 @@ export default {
           field: "uzrastTima",
           sortable: true,
           sort: (a, b) =>
-            parseInt(a.replace("U", ""), 10) - parseInt(b.replace("U", ""), 10)
+            parseInt(a.replace("U", ""), 10) - parseInt(b.replace("U", ""), 10),
         },
         {
           name: "mesto",
           align: "left",
           label: this.$t("administration.teams.place"),
           field: "mesto",
-          sortable: true
+          sortable: true,
         },
         {
           name: "datumEvidentiranja",
@@ -504,15 +524,15 @@ export default {
           label: this.$t("administration.teams.dateReg"),
           field: "datumEvidentiranja",
           sortable: true,
-          format: val => date.formatDate(val, "DD/MM/YYYY")
+          format: (val) => date.formatDate(val, "DD/MM/YYYY"),
         },
         {
           name: "action",
           align: "left",
           label: this.$t("table.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       // data: [
@@ -550,8 +570,8 @@ export default {
       //   },
       // ],
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   mounted() {
@@ -602,16 +622,16 @@ export default {
           headers: {
             accept: "*/*",
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.data = response.data;
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           debugger;
           this.loadingUtakmice = false;
@@ -627,16 +647,16 @@ export default {
         headers: {
           accept: "*/*",
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.$token
-        }
+          Authorization: "Bearer " + window.$token,
+        },
       })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.data = response.data;
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           debugger;
           this.loadingUtakmice = false;
@@ -659,7 +679,7 @@ export default {
         imeTima: this.editedItem.imeTima,
         mesto: this.editedItem.mesto,
         uzrastTima: this.editedItem.uzrastTima,
-        rangTakmicenja: this.editedItem.rangTakmicenja
+        rangTakmicenja: this.editedItem.rangTakmicenja,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -669,19 +689,19 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.teams.msgPositive"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -703,7 +723,7 @@ export default {
         imeTima: this.editedItem.imeTima,
         mesto: this.editedItem.mesto,
         uzrastTima: this.editedItem.uzrastTima,
-        rangTakmicenja: this.editedItem.rangTakmicenja
+        rangTakmicenja: this.editedItem.rangTakmicenja,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -713,19 +733,19 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.teams.msgChange"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -743,19 +763,19 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getData();
           self.$q.notify({
             message: self.$t("administration.teams.msgDel"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -787,7 +807,7 @@ export default {
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.teams.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -815,7 +835,7 @@ export default {
         customConfirmBtnText: this.$t("administration.teams.txtYes"),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       var self = this;
@@ -850,9 +870,9 @@ export default {
 
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
           debugger;
           if (val == "" && val == null) this.$refs["input" + i].validate();
           this.$refs["input" + i].validate();
@@ -867,8 +887,8 @@ export default {
       while (!(i > 1 && sviSelektovi == null)) {
         debugger;
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val <= 1) this.$refs["select" + i].validate();
         }
@@ -890,9 +910,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -905,8 +925,8 @@ export default {
       var sviSelektovi = document.getElementById("Span-SL" + i);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -917,11 +937,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -940,11 +960,11 @@ export default {
         this.$q.notify({
           message: this.$t("administration.teams.msgPrtSc"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

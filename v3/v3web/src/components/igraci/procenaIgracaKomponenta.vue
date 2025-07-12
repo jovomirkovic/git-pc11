@@ -27,10 +27,7 @@
       :no-results-label="$t('table.noResultLabel')"
       :loading="loadingUtakmice"
       class="mojaTabela my-sticky-header-table"
-      style="
-            background-color: unset;
-            box-shadow: unset;
-            "
+      style="background-color: unset; box-shadow: unset"
       table-header-style="font-weight: bold; background: #e5edf4; color: #8b94aa; height: 24px !important; text-transform: uppercase;"
       color="blue-10"
     >
@@ -152,12 +149,12 @@
     <q-dialog persistent v-model="new_customer">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-            "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -166,10 +163,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("players.playerRating.data") }}
           </div>
         </q-card-section>
@@ -206,9 +203,9 @@
                     @input="popniPlaceholder('Span-SL1')"
                     @blur="spustiPlaceholder('Span-SL1', editedItem.tipProcena)"
                     :rules="[
-                      val =>
+                      (val) =>
                         (val !== null && val !== '') ||
-                        $t('players.playerRating.sellectAssessment')
+                        $t('players.playerRating.sellectAssessment'),
                     ]"
                   />
                   <span
@@ -241,12 +238,12 @@
                       @blur="spustiPlaceholder('Span-IP1', editedItem.procena)"
                       ref="input1"
                       :rules="[
-                        val =>
+                        (val) =>
                           (val !== null && val !== '') ||
                           $t('players.playerRating.insertAssessment'),
-                        val =>
+                        (val) =>
                           (val > 0 && val < 101) ||
-                          $t('players.playerRating.check100')
+                          $t('players.playerRating.check100'),
                       ]"
                     />
                     <span id="Span-IP1" class="placeholder">{{
@@ -268,14 +265,24 @@
             :label="$t('administration.user.cancel')"
             @click="close"
             type="submit"
-            style="background-color: #f5f8fb; color: #323b62; width: 20%; margin: 10px;"
+            style="
+              background-color: #f5f8fb;
+              color: #323b62;
+              width: 20%;
+              margin: 10px;
+            "
             v-close-popup
           ></q-btn>
           <q-btn
             :label="$t('administration.user.save')"
             @click="addRow"
             type="submit"
-            style="background-color: #ff4b00; color: white; width: 20%; margin: 10px;"
+            style="
+              background-color: #ff4b00;
+              color: white;
+              width: 20%;
+              margin: 10px;
+            "
           ></q-btn>
         </q-card-actions>
       </q-card>
@@ -284,12 +291,12 @@
     <q-dialog v-model="dataPreview">
       <q-card
         style="
-              width: 600px;
-              max-width: 60vw;
-              border-radius: 5px;
-              box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
-              color: #323b62;
-          "
+          width: 600px;
+          max-width: 60vw;
+          border-radius: 5px;
+          box-shadow: 0px 15px 25px 0px rgba(50, 50, 50, 0.7);
+          color: #323b62;
+        "
       >
         <q-card-section>
           <q-btn
@@ -298,10 +305,10 @@
             flat
             round
             dense
-            style="float: right;"
+            style="float: right"
             v-close-popup
           ></q-btn>
-          <div class="text-h6" style="text-align: center;">
+          <div class="text-h6" style="text-align: center">
             {{ $t("players.playerRating.data") }}
           </div>
         </q-card-section>
@@ -314,7 +321,13 @@
                   <q-select
                     readonly
                     borderless
-                    style="background: #f5f8fb; color: #323b62; height: 45px; border-radius: 5px; padding-left: 14px !important; "
+                    style="
+                      background: #f5f8fb;
+                      color: #323b62;
+                      height: 45px;
+                      border-radius: 5px;
+                      padding-left: 14px !important;
+                    "
                     :label="$t('players.playerRating.typeOfAssessment')"
                     :options="listaProcena"
                     v-model="editedItem.tipProcena"
@@ -381,34 +394,50 @@ export default {
       listaProcena: [
         {
           label: this.$t("players.playerRating.reprezentacija"),
-          value: "1"
+          value: "1",
         },
         {
           label: this.$t("players.playerRating.fkCZ"),
-          value: "2"
+          value: "2",
         },
         {
           label: this.$t("players.playerRating.superliga"),
-          value: "3"
+          value: "3",
         },
         {
           label: this.$t("players.playerRating.prvaLiga"),
-          value: "4"
-        }
+          value: "4",
+        },
+        {
+          label: this.$t("players.playerRating.olympicMedalist"),
+          value: "5",
+        },
+        {
+          label: this.$t("players.playerRating.olympicParticipation"),
+          value: "6",
+        },
+        {
+          label: this.$t("players.playerRating.nationalRecord"),
+          value: "7",
+        },
+        {
+          label: this.$t("players.playerRating.identifiedTalent"),
+          value: "8",
+        },
       ],
       editedItem: {
         ident: 0,
         igr: {},
         procena: null,
         strucniStab: {},
-        tipProcena: ""
+        tipProcena: "",
       },
       defaultItem: {
         ident: 0,
         igr: {},
         procena: null,
         strucniStab: {},
-        tipProcena: ""
+        tipProcena: "",
       },
 
       mode: "list",
@@ -426,45 +455,45 @@ export default {
           align: "left",
           label: this.$t("players.playerRating.whoassesed"),
           field: "faca",
-          sortable: true
+          sortable: true,
         },
         {
           name: "tipProcena",
           align: "left",
           label: this.$t("players.playerRating.typeOfAssessment"),
           field: "tipProcena",
-          sortable: true
+          sortable: true,
         },
         {
           name: "procena",
           align: "left",
           label: this.$t("players.playerRating.assessment"),
           field: "procena",
-          sortable: true
+          sortable: true,
         },
         {
           name: "action",
           align: "left",
           label: this.$t("players.playerRating.action"),
           field: "action",
-          sortable: true
-        }
+          sortable: true,
+        },
       ],
       data: [],
       igr: "",
       igrID: "",
       pagination: {
-        rowsPerPage: 10
-      }
+        rowsPerPage: 10,
+      },
     };
   },
   watch: {
-    selektovaniIgrac: function(val) {
+    selektovaniIgrac: function (val) {
       this.igr = val.igrac;
       this.igrID = val.igracID;
 
       this.getDataZaID();
-    }
+    },
   },
   mounted() {
     // this.igrac = window.$igracName;
@@ -523,16 +552,16 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.data = response.data.map(this.dajProcene);
           this.loadingUtakmice = false;
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           this.loadingUtakmice = false;
           console.log("Greska: " + e);
@@ -549,8 +578,8 @@ export default {
         procena: item.procena,
         faca: item.strucniStab.ime + " " + item.strucniStab.prezime,
         tipProcena:
-          this.listaProcena.filter(e => e.value == item.tipProcena)[0]?.label ||
-          "asdf"
+          this.listaProcena.filter((e) => e.value == item.tipProcena)[0]
+            ?.label || "asdf",
       };
       function dajTipove(a) {
         var vrati;
@@ -586,7 +615,7 @@ export default {
         identIgrac: this.igrID,
         identStrucniStab: window.$userID,
         procena: this.editedItem.procena,
-        tipProcena: this.editedItem.tipProcena
+        tipProcena: this.editedItem.tipProcena,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -596,19 +625,19 @@ export default {
         .post(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
           self.$q.notify({
             message: self.$t("players.playerRating.newAdded"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -630,7 +659,7 @@ export default {
         identIgrac: this.igrID,
         identStrucniStab: window.$userID,
         procena: this.editedItem.procena,
-        tipProcena: this.editedItem.tipProcena
+        tipProcena: this.editedItem.tipProcena,
       };
 
       let data1 = JSON.stringify(dataString);
@@ -640,19 +669,19 @@ export default {
         .put(linkStr, data1, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
           self.$q.notify({
             message: self.$t("players.playerRating.dataChanged"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -668,19 +697,19 @@ export default {
         .delete(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(function(response) {
+        .then(function (response) {
           debugger;
           console.log(response);
           self.getDataZaID();
           self.$q.notify({
             message: self.$t("players.playerRating.dataDeleted"),
-            color: "green"
+            color: "green",
           });
         })
-        .catch(function(response) {
+        .catch(function (response) {
           //handle error
           console.log(response);
           //alert(response);
@@ -715,7 +744,7 @@ export default {
       if (sveOK == false) {
         this.$q.notify({
           message: this.$t("administration.user.notSaved"),
-          color: "red"
+          color: "red",
         });
         this.zacrveniPrazne();
       } else {
@@ -767,7 +796,7 @@ export default {
         customConfirmBtnText: self.$t("players.playerRating.yes"),
         onConfirm: onConfirmWrapper,
         type: "warning",
-        showXclose: true
+        showXclose: true,
       };
       this.$Simplert.open(obj);
       function onConfirmWrapper() {
@@ -807,9 +836,9 @@ export default {
       var sviInputi = document.getElementById("Span-IP" + i);
       while (!(i > 1 && sviInputi == null)) {
         if (sviInputi != null) {
-          var val = sviInputi.parentElement.children[0].getElementsByTagName(
-            "input"
-          )[0].value;
+          var val =
+            sviInputi.parentElement.children[0].getElementsByTagName("input")[0]
+              .value;
 
           if (val != "" && val != null) this.popniPlaceholder("Span-IP" + i);
         }
@@ -825,8 +854,8 @@ export default {
       console.log(sviSelektovi);
       while (!(i > 1 && sviSelektovi == null)) {
         if (sviSelektovi != null) {
-          var val = sviSelektovi.parentElement.children[0].innerText.split("\n")
-            .length;
+          var val =
+            sviSelektovi.parentElement.children[0].innerText.split("\n").length;
 
           if (val > 1) this.popniPlaceholder("Span-SL" + i);
         }
@@ -837,11 +866,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -860,11 +889,11 @@ export default {
         this.$q.notify({
           message: self.$t("players.playerRating.browserForbids"),
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
