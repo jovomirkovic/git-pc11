@@ -465,6 +465,34 @@
                       borderless
                       dense
                       placeholder=" "
+                      v-model="editedItem.masaTelesneMasti"
+                      type="number"
+                      @focus="popniPlaceholder('Span-IP91')"
+                      @input="popniPlaceholder('Span-IP91')"
+                      @blur="
+                        spustiPlaceholder(
+                          'Span-IP9',
+                          editedItem.masaTelesneMasti
+                        )
+                      "
+                    />
+                    <span id="Span-IP9" class="placeholder"
+                      >{{
+                        $t("players.morphologicalCharacteristics.kgBodyMass")
+                      }}
+                      [KG]</span
+                    >
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <q-input
+                      :readonly="readonly"
+                      borderless
+                      dense
+                      placeholder=" "
                       v-model="editedItem.procenatTelesneMasti"
                       type="number"
                       @focus="popniPlaceholder('Span-IP9')"
@@ -1017,6 +1045,26 @@
                       type="number"
                       dense
                       outlined
+                      v-model="editedItem.masaTelesneMasti"
+                      :label="
+                        $t('players.morphologicalCharacteristics.kgBodyMass')
+                      "
+                    />
+                    <span class="placeholder">{{
+                      $t("players.morphologicalCharacteristics.kgBodyMass")
+                    }}</span>
+                  </label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <label class="custom-field one">
+                    <input
+                      readonly
+                      placeholder=" "
+                      type="number"
+                      dense
+                      outlined
                       v-model="editedItem.procenatTelesneMasti"
                       :label="
                         $t(
@@ -1306,6 +1354,7 @@ export default {
         masaMisicaProcenat: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
+        masaTelesneMasti: "",
         procenatTelesneMasti: "",
         procenatVodeUTelu: "",
         rasponRuku: "",
@@ -1333,6 +1382,7 @@ export default {
         masaMisicaProcenat: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
+        masaTelesneMasti: "",
         procenatTelesneMasti: "",
         procenatVodeUTelu: "",
         rasponRuku: "",
@@ -1546,6 +1596,7 @@ export default {
         odskocnaNoga: this.editedItem.odskocnaNoga,
         procenaKonacneTelesneVisine:
           this.editedItem.procenaKonacneTelesneVisine,
+        masaTelesneMasti: this.editedItem.masaTelesneMasti,
         procenatTelesneMasti: this.editedItem.procenatTelesneMasti,
         procenatVodeUTelu: this.editedItem.procenatVodeUTelu,
         rasponRuku: this.editedItem.rasponRuku,
@@ -1612,6 +1663,7 @@ export default {
         odskocnaNoga: this.editedItem.odskocnaNoga,
         procenaKonacneTelesneVisine:
           this.editedItem.procenaKonacneTelesneVisine,
+        masaTelesneMasti: this.editedItem.masaTelesneMasti,
         procenatTelesneMasti: this.editedItem.procenatTelesneMasti,
         procenatVodeUTelu: this.editedItem.procenatVodeUTelu,
         rasponRuku: this.editedItem.rasponRuku,
@@ -1715,6 +1767,8 @@ export default {
         this.editedItem.masaMisicaProcenat = 0;
       if (this.editedItem.procenaKonacneTelesneVisine == "")
         this.editedItem.procenaKonacneTelesneVisine = 0;
+      if (this.editedItem.masaTelesneMasti == "")
+        this.editedItem.masaTelesneMasti = 0;
       if (this.editedItem.procenatTelesneMasti == "")
         this.editedItem.procenatTelesneMasti = 0;
       if (this.editedItem.procenatVodeUTelu == "")

@@ -526,35 +526,36 @@
                     >
                   </q-item-section>
                 </q-item> -->
-
-                <q-item
-                  class="formular rasiri ponisti"
-                  style="position: relative; top: 5px"
-                >
-                  <q-item-section>
-                    <label class="custom-field one">
-                      <q-input
-                        :readonly="readonly"
-                        borderless
-                        dense
-                        placeholder=" "
-                        v-model="editedItem.koGaJePreporucio"
-                        @focus="popniPlaceholder('Span-IP8')"
-                        @input="popniPlaceholder('Span-IP8')"
-                        @blur="
-                          spustiPlaceholder(
-                            'Span-IP8',
-                            editedItem.koGaJePreporucio
-                          )
-                        "
-                        ref="input9"
-                      />
-                      <span id="Span-IP8" class="placeholder">{{
-                        $t("administration.players.recommendation")
-                      }}</span>
-                    </label>
-                  </q-item-section>
-                </q-item>
+                <div>
+                  <q-item
+                    class="formular rasiri ponisti"
+                    style="position: relative; top: 5px"
+                  >
+                    <q-item-section>
+                      <label class="custom-field one">
+                        <q-input
+                          :readonly="readonly"
+                          borderless
+                          dense
+                          placeholder=" "
+                          v-model="editedItem.koGaJePreporucio"
+                          @focus="popniPlaceholder('Span-IP8')"
+                          @input="popniPlaceholder('Span-IP8')"
+                          @blur="
+                            spustiPlaceholder(
+                              'Span-IP8',
+                              editedItem.koGaJePreporucio
+                            )
+                          "
+                          ref="input9"
+                        />
+                        <span id="Span-IP8" class="placeholder">{{
+                          $t("administration.players.recommendation")
+                        }}</span>
+                      </label>
+                    </q-item-section>
+                  </q-item>
+                </div>
 
                 <q-item class="formular rasiri">
                   <q-item-section>
