@@ -437,14 +437,14 @@
                       borderless
                       dense
                       placeholder=" "
-                      v-model="editedItem.masaMisicaProcenat"
+                      v-model="editedItem.muscleMassPercentage"
                       type="number"
                       @focus="popniPlaceholder('Span-IP81')"
                       @input="popniPlaceholder('Span-IP81')"
                       @blur="
                         spustiPlaceholder(
                           'Span-IP81',
-                          editedItem.masaMisicaProcenat
+                          editedItem.muscleMassPercentage
                         )
                       "
                     />
@@ -467,16 +467,16 @@
                       placeholder=" "
                       v-model="editedItem.masaTelesneMasti"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP91')"
-                      @input="popniPlaceholder('Span-IP91')"
+                      @focus="popniPlaceholder('Span-IP913')"
+                      @input="popniPlaceholder('Span-IP913')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP9',
+                          'Span-IP913',
                           editedItem.masaTelesneMasti
                         )
                       "
                     />
-                    <span id="Span-IP9" class="placeholder"
+                    <span id="Span-IP913" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.kgBodyMass")
                       }}
@@ -495,16 +495,16 @@
                       placeholder=" "
                       v-model="editedItem.procenatTelesneMasti"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP9')"
-                      @input="popniPlaceholder('Span-IP9')"
+                      @focus="popniPlaceholder('Span-IP942')"
+                      @input="popniPlaceholder('Span-IP942')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP9',
+                          'Span-IP942',
                           editedItem.procenatTelesneMasti
                         )
                       "
                     />
-                    <span id="Span-IP9" class="placeholder"
+                    <span id="Span-IP942" class="placeholder"
                       >{{
                         $t(
                           "players.morphologicalCharacteristics.percentageBodyMass"
@@ -637,14 +637,14 @@
                       borderless
                       dense
                       placeholder=" "
-                      v-model="editedItem.duzinaPodlaktice"
+                      v-model="editedItem.forearmLength"
                       type="number"
                       @focus="popniPlaceholder('Span-IP121')"
                       @input="popniPlaceholder('Span-IP121')"
                       @blur="
                         spustiPlaceholder(
                           'Span-IP121',
-                          editedItem.duzinaPodlaktice
+                          editedItem.forearmLength
                         )
                       "
                     />
@@ -665,14 +665,14 @@
                       borderless
                       dense
                       placeholder=" "
-                      v-model="editedItem.duzinaNadlaktice"
+                      v-model="editedItem.upperArmLength"
                       type="number"
                       @focus="popniPlaceholder('Span-IP122')"
                       @input="popniPlaceholder('Span-IP122')"
                       @blur="
                         spustiPlaceholder(
                           'Span-IP122',
-                          editedItem.duzinaNadlaktice
+                          editedItem.upperArmLength
                         )
                       "
                     />
@@ -695,12 +695,12 @@
                       borderless
                       dense
                       placeholder=" "
-                      v-model="editedItem.velicinaSake"
+                      v-model="editedItem.handSize"
                       type="number"
                       @focus="popniPlaceholder('Span-IP123')"
                       @input="popniPlaceholder('Span-IP123')"
                       @blur="
-                        spustiPlaceholder('Span-IP123', editedItem.velicinaSake)
+                        spustiPlaceholder('Span-IP123', editedItem.handSize)
                       "
                     />
                     <span id="Span-IP123" class="placeholder"
@@ -1173,7 +1173,7 @@
                       readonly
                       placeholder=" "
                       type="number"
-                      v-model="editedItem.duzinaPodlaktice"
+                      v-model="editedItem.forearmLength"
                       :label="
                         $t('players.morphologicalCharacteristics.forearmLength')
                       "
@@ -1191,7 +1191,7 @@
                       readonly
                       placeholder=" "
                       type="number"
-                      v-model="editedItem.duzinaNadlaktice"
+                      v-model="editedItem.upperArmLength"
                       :label="
                         $t(
                           'players.morphologicalCharacteristics.upperArmLength'
@@ -1211,7 +1211,7 @@
                       readonly
                       placeholder=" "
                       type="number"
-                      v-model="editedItem.velicinaSake"
+                      v-model="editedItem.handSize"
                       :label="
                         $t('players.morphologicalCharacteristics.handSize')
                       "
@@ -1342,16 +1342,16 @@ export default {
         dominantnaNoga: "",
         dominantnaRuka: "",
         duzinaNadkolenice: "",
-        duzinaPodlaktice: "",
-        duzinaNadlaktice: "",
-        velicinaSake: "",
+        forearmLength: "",
+        upperArmLength: "",
+        handSize: "",
         duzinaPotkolenice: "",
         duzinaStopala: "",
         ident: "",
         identKorisnik: "",
         korisnikImePrezime: "",
         masaMisica: "",
-        masaMisicaProcenat: "",
+        muscleMassPercentage: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
         masaTelesneMasti: "",
@@ -1370,16 +1370,16 @@ export default {
         dominantnaNoga: "",
         dominantnaRuka: "",
         duzinaNadkolenice: "",
-        duzinaPodlaktice: "",
-        duzinaNadlaktice: "",
-        velicinaSake: "",
+        forearmLength: "",
+        upperArmLength: "",
+        handSize: "",
         duzinaPotkolenice: "",
         duzinaStopala: "",
         ident: "",
         identKorisnik: "",
         korisnikImePrezime: "",
         masaMisica: "",
-        masaMisicaProcenat: "",
+        muscleMassPercentage: "",
         odskocnaNoga: "",
         procenaKonacneTelesneVisine: "",
         masaTelesneMasti: "",
@@ -1583,16 +1583,16 @@ export default {
         dominantnaNoga: this.editedItem.dominantnaNoga,
         dominantnaRuka: this.editedItem.dominantnaRuka,
         duzinaNadkolenice: this.editedItem.duzinaNadkolenice,
-        duzinaPodlaktice: this.editedItem.duzinaPodlaktice,
-        duzinaNadlaktice: this.editedItem.duzinaNadlaktice,
-        velicinaSake: this.editedItem.velicinaSake,
+        forearmLength: this.editedItem.forearmLength,
+        upperArmLength: this.editedItem.upperArmLength,
+        handSize: this.editedItem.handSize,
         duzinaPotkolenice: this.editedItem.duzinaPotkolenice,
         duzinaStopala: this.editedItem.duzinaStopala,
         ident: 0,
         identKorisnik: this.editedItem.identKorisnik,
         korisnikImePrezime: this.editedItem.korisnikImePrezime,
         masaMisica: this.editedItem.masaMisica,
-        masaMisicaProcenat: this.editedItem.masaMisicaProcenat,
+        muscleMassPercentage: this.editedItem.muscleMassPercentage,
         odskocnaNoga: this.editedItem.odskocnaNoga,
         procenaKonacneTelesneVisine:
           this.editedItem.procenaKonacneTelesneVisine,
@@ -1650,16 +1650,16 @@ export default {
         dominantnaNoga: this.editedItem.dominantnaNoga,
         dominantnaRuka: this.editedItem.dominantnaRuka,
         duzinaNadkolenice: this.editedItem.duzinaNadkolenice,
-        duzinaPodlaktice: this.editedItem.duzinaPodlaktice,
-        duzinaNadlaktice: this.editedItem.duzinaNadlaktice,
-        velicinaSake: this.editedItem.velicinaSake,
+        forearmLength: this.editedItem.forearmLength,
+        upperArmLength: this.editedItem.upperArmLength,
+        handSize: this.editedItem.handSize,
         duzinaPotkolenice: this.editedItem.duzinaPotkolenice,
         duzinaStopala: this.editedItem.duzinaStopala,
         ident: this.editedItem.ident,
         identKorisnik: this.editedItem.identKorisnik,
         korisnikImePrezime: this.editedItem.korisnikImePrezime,
         masaMisica: this.editedItem.masaMisica,
-        masaMisicaProcenat: this.editedItem.masaMisicaProcenat,
+        muscleMassPercentage: this.editedItem.muscleMassPercentage,
         odskocnaNoga: this.editedItem.odskocnaNoga,
         procenaKonacneTelesneVisine:
           this.editedItem.procenaKonacneTelesneVisine,
@@ -1753,18 +1753,18 @@ export default {
         this.editedItem.dohvatnaVisina = 0;
       if (this.editedItem.duzinaNadkolenice == "")
         this.editedItem.duzinaNadkolenice = 0;
-      if (this.editedItem.duzinaPodlaktice == "")
-        this.editedItem.duzinaPodlaktice = 0;
-      if (this.editedItem.duzinaNadlaktice == "")
-        this.editedItem.duzinaNadlaktice = 0;
-      if (this.editedItem.velicinaSake == "") this.editedItem.velicinaSake = 0;
+      if (this.editedItem.forearmLength == "")
+        this.editedItem.forearmLength = 0;
+      if (this.editedItem.upperArmLength == "")
+        this.editedItem.upperArmLength = 0;
+      if (this.editedItem.handSize == "") this.editedItem.handSize = 0;
       if (this.editedItem.duzinaPotkolenice == "")
         this.editedItem.duzinaPotkolenice = 0;
       if (this.editedItem.duzinaStopala == "")
         this.editedItem.duzinaStopala = 0;
       if (this.editedItem.masaMisica == "") this.editedItem.masaMisica = 0;
-      if (this.editedItem.masaMisicaProcenat == "")
-        this.editedItem.masaMisicaProcenat = 0;
+      if (this.editedItem.muscleMassPercentage == "")
+        this.editedItem.muscleMassPercentage = 0;
       if (this.editedItem.procenaKonacneTelesneVisine == "")
         this.editedItem.procenaKonacneTelesneVisine = 0;
       if (this.editedItem.masaTelesneMasti == "")
