@@ -83,15 +83,22 @@
             type="number"
             mask="#######"
           />
+
+          <span>Logo</span>
           <q-input
-            rounded
-            outlined
-            class="q-ma-md"
-            v-model="customConfiguration"
-            style="min-width: 350px"
-            label="Token configuration (json)"
-            type="textarea"
+            type="file"
+            accept="image/*"
+            @change="onFileChange"
+            borderless
           />
+          <div v-if="customConfiguration.logo" class="q-mt-md">
+            <img
+              :src="customConfiguration.logo"
+              alt="Logo preview"
+              width="150"
+              height="150"
+            />
+          </div>
           <q-btn
             @click="
               () => {
@@ -133,7 +140,9 @@ export default {
       addEntryDialog: false,
       name: "",
       tokenLifespanInMinutes: 0,
-      customConfiguration: null,
+      customConfiguration: {
+        logo: "",
+      },
     };
   },
   watch: {
@@ -142,11 +151,56 @@ export default {
         this.selectedTenant = null;
         this.name = "";
         this.tokenLifespanInMinutes = 0;
-        this.customConfiguration = null;
+        this.customConfiguration = {
+          logo: "",
+        };
       }
     },
   },
   methods: {
+    onFileChange(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          const targetSize = 150;
+          canvas.width = targetSize;
+          canvas.height = targetSize;
+
+          // Compute aspect ratio to cover
+          const scale = Math.max(
+            targetSize / img.width,
+            targetSize / img.height
+          );
+          const x = (targetSize - img.width * scale) / 2;
+          const y = (targetSize - img.height * scale) / 2;
+
+          // Draw the image covering the canvas
+          ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            x,
+            y,
+            img.width * scale,
+            img.height * scale
+          );
+
+          // Convert to base64
+          this.customConfiguration.logo = canvas.toDataURL("image/png");
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
     getTenants() {
       let self = this;
       fetch("https://redstar-dev.atomdataservices.com/tenants", {
@@ -172,7 +226,9 @@ export default {
             try {
               tmp = JSON.parse(e.customConfiguration);
             } catch (err) {
-              tmp = null; // or '' if you prefer
+              tmp = {
+                logo: "",
+              }; // or '' if you prefer
             }
 
             return {
@@ -214,8 +270,14 @@ export default {
           try {
             tmp = JSON.parse(data.customConfiguration);
           } catch (err) {
-            tmp = null; // or '' if you prefer
+            tmp = {
+              logo: "",
+            }; // or '' if you prefer
           }
+          if (tmp == null)
+            tmp = {
+              logo: "",
+            };
 
           self.customConfiguration = tmp;
           self.addEntryDialog = true;
@@ -400,6 +462,7 @@ export default {
     },
   },
   mounted() {
+    if (!window.$roles.includes("sys_admin")) this.$router.push("/dashboard1");
     this.getTenants();
   },
 };

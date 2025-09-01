@@ -16,16 +16,16 @@
           class="q-mr-sm"
         />
         <!-- <q-avatar> -->
-        <img src="../assets/pro-coach11 assets/foto/web/coklogo.png" />
+        <img :src="window.$tenant?.customConfiguration?.logo || defaultLogo" />
         <!-- </q-avatar> -->
 
         <q-toolbar-title>
           <!-- {{naslov}}  -->
-          <div class="row justify-center" style="text-align: center;">
+          <div class="row justify-center" style="text-align: center">
             <div
               v-if="selektovaniTim != undefined"
               v-show="putanja != 'administracija' && putanja != 'trenazneVezbe'"
-              style=" color: white;"
+              style="color: white"
             >
               {{ $t("matches.team") }}: {{ selektovaniTim.label }} -
               {{ $t("matches.place") }}: {{ selektovaniTim.mesto }} -
@@ -33,14 +33,14 @@
               }}<span
                 v-show="
                   putanja != 'treninzi' &&
-                    putanja != 'utakmice' &&
-                    putanja != 'trenazneVezbe'
+                  putanja != 'utakmice' &&
+                  putanja != 'trenazneVezbe'
                 "
               >
                 - {{ this.igrac }}</span
               >
               <q-btn
-                style="padding: 0px;margin: 0px 10px;color:red"
+                style="padding: 0px; margin: 0px 10px; color: red"
                 flat
                 round
                 icon="people"
@@ -72,7 +72,7 @@
           round
           dense
           flat
-          style="background-color: #456aaa; margin: 0 10px;"
+          style="background-color: #456aaa; margin: 0 10px"
           color="white"
           :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
           @click="$q.fullscreen.toggle()"
@@ -84,7 +84,7 @@
           flat
           round
           dense
-          style="background-color: #456aaa;"
+          style="background-color: #456aaa"
           icon="fas fa-sign-out-alt"
           to="/"
         >
@@ -96,7 +96,7 @@
       class="left-navigation text-white"
       show-if-above
       v-model="left"
-      style="background-color: #323b62 !important; "
+      style="background-color: #323b62 !important"
       side="left"
       :mini="miniState"
       min-width="60"
@@ -107,7 +107,16 @@
       elevated
     >
       <div
-        style="height: calc(100% - 117px);padding:5px; margin: auto; position:absolute; top: 0; bottom: 0; left: 0; right: 0;"
+        style="
+          height: calc(100% - 117px);
+          padding: 5px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        "
       >
         <!-- <q-toolbar style="margin-left: 0px;padding-left: 0px;">
           <q-avatar >
@@ -117,7 +126,7 @@
           <q-toolbar-title>{{korisnik}}</q-toolbar-title>
         </q-toolbar>
         <hr/> -->
-        <q-scroll-area style="height:100%;">
+        <q-scroll-area style="height: 100%">
           <q-list padding>
             <!-- <div v-for="d in menu" :key="d.label">
               <q-item active-class="tab-active" :to="d.to" exact class="q-ma-sm navigation-item" clickable v-ripple>
@@ -413,10 +422,11 @@
 
 <script>
 import promenaIgraca from "../components/promenaIgracaKomponenta";
+import defaultLogo from "../assets/quasar-logo-full.svg";
 
 export default {
   components: {
-    promenaIgraca
+    promenaIgraca,
   },
   data() {
     return {
@@ -437,40 +447,40 @@ export default {
         {
           label: "Igrači",
           to: "/igraci",
-          iconName: "drafts"
+          iconName: "drafts",
         },
         {
           label: "Dashboard",
           to: "/dashboard",
-          iconName: "drafts"
+          iconName: "drafts",
         },
         {
           label: "Administracija",
           to: "/administracija",
-          iconName: "star"
-        }
+          iconName: "star",
+        },
       ],
       lang: JSON.parse(localStorage.getItem("jezik")),
       langOptions: [
         {
           value: "en-us",
           label: "English",
-          flag: "gb"
+          flag: "gb",
         },
         {
           value: "rs",
           label: "Srpski",
-          flag: "rs"
-        }
+          flag: "rs",
+        },
       ],
       contentStyle: {
         backgroundColor: "rgba(0,0,0,0.02)",
-        color: "#555"
+        color: "#555",
       },
 
       contentActiveStyle: {
         backgroundColor: "#eee",
-        color: "black"
+        color: "black",
       },
 
       thumbStyle: {
@@ -478,8 +488,8 @@ export default {
         borderRadius: "5px",
         backgroundColor: "#027be3",
         width: "5px",
-        opacity: 0.75
-      }
+        opacity: 0.75,
+      },
     };
   },
   mounted() {
@@ -507,13 +517,13 @@ export default {
       this.$i18n.locale = lang.value;
       localStorage.setItem("jezik", JSON.stringify(lang));
     },
-    miniState: function() {
+    miniState: function () {
       if (this.miniState && this.comp_model) {
         this.comp = "div";
       } else {
         this.comp = "q-collapsible";
       }
-    }
+    },
   },
   methods: {
     promenaTima() {
@@ -532,7 +542,7 @@ export default {
       this.selektovaniIgrac = {
         igrac: this.igrac,
         igracID: this.igracID,
-        selektovaniTim: this.selektovaniTim
+        selektovaniTim: this.selektovaniTim,
       };
       console.log(this.selektovaniIgrac);
       debugger;
@@ -549,7 +559,7 @@ export default {
       this.selektovaniIgrac = {
         igrac: undefined,
         igracID: undefined,
-        selektovaniTim: this.selektovaniTim
+        selektovaniTim: this.selektovaniTim,
       };
       console.log(this.selektovaniIgrac);
       this.dialog_za_promenu_igraca = false;
@@ -561,8 +571,8 @@ export default {
     },
     izborIgraca() {
       this.dialog_za_promenu_igraca = true;
-    }
-  }
+    },
+  },
 };
 </script>
 

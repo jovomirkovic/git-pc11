@@ -16,19 +16,17 @@
           class="q-mr-sm"
         />
         <!-- <q-avatar> -->
-        <img
-          height="40px"
-          src="../assets/pro-coach11 assets/foto/web/coklogo.png"
-        />
+
+        <img height="40px" :src="tenantLogo" alt="Logo" />
         <!-- </q-avatar> -->
 
         <q-toolbar-title>
           <!-- {{naslov}}  -->
-          <div class="row justify-center" style="text-align: center;">
+          <div class="row justify-center" style="text-align: center">
             <div
               v-if="selektovaniTim != undefined"
               v-show="putanja != 'administracija' && putanja != 'trenazneVezbe'"
-              style=" color: white;"
+              style="color: white"
             >
               {{ $t("matches.team") }}: {{ selektovaniTim.label }} -
               {{ $t("matches.place") }}: {{ selektovaniTim.mesto }} -
@@ -36,14 +34,14 @@
               }}<span
                 v-show="
                   putanja != 'treninzi' &&
-                    putanja != 'utakmice' &&
-                    putanja != 'trenazneVezbe'
+                  putanja != 'utakmice' &&
+                  putanja != 'trenazneVezbe'
                 "
               >
                 - {{ this.igrac }}</span
               >
               <q-btn
-                style="padding: 0px;margin: 0px 10px;color:red"
+                style="padding: 0px; margin: 0px 10px; color: red"
                 flat
                 round
                 icon="people"
@@ -75,7 +73,7 @@
           round
           dense
           flat
-          style="background-color: #456aaa; margin: 0 10px;"
+          style="background-color: #456aaa; margin: 0 10px"
           color="white"
           :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
           @click="$q.fullscreen.toggle()"
@@ -87,7 +85,7 @@
           flat
           round
           dense
-          style="background-color: #456aaa;"
+          style="background-color: #456aaa"
           icon="fas fa-sign-out-alt"
           to="/"
         >
@@ -99,7 +97,7 @@
       class="left-navigation text-white"
       show-if-above
       v-model="left"
-      style="background-color: #323b62 !important; "
+      style="background-color: #323b62 !important"
       side="left"
       :mini="miniState"
       min-width="60"
@@ -110,7 +108,16 @@
       elevated
     >
       <div
-        style="height: calc(100% - 117px);padding:5px; margin: auto; position:absolute; top: 0; bottom: 0; left: 0; right: 0;"
+        style="
+          height: calc(100% - 117px);
+          padding: 5px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        "
       >
         <!-- <q-toolbar style="margin-left: 0px;padding-left: 0px;">
           <q-avatar >
@@ -120,10 +127,10 @@
           <q-toolbar-title>{{korisnik}}</q-toolbar-title>
         </q-toolbar>
         <hr/> -->
-        <q-scroll-area style="height: 100%;">
+        <q-scroll-area style="height: 100%">
           <q-list padding>
             <menuItemComponent
-              v-for="item in filteredMenu.filter(e => e.type != 'component')"
+              v-for="item in filteredMenu.filter((e) => e.type != 'component')"
               :key="item.to"
               :item="item"
               @update-putanja="updatePutanja"
@@ -141,6 +148,7 @@
         :selektovaniIgrac="selektovaniIgrac"
         :menuItems="menuItems"
         :userRoles="userRoles"
+        :tenantLogo="tenantLogo"
         @update-meni="updateMeni"
       />
     </q-page-container>
@@ -160,14 +168,16 @@
 <script>
 import promenaIgraca from "../components/promenaIgracaKomponenta";
 import menuItemComponent from "../components/menuItemComponent";
+import defaultLogo from "../assets/pro-coach11 assets/foto/web/coklogo.png";
 
 export default {
   components: {
     promenaIgraca,
-    menuItemComponent
+    menuItemComponent,
   },
   data() {
     return {
+      tenantLogo: defaultLogo,
       dialog_za_promenu_igraca: false,
       selektovaniTim: "",
       selektovaniIgrac: {},
@@ -185,18 +195,18 @@ export default {
         {
           label: "Igrači",
           to: "/igraci",
-          iconName: "drafts"
+          iconName: "drafts",
         },
         {
           label: "Dashboard",
           to: "/dashboard",
-          iconName: "drafts"
+          iconName: "drafts",
         },
         {
           label: "Administracija",
           to: "/administracija",
-          iconName: "star"
-        }
+          iconName: "star",
+        },
       ],
       userRoles: ["admin"],
       /**
@@ -218,28 +228,33 @@ export default {
           label: "main.administration",
           to: "/administracija",
           icon: "Administration.svg",
-          roles: ["admin", "sys_admin", "role_trener"]
+          roles: ["admin", "sys_admin", "role_trener"],
         },
         {
           key: "trenazneVezbe",
           label: "main.trainingExercises",
           to: "/trenezneVezbe",
           icon: "Training excersizes.svg",
-          roles: ["admin", "sys_admin", "role_trener", "role_kondicioni_trener"]
+          roles: [
+            "admin",
+            "sys_admin",
+            "role_trener",
+            "role_kondicioni_trener",
+          ],
         },
         {
           key: "treninzi",
           label: "main.trainings",
           to: "/treninzi",
           icon: "Trainings.svg",
-          roles: ["coach", "admin", "sys_admin"]
+          roles: ["coach", "admin", "sys_admin"],
         },
         {
           key: "utakmice",
           label: "main.matches",
           to: "/utakmice",
           icon: "Matches.svg",
-          roles: ["coach", "role_trener_golmana"]
+          roles: ["coach", "role_trener_golmana"],
         },
         {
           key: "catapult",
@@ -247,71 +262,71 @@ export default {
           to: "/catapult",
           icon: "Catapult.svg",
           roles: ["admin", "sys_admin"],
-          disabled: true
+          disabled: true,
         },
         {
           key: "tehnickiElementi",
           label: "main.technicalElements",
           to: "/tehnickiElementi",
           icon: "Technical elements.svg",
-          roles: ["coach", "sys_admin"]
+          roles: ["coach", "sys_admin"],
         },
         {
           key: "taktickiElementi",
           label: "main.tacticalElements",
           to: "/taktickiElementi",
           icon: "Tactical elements.svg",
-          roles: ["coach", "sys_admin"]
+          roles: ["coach", "sys_admin"],
         },
         {
           key: "igraci",
           label: "main.players",
           to: "/igraci",
           icon: "Players.svg",
-          roles: ["admin", "coach", "sys_admin"]
+          roles: ["admin", "coach", "sys_admin"],
         },
         {
           key: "medicinskiKarton",
           label: "main.medicalRecord",
           to: "/medicinskiKarton",
           icon: "Medical record.svg",
-          roles: ["medic", "sys_admin", "role_lekar"]
+          roles: ["medic", "sys_admin", "role_lekar"],
         },
         {
           key: "povredeIgraca",
           label: "main.playerInjuries",
           to: "/povredeIgraca",
           icon: "Player injuries.svg",
-          roles: ["medic", "coach", "sys_admin", "role_lekar"]
+          roles: ["medic", "coach", "sys_admin", "role_lekar"],
         },
         {
           key: "strucniTim",
           label: "main.coachingStaff",
           to: "/strucniTim",
           icon: "Administration.svg",
-          roles: ["coach", "sys_admin", "role_kondicioni_trener"]
+          roles: ["coach", "sys_admin", "role_kondicioni_trener"],
         },
         {
           key: "test",
           label: "main.test",
           to: "/test",
           icon: "Administration.svg",
-          roles: ["admin", "sys_admin"]
+          roles: ["admin", "sys_admin"],
         },
         {
           key: "access",
           label: "main.access",
           to: "/access",
           icon: "Administration.svg",
-          roles: ["sys_Admin", "sys_admin"]
+          roles: ["sys_Admin", "sys_admin"],
         },
         {
           key: "Tenanti",
           label: "tenanti",
           to: "/tenanti",
           icon: "Administration.svg",
-          roles: ["sys_admin", "pomocni_trener"]
-        }
+          roles: ["sys_admin", "pomocni_trener"],
+        },
       ],
       menuItems: [],
       lang: JSON.parse(localStorage.getItem("jezik")),
@@ -319,22 +334,22 @@ export default {
         {
           value: "en-us",
           label: "English",
-          flag: "gb"
+          flag: "gb",
         },
         {
           value: "rs",
           label: "Srpski",
-          flag: "rs"
-        }
+          flag: "rs",
+        },
       ],
       contentStyle: {
         backgroundColor: "rgba(0,0,0,0.02)",
-        color: "#555"
+        color: "#555",
       },
 
       contentActiveStyle: {
         backgroundColor: "#eee",
-        color: "black"
+        color: "black",
       },
 
       thumbStyle: {
@@ -342,12 +357,14 @@ export default {
         borderRadius: "5px",
         backgroundColor: "#027be3",
         width: "5px",
-        opacity: 0.75
-      }
+        opacity: 0.75,
+      },
     };
   },
+
   mounted() {
     debugger;
+    this.getTenant(window.$tenant);
     //this.igrac = window.$igracName;
     //this.getRoles()
     this.userRoles = window.$roles; // ['admin'] //window.$roles;
@@ -381,21 +398,21 @@ export default {
     filteredMenu() {
       // Step 1: Filter menuItems based on user roles
       const visibleItems = this.menuItems.filter(
-        item =>
+        (item) =>
           item.roles.length !== 0 &&
-          item.roles.some(role => this.userRoles.includes(role))
+          item.roles.some((role) => this.userRoles.includes(role))
       );
 
       // Step 2: Build a map of items by id for quick access
       const itemMap = new Map();
-      visibleItems.forEach(item => {
+      visibleItems.forEach((item) => {
         item.children = [];
         itemMap.set(item.id, item);
       });
 
       // Step 3: Group items with parentId under their parent
       const topLevelItems = [];
-      visibleItems.forEach(item => {
+      visibleItems.forEach((item) => {
         if (item.parentId && itemMap.has(item.parentId)) {
           itemMap.get(item.parentId).children.push(item);
         } else if (!item.parentId) {
@@ -405,22 +422,58 @@ export default {
 
       console.log("topLevelItems", topLevelItems);
       return topLevelItems;
-    }
+    },
   },
   watch: {
     lang(lang) {
       this.$i18n.locale = lang.value;
       localStorage.setItem("jezik", JSON.stringify(lang));
     },
-    miniState: function() {
+    miniState: function () {
       if (this.miniState && this.comp_model) {
         this.comp = "div";
       } else {
         this.comp = "q-collapsible";
       }
-    }
+    },
   },
   methods: {
+    getTenant(tenant) {
+      let self = this;
+      fetch("https://redstar-dev.atomdataservices.com/tenants/" + tenant, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + window.$token,
+        },
+      })
+        .then((response) => response.json())
+        // .then(response => {
+        //   debugger
+        //   self.data = response.data;
+        //   console.log('Успешно tenants data:', self.data);
+        //     })
+
+        .then((data) => {
+          debugger;
+
+          console.log(data);
+
+          let tmp;
+          try {
+            tmp = JSON.parse(data.customConfiguration);
+          } catch (err) {
+            tmp = {}; // or '' if you prefer
+          }
+          if (tmp == null) tmp = {};
+
+          self.tenantLogo = tmp.logo || defaultLogo;
+        })
+        .catch((error) => {
+          //console.error('Greska u logovanju:', error);
+          self.$q.notify({ message: self.$t("login.checkData"), color: "red" });
+        });
+    },
     updatePutanja(to) {
       console.log("putanja", to);
       this.putanja = to;
@@ -435,12 +488,12 @@ export default {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         }
       )
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           console.log("Успешно getMeni:", data.keyValue);
           debugger;
           if (Object.keys(data.keyValue).length === 0) this.menuItems = [];
@@ -462,8 +515,8 @@ export default {
                 label: "main.access",
                 to: "/access",
                 icon: "Administration.svg",
-                roles: ["sys_Admin", "sys_admin"]
-              }
+                roles: ["sys_Admin", "sys_admin"],
+              },
             ];
             console.log("MenuLayoutDynamics getmeni: ", this.menuItems);
             //alert(JSON.stringify(this.menuItems));
@@ -472,7 +525,7 @@ export default {
             //alert(this.userRoles.includes("sys_admin"));
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Грешка meni:", error);
         });
     },
@@ -493,7 +546,7 @@ export default {
       this.selektovaniIgrac = {
         igrac: this.igrac,
         igracID: this.igracID,
-        selektovaniTim: this.selektovaniTim
+        selektovaniTim: this.selektovaniTim,
       };
       console.log(this.selektovaniIgrac);
       debugger;
@@ -510,7 +563,7 @@ export default {
       this.selektovaniIgrac = {
         igrac: undefined,
         igracID: undefined,
-        selektovaniTim: this.selektovaniTim
+        selektovaniTim: this.selektovaniTim,
       };
       console.log(this.selektovaniIgrac);
       this.dialog_za_promenu_igraca = false;
@@ -522,8 +575,8 @@ export default {
     },
     izborIgraca() {
       this.dialog_za_promenu_igraca = true;
-    }
-  }
+    },
+  },
 };
 </script>
 

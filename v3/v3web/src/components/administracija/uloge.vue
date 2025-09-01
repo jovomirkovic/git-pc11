@@ -665,6 +665,15 @@ export default {
 
       if (this.editedItem.uloga == null || this.editedItem.uloga == "")
         sveOK = false;
+      else if (this.editedItem.uloga.toLowerCase().includes("sys_admin")) {
+        this.close();
+        this.$q.notify({
+          message:
+            "Something went wrong, please contact your admin for support",
+          color: "red",
+        });
+        return;
+      }
       if (
         this.editedItem.naziv_uloge == null ||
         this.editedItem.naziv_uloge == ""

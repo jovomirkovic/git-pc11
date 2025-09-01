@@ -7,24 +7,24 @@
           class="login-form"
           v-bind:class="$q.platform.is.mobile ? 'mobilniStajl' : 'webStajl'"
         >
-          <div style="width: 100%;">
+          <div style="width: 100%">
             <q-img
-              style="width: 80%; margin: auto; margin-bottom: 50px;"
+              style="width: 80%; margin: auto; margin-bottom: 50px"
               src="../assets/pro-coach11 assets/foto/web/coklogo.png"
             ></q-img>
           </div>
           <div>
             <span v-if="listOfTenants.length == 0">
-              <label class="custom-field one" style="margin-top: 15px;">
+              <label class="custom-field one" style="margin-top: 15px">
                 <input
                   type="text"
                   placeholder=" "
                   v-model="username"
                   :label="$t('login.username')"
-                  style=" background: #3b5d99; color: white;"
+                  style="background: #3b5d99; color: white"
                   :rules="[
-                    val =>
-                      (val !== null && val !== '') || $t('login.enterUserName')
+                    (val) =>
+                      (val !== null && val !== '') || $t('login.enterUserName'),
                   ]"
                 />
                 <span class="placeholder">{{ $t("login.username") }}</span>
@@ -36,10 +36,10 @@
                   placeholder=" "
                   v-model="password"
                   :label="$t('login.password')"
-                  style=" background: #3b5d99; color: white;margin-top: 15px;"
+                  style="background: #3b5d99; color: white; margin-top: 15px"
                   :rules="[
-                    val =>
-                      (val !== null && val !== '') || $t('login.enterPassword')
+                    (val) =>
+                      (val !== null && val !== '') || $t('login.enterPassword'),
                   ]"
                   @keydown.enter.prevent="login"
                 />
@@ -54,7 +54,13 @@
               :options="listOfTenants"
               :label="$t('login.selectTenant')"
               color="white"
-              style=" background: #3b5d99; color: white; padding-left: 10px;margin-top: 15px; border-radius: 5px;"
+              style="
+                background: #3b5d99;
+                color: white;
+                padding-left: 10px;
+                margin-top: 15px;
+                border-radius: 5px;
+              "
               @keydown.enter.prevent="loginAsTenant"
             />
             <div>
@@ -91,7 +97,7 @@ export default {
       username: "test", //"milivoje",
       password: "super-ads-admin", //"radivoje"
       listOfTenants: [],
-      selectedTenant: null
+      selectedTenant: null,
     };
   },
 
@@ -109,19 +115,19 @@ export default {
           method: "POST",
           headers: {
             accept: "*/*",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            password: this.password
-          })
+            password: this.password,
+          }),
         }
       )
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           debugger;
-          this.listOfTenants = data.map(e => e.name);
+          this.listOfTenants = data.map((e) => e.name);
         })
-        .catch(error => {
+        .catch((error) => {
           //console.error('Greska u logovanju:', error);
           this.$q.notify({ message: this.$t("login.checkData"), color: "red" });
         });
@@ -141,14 +147,14 @@ export default {
         .post("https://redstar-dev.atomdataservices.com/api/auth/token", {
           username: this.username,
           password: this.password,
-          tenantId: this.selectedTenant // "okcg" //ovo je zakucano - za svaki tentant je drugacije, ali se ovde menja
+          tenantId: this.selectedTenant, // "okcg" //ovo je zakucano - za svaki tentant je drugacije, ali se ovde menja
         })
-        .then(response => {
+        .then((response) => {
           this.$q.loading.hide();
           window.$token = response.data.token;
           this.$router.push({ name: "dashboard1" });
         })
-        .catch(error => {
+        .catch((error) => {
           this.$q.loading.hide();
           console.error("Грешка:", error);
         });
@@ -161,23 +167,23 @@ export default {
         method: "POST",
         headers: {
           accept: "*/*",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           username: this.username, // "milivoje",
           password: this.password, //"",
-          tenantId: this.selectedTenant //ovo je zakucano - za svaki tentant je drugacije
-        })
+          tenantId: this.selectedTenant, //ovo je zakucano - za svaki tentant je drugacije
+        }),
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           debugger;
           window.$token = data.token;
           this.$token = data.token;
           console.log("Успешно:", window.$token);
           this.user();
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Грешка:", error);
         });
     },
@@ -190,20 +196,20 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + window.$token
-        }
+          Authorization: "Bearer " + window.$token,
+        },
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           console.log("Успешно user:", data);
           if (data.roles == undefined) {
             self.$q.notify({
               message: data.message,
-              color: "negative"
+              color: "negative",
             });
             return;
           }
-          window.$roles = data.roles.map(role => role.toLowerCase());
+          window.$roles = data.roles.map((role) => role.toLowerCase());
           window.$userName = data.username;
           window.$password = this.password;
           window.$userID = data.id;
@@ -211,22 +217,22 @@ export default {
           this.$router.push({ name: "dashboard1" });
           self.$q.notify({
             message: "Welcome " + data.firstName + " " + data.lastName,
-            color: "positive"
+            color: "positive",
           });
 
           //this.meni();
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Грешка:", error);
 
           self.$q.notify({
             message: error.message,
-            color: "negative"
+            color: "negative",
           });
         });
-    }
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 

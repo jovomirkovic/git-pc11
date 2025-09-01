@@ -905,6 +905,12 @@ export default {
       try {
         let tmpMenu = JSON.parse(this.menuItemsJSONString);
 
+        tmpMenu.forEach((entry, index) => {
+          tmpMenu[index].roles = entry.roles.filter(
+            (e) => !e.toLowerCase().includes("sys_admin")
+          );
+        });
+
         this.entries = tmpMenu;
 
         this.$q.notify({
@@ -923,6 +929,11 @@ export default {
       }
     },
     exportJSON() {
+      this.entries.forEach((entry, index) => {
+        this.entries[index].roles = entry.roles.filter(
+          (e) => !e.toLowerCase().includes("sys_admin")
+        );
+      });
       const jsonString = JSON.stringify(this.entries, null, 2);
 
       // This format ensures filenames remain chronologically sortable by name
@@ -1078,9 +1089,11 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-          this.roleOptions = data.map((item) => {
-            return { label: item.uloga, value: item.uloga.toLowerCase() };
-          });
+          this.roleOptions = data
+            .map((item) => {
+              return { label: item.uloga, value: item.uloga.toLowerCase() };
+            })
+            .filter((e) => e.value != "sys_admin");
           console.log("Успешно role:", this.roleOptions);
           //this.roleOptions = ['pomocni_trener', 'role_trener', 'role_trener_golmana', 'role_kondicioni_trener', 'physiotherapist', 'storage-operator', 'role_psiholog', 'role_koordinator', 'role_lekar', 'administrator', 'user', 'role_igrac', 'admin', 'info', 'sys_admin', 'direktor', 'role_analiticar', 'role_skaut']
         })
@@ -1111,7 +1124,41 @@ export default {
     },
     saveRoles() {
       console.log("Saving roles...");
-      //console.log("Final entries:", JSON.stringify(this.entries, null, 2));
+
+      // Deep clone entries so we don't mutate original directly
+      let clonedEntries = JSON.parse(JSON.stringify(this.entries));
+
+      // Recursive helper to update roles up the parent chain
+      const propagateRolesUp = (entry, allEntries) => {
+        if (entry.parentId) {
+          const parent = allEntries.find((e) => e.id === entry.parentId);
+          if (parent) {
+            // Merge roles into parent
+            parent.roles = Array.from(
+              new Set([...(parent.roles || []), ...(entry.roles || [])])
+            );
+
+            // Recursively continue up the chain
+            propagateRolesUp(parent, allEntries);
+          }
+        }
+      };
+
+      // Remove sys_admin roles (case-insensitive)
+      const cleanRoles = (roles) =>
+        (roles || []).filter((r) => r.toLowerCase() !== "sys_admin");
+
+      // Process all entries
+      clonedEntries.forEach((entry) => {
+        entry.roles = cleanRoles(entry.roles);
+        propagateRolesUp(entry, clonedEntries);
+      });
+
+      // Remove the "tenanti" page based on id, type, and key
+      clonedEntries = clonedEntries.filter(
+        (e) => !(e.id === "tenanti" && e.type === "page" && e.key === "tenanti")
+      );
+
       fetch("https://redstar-dev.atomdataservices.com/ui-access-user-kc", {
         method: "PUT",
         headers: {
@@ -1121,13 +1168,13 @@ export default {
         },
         body: JSON.stringify({
           tenantName: window.$tenant,
-          keyValue: this.entries,
+          keyValue: clonedEntries,
         }),
       })
         .then((response) => response.json())
         .then((data) => {
           this.meni();
-          this.$emit("update-meni", this.entries);
+          this.$emit("update-meni", clonedEntries);
           this.$q.notify({
             message: "Saved",
             color: "green",

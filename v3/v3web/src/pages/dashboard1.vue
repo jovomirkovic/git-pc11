@@ -2,11 +2,11 @@
   <q-page class="flex flex-center">
     <div class="column justify-center items-center q-pa-md">
       <q-img
-        style="width: 150px; margin-bottom: 70px;"
-        src="../assets/pro-coach11 assets/foto/web/coklogo.png"
+        style="width: 150px; margin-bottom: 70px"
+        :src="tenantLogo"
       ></q-img>
 
-      <q-card style="width: 80%; box-shadow: 0 14px 18px rgba(0, 0, 0, 0.5);">
+      <q-card style="width: 80%; box-shadow: 0 14px 18px rgba(0, 0, 0, 0.5)">
         <q-card-section class="bg-blue-8 text-white">
           <div class="row">
             <div class="col-10">
@@ -41,6 +41,7 @@ function wrapCsvValue(val, formatFn) {
 }
 
 export default {
+  props: ["tenantLogo"],
   data() {
     return {
       tenant: window.$tenant,
@@ -54,16 +55,16 @@ export default {
       listaIgraca1: [
         { label: "Dule Savić", value: 1 },
         { label: "Vladimir Petrović", value: 2 },
-        { label: "Dejan Savićevič", value: 3 }
+        { label: "Dejan Savićevič", value: 3 },
       ],
       barChartOption: {
         grid: {
           bottom: "20%",
           left: "15%",
-          top: "3%"
+          top: "3%",
         },
         legend: {
-          bottom: 0
+          bottom: 0,
         },
         tooltip: {},
         dataset: {
@@ -73,11 +74,11 @@ export default {
             { time_period: "2", svi: 15, ekipa: 16 },
             { time_period: "3", svi: 45, ekipa: 48 },
             { time_period: "4", svi: 17, ekipa: 19 },
-            { time_period: "5", svi: 3, ekipa: 9 }
-          ]
+            { time_period: "5", svi: 3, ekipa: 9 },
+          ],
         },
         xAxis: {
-          type: "category"
+          type: "category",
           // axisLabel: {
           //     rotate: 45
           // }
@@ -92,17 +93,17 @@ export default {
         },
         series: [
           { type: "bar", name: "svi" },
-          { type: "bar", name: "Tim" }
-        ]
+          { type: "bar", name: "Tim" },
+        ],
       },
       lineChartOption: {
         grid: {
           bottom: "20%",
           left: "15%",
-          top: "3%"
+          top: "3%",
         },
         legend: {
-          bottom: 0
+          bottom: 0,
         },
         tooltip: {
           // formatter:
@@ -116,35 +117,35 @@ export default {
           source: [
             { product_name: "Product A", share: 20, growth: 25 },
             { product_name: "Product B", share: 22, growth: 18 },
-            { product_name: "Product C", share: 40, growth: 45 }
-          ]
+            { product_name: "Product C", share: 40, growth: 45 },
+          ],
         },
         xAxis: {
-          type: "category"
+          type: "category",
           // axisLabel: {
           //     rotate: 45
           // }
         },
         yAxis: {
           axisLabel: {
-            formatter: function(value, index) {
+            formatter: function (value, index) {
               return value + " %";
-            }
-          }
+            },
+          },
         },
         series: [
           { type: "line", name: "Share" },
-          { type: "line", name: "Growth" }
-        ]
+          { type: "line", name: "Growth" },
+        ],
       },
       pieOptions: {
         tooltip: {
-          show: true
+          show: true,
         },
         legend: {
           orient: "horizontal",
           bottom: 0,
-          width: 300
+          width: 300,
         },
         series: [
           {
@@ -156,32 +157,32 @@ export default {
               normal: {
                 show: true,
                 position: "inner",
-                formatter: function(param, index) {
+                formatter: function (param, index) {
                   return param.value + " %";
-                }
+                },
               },
               emphasis: {
                 show: true,
                 textStyle: {
                   fontSize: "20",
-                  fontWeight: "bold"
-                }
-              }
+                  fontWeight: "bold",
+                },
+              },
             },
             labelLine: {
               normal: {
-                show: false
-              }
+                show: false,
+              },
             },
             selectedMode: "single",
             data: [
               { value: 40, name: "Product 1", selected: true },
               { value: 20, name: "Competitor 1", selected: false },
               { value: 15, name: "Competitor 2", selected: false },
-              { value: 25, name: "Competitor 3", selected: false }
-            ]
-          }
-        ]
+              { value: 25, name: "Competitor 3", selected: false },
+            ],
+          },
+        ],
       },
 
       borgOptions: {
@@ -192,8 +193,8 @@ export default {
           show: false,
           feature: {
             restore: { show: true },
-            saveAsImage: { show: true }
-          }
+            saveAsImage: { show: true },
+          },
         },
         series: [
           {
@@ -208,24 +209,24 @@ export default {
               // 坐标轴线
               lineStyle: {
                 // 属性lineStyle控制线条样式
-                width: 10
-              }
+                width: 10,
+              },
             },
             axisTick: {
               // 坐标轴小标记
               length: 1, // 属性length控制线长
               lineStyle: {
                 // 属性lineStyle控制线条样式
-                color: "auto"
-              }
+                color: "auto",
+              },
             },
             splitLine: {
               // 分隔线
               length: 20, // 属性length控制线长
               lineStyle: {
                 // 属性lineStyle（详见lineStyle）控制线条样式
-                color: "auto"
-              }
+                color: "auto",
+              },
             },
             axisLabel: {
               backgroundColor: "auto",
@@ -235,17 +236,17 @@ export default {
               textShadowBlur: 2,
               textShadowOffsetX: 1,
               textShadowOffsetY: 1,
-              textShadowColor: "#222"
+              textShadowColor: "#222",
             },
             title: {
               // 其余属性默认使用全局文本样式，详见TEXTSTYLE
               fontWeight: "bolder",
               fontSize: 20,
-              fontStyle: "italic"
+              fontStyle: "italic",
             },
             detail: {
               // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-              formatter: function(value) {
+              formatter: function (value) {
                 value = (value + "").split(".");
                 value.length < 2 && value.push("00");
                 return (
@@ -272,17 +273,17 @@ export default {
               fontFamily: "Arial",
               width: 60,
               color: "#eee",
-              rich: {}
+              rich: {},
             },
-            data: [{ value: 7, name: "Borg" }]
-          }
-        ]
+            data: [{ value: 7, name: "Borg" }],
+          },
+        ],
       },
       borgOpis: "",
 
       gaugeOptions: {
         tooltip: {
-          formatter: "{a} <br/>{b} : {c}%"
+          formatter: "{a} <br/>{b} : {c}%",
         },
         series: [
           {
@@ -297,25 +298,25 @@ export default {
                 color: [
                   [0.35, "#293c55"],
                   [0.65, "#61a0a8"],
-                  [1, "#c23731"]
+                  [1, "#c23731"],
                 ],
-                width: 20
-              }
-            }
-          }
-        ]
+                width: 20,
+              },
+            },
+          },
+        ],
       },
 
       stackedBarOptions: {
         tooltip: {
           trigger: "axis",
           axisPointer: {
-            type: "shadow"
+            type: "shadow",
           },
-          backgroundColor: "rgba(50,50,50,0.9)"
+          backgroundColor: "rgba(50,50,50,0.9)",
         },
         legend: {
-          bottom: 0
+          bottom: 0,
         },
         color: ["#3395dd", "#ed892d", "#34393b"],
         // legend: {
@@ -328,20 +329,20 @@ export default {
         grid: {
           bottom: "10%",
           left: "15%",
-          top: "9%"
+          top: "9%",
         },
         calculable: true,
         xAxis: {
           type: "value",
           position: "top",
           axisLine: {
-            show: false
+            show: false,
           },
           axisLabel: {
-            formatter: function(value, index) {
+            formatter: function (value, index) {
               return "$" + value;
-            }
-          }
+            },
+          },
         },
         yAxis: [
           {
@@ -350,36 +351,36 @@ export default {
               "Alex Morrow",
               "Joanna Carter",
               "Jimmy Joanna",
-              "Mack Hales"
+              "Mack Hales",
             ],
             axisLabel: {
-              fontSize: 12
-            }
-          }
+              fontSize: 12,
+            },
+          },
         ],
         series: [
           {
             name: "Qualification",
             type: "bar",
             stack: "A",
-            data: [300, 350, 400, 500]
+            data: [300, 350, 400, 500],
           },
           {
             name: "Discovery",
             type: "bar",
             stack: "A",
-            data: [100, 180, 250, 300]
+            data: [100, 180, 250, 300],
           },
           {
             name: "Quote",
             type: "bar",
             stack: "A",
-            data: [100, 120, 200, 220]
-          }
-        ]
+            data: [100, 120, 200, 220],
+          },
+        ],
       },
       filter: "",
-      mode: "list"
+      mode: "list",
     };
   },
   mounted() {
@@ -392,9 +393,9 @@ export default {
     //this.selektovaniIgrac.value = window.$igracID
   },
   methods: {
-    menjajBorg: function() {
+    menjajBorg: function () {
       var self = this;
-      setInterval(function() {
+      setInterval(function () {
         if (self.borgOptions.series[0].data[0].value == 2.97) {
           self.borgOptions.series[0].data[0].value = 7.25;
           self.borgOpis = "Prosečna vrednost";
@@ -414,17 +415,17 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.listaTimova = response.data.map(this.dajTimove);
           //this.selektovaniTim.value = window.$timID
 
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           console.log("Greska: " + e);
         });
@@ -439,15 +440,15 @@ export default {
         .get(linkStr, {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + window.$token
-          }
+            Authorization: "Bearer " + window.$token,
+          },
         })
-        .then(response => {
+        .then((response) => {
           debugger;
           this.listaIgraca = response.data.map(this.dajIgrace);
           debugger;
         })
-        .catch(e => {
+        .catch((e) => {
           //this.errors.push(e);
           console.log("Greska: " + e);
         });
@@ -461,7 +462,7 @@ export default {
       return {
         label: item.ime + " " + item.prezime,
         img: item.fotografija,
-        value: item.id
+        value: item.id,
       };
     },
     promenaTima() {
@@ -489,11 +490,11 @@ export default {
     },
     exportTable() {
       // naive encoding to csv format
-      const content = [this.columns.map(col => wrapCsvValue(col.label))]
+      const content = [this.columns.map((col) => wrapCsvValue(col.label))]
         .concat(
-          this.data.map(row =>
+          this.data.map((row) =>
             this.columns
-              .map(col =>
+              .map((col) =>
                 wrapCsvValue(
                   typeof col.field === "function"
                     ? col.field(row)
@@ -512,11 +513,11 @@ export default {
         this.$q.notify({
           message: "Browser denied file download...",
           color: "negative",
-          icon: "warning"
+          icon: "warning",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

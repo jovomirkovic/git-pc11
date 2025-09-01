@@ -439,16 +439,16 @@
                       placeholder=" "
                       v-model="editedItem.muscleMassPercentage"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP81')"
-                      @input="popniPlaceholder('Span-IP81')"
+                      @focus="popniPlaceholder('Span-NP1')"
+                      @input="popniPlaceholder('Span-NP1')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP81',
+                          'Span-NP1',
                           editedItem.muscleMassPercentage
                         )
                       "
                     />
-                    <span id="Span-IP81" class="placeholder"
+                    <span id="Span-NP1" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.muscleMassKg")
                       }}
@@ -467,16 +467,16 @@
                       placeholder=" "
                       v-model="editedItem.masaTelesneMasti"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP913')"
-                      @input="popniPlaceholder('Span-IP913')"
+                      @focus="popniPlaceholder('Span-NP2')"
+                      @input="popniPlaceholder('Span-NP2')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP913',
+                          'Span-NP2',
                           editedItem.masaTelesneMasti
                         )
                       "
                     />
-                    <span id="Span-IP913" class="placeholder"
+                    <span id="Span-NP2" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.kgBodyMass")
                       }}
@@ -495,16 +495,16 @@
                       placeholder=" "
                       v-model="editedItem.procenatTelesneMasti"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP942')"
-                      @input="popniPlaceholder('Span-IP942')"
+                      @focus="popniPlaceholder('Span-NP3')"
+                      @input="popniPlaceholder('Span-NP3')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP942',
+                          'Span-NP3',
                           editedItem.procenatTelesneMasti
                         )
                       "
                     />
-                    <span id="Span-IP942" class="placeholder"
+                    <span id="Span-NP3" class="placeholder"
                       >{{
                         $t(
                           "players.morphologicalCharacteristics.percentageBodyMass"
@@ -525,16 +525,16 @@
                       placeholder=" "
                       v-model="editedItem.procenatVodeUTelu"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP10')"
-                      @input="popniPlaceholder('Span-IP10')"
+                      @focus="popniPlaceholder('Span-NP4')"
+                      @input="popniPlaceholder('Span-NP4')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP10',
+                          'Span-NP4',
                           editedItem.procenatVodeUTelu
                         )
                       "
                     />
-                    <span id="Span-IP10" class="placeholder"
+                    <span id="Span-NP4" class="placeholder"
                       >{{
                         $t(
                           "players.morphologicalCharacteristics.percentageWaterBody"
@@ -583,16 +583,16 @@
                       placeholder=" "
                       v-model="editedItem.duzinaPotkolenice"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP11')"
-                      @input="popniPlaceholder('Span-IP11')"
+                      @focus="popniPlaceholder('Span-NP5')"
+                      @input="popniPlaceholder('Span-NP5')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP11',
+                          'Span-NP5',
                           editedItem.duzinaPotkolenice
                         )
                       "
                     />
-                    <span id="Span-IP11" class="placeholder"
+                    <span id="Span-NP5" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.shankLength")
                       }}
@@ -611,16 +611,16 @@
                       placeholder=" "
                       v-model="editedItem.duzinaNadkolenice"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP12')"
-                      @input="popniPlaceholder('Span-IP12')"
+                      @focus="popniPlaceholder('Span-NP6')"
+                      @input="popniPlaceholder('Span-NP6')"
                       @blur="
                         spustiPlaceholder(
-                          'Span-IP12',
+                          'Span-NP6',
                           editedItem.duzinaNadkolenice
                         )
                       "
                     />
-                    <span id="Span-IP12" class="placeholder"
+                    <span id="Span-NP6" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.thighLength")
                       }}
@@ -639,16 +639,13 @@
                       placeholder=" "
                       v-model="editedItem.forearmLength"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP121')"
-                      @input="popniPlaceholder('Span-IP121')"
+                      @focus="popniPlaceholder('Span-NP7')"
+                      @input="popniPlaceholder('Span-NP7')"
                       @blur="
-                        spustiPlaceholder(
-                          'Span-IP121',
-                          editedItem.forearmLength
-                        )
+                        spustiPlaceholder('Span-NP7', editedItem.forearmLength)
                       "
                     />
-                    <span id="Span-IP121" class="placeholder"
+                    <span id="Span-NP7" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.forearmLength")
                       }}
@@ -667,16 +664,13 @@
                       placeholder=" "
                       v-model="editedItem.upperArmLength"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP122')"
-                      @input="popniPlaceholder('Span-IP122')"
+                      @focus="popniPlaceholder('Span-NP8')"
+                      @input="popniPlaceholder('Span-NP8')"
                       @blur="
-                        spustiPlaceholder(
-                          'Span-IP122',
-                          editedItem.upperArmLength
-                        )
+                        spustiPlaceholder('Span-NP8', editedItem.upperArmLength)
                       "
                     />
-                    <span id="Span-IP122" class="placeholder"
+                    <span id="Span-NP8" class="placeholder"
                       >{{
                         $t(
                           "players.morphologicalCharacteristics.upperArmLength"
@@ -697,13 +691,11 @@
                       placeholder=" "
                       v-model="editedItem.handSize"
                       type="number"
-                      @focus="popniPlaceholder('Span-IP123')"
-                      @input="popniPlaceholder('Span-IP123')"
-                      @blur="
-                        spustiPlaceholder('Span-IP123', editedItem.handSize)
-                      "
+                      @focus="popniPlaceholder('Span-NP9')"
+                      @input="popniPlaceholder('Span-NP9')"
+                      @blur="spustiPlaceholder('Span-NP9', editedItem.handSize)"
                     />
-                    <span id="Span-IP123" class="placeholder"
+                    <span id="Span-NP9" class="placeholder"
                       >{{
                         $t("players.morphologicalCharacteristics.handSize")
                       }}
@@ -1896,6 +1888,26 @@ export default {
 
         i++;
         sviSelektovi = document.getElementById("Span-SL" + i);
+      }
+
+      console.log("PENJEM: 1");
+      i = 0;
+      var svaNovaPolja = document.getElementById("Span-NP" + i);
+      while (!(i > 1 && svaNovaPolja == null)) {
+        console.log("PENJEM: 2");
+        if (svaNovaPolja != null) {
+          console.log("PENJEM: 3");
+          var val =
+            svaNovaPolja.parentElement.children[0].getElementsByTagName(
+              "input"
+            )[0].value;
+
+          if (val != "" && val != null) this.popniPlaceholder("Span-NP" + i);
+          console.log("PENJEM: 4");
+        }
+
+        i++;
+        svaNovaPolja = document.getElementById("Span-NP" + i);
       }
     },
     exportTable() {
