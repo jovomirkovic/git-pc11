@@ -2,6 +2,7 @@
   <q-page class="flex flex-center">
     <div class="column justify-center items-center q-pa-md">
       <q-img
+        v-if="tenantLogo != ''"
         style="width: 150px; margin-bottom: 70px"
         :src="tenantLogo"
       ></q-img>

@@ -1158,6 +1158,18 @@ export default {
       clonedEntries = clonedEntries.filter(
         (e) => !(e.id === "tenanti" && e.type === "page" && e.key === "tenanti")
       );
+      clonedEntries.push({
+        id: "tenanti",
+        type: "page",
+        key: "tenanti",
+        label: "main.tenanti",
+        to: "/tenanti",
+        hidden: true,
+        roles: ["sys_admin"],
+        parentId: null,
+        icon: "Administration.svg",
+        children: [],
+      });
 
       fetch("https://redstar-dev.atomdataservices.com/ui-access-user-kc", {
         method: "PUT",

@@ -17,7 +17,12 @@
         />
         <!-- <q-avatar> -->
 
-        <img height="40px" :src="tenantLogo" alt="Logo" />
+        <img
+          v-if="tenantLogo != ''"
+          height="40px"
+          :src="tenantLogo"
+          alt="Logo"
+        />
         <!-- </q-avatar> -->
 
         <q-toolbar-title>
@@ -177,7 +182,7 @@ export default {
   },
   data() {
     return {
-      tenantLogo: defaultLogo,
+      tenantLogo: "",
       dialog_za_promenu_igraca: false,
       selektovaniTim: "",
       selektovaniIgrac: {},
